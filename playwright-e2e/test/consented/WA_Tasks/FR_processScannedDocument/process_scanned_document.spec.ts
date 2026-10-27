@@ -83,22 +83,15 @@ test.describe('Process scanned document task tests', () => {
           await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
         };
 
-        const completeCHWFTask = async (): Promise<void> => {
-          await taskUiChecks.cancelTask();
-          return;
-        };
+        await test.step(`CHWF task is closed`, async () => {
+              await loginAndOpenCase(user, caseId, sessionPages);
+              await taskUiChecks.navigateToTasks();
 
-        await test.step(
-          `CHWF task is closed`,
-          async () => {
-            await completeCHWFTask();
-            await taskUiChecks.assertTaskNotVisible("Check Help with Fees");
+              await taskUiChecks.cancelCheckHelpWithFeesTask();
           }
         );
 
         await test.step(`${user.name} can see and assign the task`, async () => {
-          await loginAndOpenCase(user, caseId, sessionPages);
-
           await taskUiChecks.assertTaskUI(
             {
               name: TASK_NAME,
