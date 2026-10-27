@@ -7501,6 +7501,15 @@
     "TabFieldDisplayOrder": 21
   },
   {
+    "LiveFrom": "26/10/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "applicantAccessCodes",
+    "TabFieldDisplayOrder": 22
+  },
+  {
     "LiveFrom": "01/02/2021",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
@@ -7688,6 +7697,15 @@
     "TabDisplayOrder": 21,
     "CaseFieldID": "respRefusedOrderCollection",
     "TabFieldDisplayOrder": 21
+  },
+  {
+    "LiveFrom": "26/10/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "resDocuments",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "respondentAccessCodes",
+    "TabFieldDisplayOrder": 22
   },
   {
     "LiveFrom": "01/02/2021",
