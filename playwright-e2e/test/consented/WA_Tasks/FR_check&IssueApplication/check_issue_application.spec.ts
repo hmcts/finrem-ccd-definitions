@@ -45,7 +45,9 @@ const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
     .createConsentedCaseUpToApplicationPaymentSubmission();
 
   await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
-  
+
+  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId); // clear the created CHWF task
+
   return caseId;
 };
 

@@ -44,6 +44,8 @@ const createProcessScannedDocumentTask = async (): Promise<string> => {
 
   await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
+  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId); // clear the created CHWF task
+
   return caseId;
 };
 
