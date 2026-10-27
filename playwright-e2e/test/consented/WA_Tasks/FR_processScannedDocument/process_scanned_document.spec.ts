@@ -85,6 +85,7 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.navigateToTasks();
           await taskUiChecks.cancelCheckHelpWithFeesTask();
 
           await taskUiChecks.assertTaskUI(
