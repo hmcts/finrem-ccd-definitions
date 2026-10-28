@@ -272,6 +272,8 @@ export class TaskUiChecks {
   }
 
   async cancelCheckHelpWithFeesTask(): Promise<void> {
+    await this.waitForTaskVisibility('Check Help With Fees', true);
+
     const hwfTask = this.page.locator('exui-case-task').filter({ hasText: 'Check Help With Fees' });
     const cancelLink = hwfTask.locator('#action_cancel');
 
