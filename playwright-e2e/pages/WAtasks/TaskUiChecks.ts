@@ -273,18 +273,15 @@ export class TaskUiChecks {
 
   async cancelCheckHelpWithFeesTask(): Promise<void> {
     const hwfTask = this.page.locator('exui-case-task').filter({ hasText: 'Check Help With Fees' });
+    const cancelLink = hwfTask.locator('#action_cancel');
 
-    await hwfTask.locator('#action_claim').click();
-    await this.page.waitForLoadState('domcontentloaded');
+    await expect(cancelLink).toBeVisible();
+    await cancelLink.click();
+    await expect(cancelLink).not.toBeVisible();
 
-    await hwfTask
-      .locator('dt')
-      .filter({ hasText: /^Manage$/ })
-      .locator('xpath=following-sibling::dd[1]')
-      .getByText('Cancel task', { exact: true })
-      .click();
-
-    await this.page.getByRole('button', { name: 'Cancel task', exact: true }).click();
+    const confirmationButton = this.page.locator('#submit-button');
+    await expect(confirmationButton).toBeVisible();
+    await confirmationButton.click();
 
     await this.assertTaskNotVisible('Check Help With Fees');
   }
