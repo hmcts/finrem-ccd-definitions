@@ -42,18 +42,14 @@ const loginAndOpenCase = async (
 
 const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
   const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
-
-  await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
+    .createConsentedCaseUpToHWFDecision();
 
   return caseId;
 };
 
 const createCheckIssueApplicationTaskFAB = async (): Promise<string> => {
   const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
-
-  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId);
+    .createConsentedCaseUpToHwfFeeAccountDebited();
   
   return caseId;
 };
@@ -99,7 +95,6 @@ test.describe('Check and Issue Application task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
-          await taskUiChecks.cancelCheckHelpWithFeesTask();
 
           await taskUiChecks.assertTaskUI(
             {
@@ -152,7 +147,6 @@ test.describe('Check and Issue Application task tests', () => {
           caseId,
           sessionPages
         );
-        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',
@@ -169,7 +163,6 @@ test.describe('Check and Issue Application task tests', () => {
           },
           checkIssueApplication.roles.teamLeader.unassignedActions
         );
-        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assignTaskToMe();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
