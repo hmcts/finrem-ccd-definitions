@@ -99,6 +99,7 @@ test.describe('Check and Issue Application task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.cancelCheckHelpWithFeesTask();
 
           await taskUiChecks.assertTaskUI(
             {
@@ -110,7 +111,6 @@ test.describe('Check and Issue Application task tests', () => {
             checkIssueApplication.roles[user.role].unassignedActions
           );
 
-          await taskUiChecks.cancelCheckHelpWithFeesTask();
           await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
@@ -152,6 +152,7 @@ test.describe('Check and Issue Application task tests', () => {
           caseId,
           sessionPages
         );
+        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',

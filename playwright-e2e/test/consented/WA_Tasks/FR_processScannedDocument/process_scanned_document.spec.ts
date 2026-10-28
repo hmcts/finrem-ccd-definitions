@@ -85,6 +85,7 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.cancelCheckHelpWithFeesTask();
 
           await taskUiChecks.assertTaskUI(
             {
@@ -96,7 +97,6 @@ test.describe('Process scanned document task tests', () => {
             processScannedDocuments.roles[user.role].unassignedActions
           );
 
-          await taskUiChecks.cancelCheckHelpWithFeesTask();
           await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
@@ -132,6 +132,7 @@ test.describe('Process scanned document task tests', () => {
         caseId,
         { loginPage, manageCaseDashboardPage }
       );
+      await taskUiChecks.cancelCheckHelpWithFeesTask();
       await taskUiChecks.assertTaskUI(
         {
           name: TASK_NAME,
@@ -173,6 +174,7 @@ test.describe('Process scanned document task tests', () => {
           caseId,
           sessionPages
         );
+        await taskUiChecks.cancelCheckHelpWithFeesTask();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',
