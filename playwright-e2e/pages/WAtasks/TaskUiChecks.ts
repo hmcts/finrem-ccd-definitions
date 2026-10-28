@@ -2,7 +2,7 @@ import { expect, type Locator, type Page } from '@playwright/test';
 import {
   taskManagementActions,
   type TaskDetails,
-  type TaskManagementAction
+  type TaskManagementAction, TaskName, TaskCompletionEventName
 } from './TaskTypes.ts';
 import {
   WorkAllocationTabsPage,
@@ -214,6 +214,35 @@ export class TaskUiChecks {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
     await this.assertOnlyManagementActions(actions);
+  }
+
+  async closeTask(taskName: TaskName, action: TaskManagementAction): Promise<void> {
+    await this.waitForTaskVisibility(taskName, true);
+    await this.assignTaskToMe();
+    if (action === 'Mark as done') {
+      await this.markTaskAsDone();
+    }
+    else if (action === 'Cancel task') {
+      await this.cancelTask();
+    }
+    await this.assertTaskNotVisible(taskName);
+  }
+
+  async submitTask(taskName: TaskName, completionEventName: TaskCompletionEventName): Promise<void> {
+    // TODO: add check for more pages
+    await this.waitForTaskVisibility(taskName, true);
+    await this.assignTaskToMe();
+    await this.selectTaskNextStep(completionEventName);
+    await this.selectButton('Submit');
+    await this.assertTaskNotVisible(taskName);
+  }
+
+  private async selectButton(buttonName: string): Promise<void> {
+    const button = this.page.getByRole('button', { name: buttonName });
+    await button.scrollIntoViewIfNeeded();
+    await expect(button).toBeVisible();
+    await expect(button).toBeEnabled();
+    await button.click({ force: true });
   }
 
   private async waitForTaskVisibility(
