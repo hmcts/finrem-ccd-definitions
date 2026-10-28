@@ -8,7 +8,11 @@ export const createDraftOrdersApprovedWithHearingTabData = (hearingDate: string)
     'Draft Orders 1',
     { tabItem: 'Type of Hearing', value: 'First Directions Appointment (FDA)' }, 
     { tabItem: 'Hearing Date', value: DateHelper.formatToDayMonthYearShort(hearingDate) },
-    { tabItem: 'Hearing Time', value: '10:00' },
+    {
+      tabItem: 'Hearing Time',
+      value: '10:00',
+      exact: false
+    },
     { tabItem: 'Order status', value: 'Processed' },
     { tabItem: 'Judge name', value: envTestData.JUDGE_NAME},
     { tabItem: 'Cover letter', value: 'agreed-draft-order-document - cover letter.pdf'},

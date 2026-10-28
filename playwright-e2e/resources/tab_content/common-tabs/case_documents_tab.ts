@@ -75,8 +75,11 @@ export function buildCaseDocTabGeneralEmailContent(emails: Array<{
   const tabContent: any[] = [];
   emails.forEach(email => {
     tabContent.push('General Email');
-    tabContent.push({ tabItem: 'Date Sent', value: 'Recipient\'s email' });
     tabContent.push({
+      tabItem: 'Date Sent',
+      value: 'Recipient\'s email',
+      exact: false
+    });    tabContent.push({
       tabItem: email.emailDate, 
       value: email.recipientEmail,
       clickable: true,
