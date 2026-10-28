@@ -26,26 +26,27 @@ test.describe.skip('Disabling consented case creation test for shuttering of cas
       await caseDetailsPage.assertTabData(createCaseTabDataPreview);
     }
   );
+
+
+    test(
+      'Contested Tab Verification',
+      { tag: ['@preview'] },
+      async (
+        {
+          loginPage,
+          manageCaseDashboardPage,
+          caseDetailsPage
+        }
+      ) => {
+        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+
+        // Login as caseworker
+        await manageCaseDashboardPage.visit();
+        await loginPage.loginCaseworker();
+        await manageCaseDashboardPage.navigateToCase(caseId);
+
+        // Assert tab data
+        await caseDetailsPage.assertTabData(createCaseTabData);
+      }
+    );
 });
-
-test(
-  'Contested Tab Verification',
-  { tag: ['@preview'] },
-  async (
-    {
-      loginPage,
-      manageCaseDashboardPage,
-      caseDetailsPage
-    }
-  ) => {
-    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
-
-    // Login as caseworker
-    await manageCaseDashboardPage.visit();
-    await loginPage.loginCaseworker();
-    await manageCaseDashboardPage.navigateToCase(caseId);
-
-    // Assert tab data
-    await caseDetailsPage.assertTabData(createCaseTabData);
-  }
-);
