@@ -72,6 +72,13 @@
   {
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "close",
+    "UserRole": "[APPLICANT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "consentOrderApproved",
     "UserRole": "[APPLICANT]",
     "CRUD": "CRU"
@@ -297,6 +304,13 @@
     "LiveFrom": "25/06/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "CaseStateID": "caseWorkerReview",
+    "UserRole": "[RESPONDENT]",
+    "CRUD": "CRU"
+  },
+  {
+    "LiveFrom": "25/06/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "CaseStateID": "close",
     "UserRole": "[RESPONDENT]",
     "CRUD": "CRU"
   },
