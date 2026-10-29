@@ -101,6 +101,37 @@ function getUsers() {
   ];
 }
 
+async function idamUserExists(
+  userId: string,
+  bearerToken: string,
+): Promise<boolean> {
+  const url =
+    `${requireEnv('IDAM_TESTING_SUPPORT_URL')}/test/idam/users/${encodeURIComponent(userId)}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${bearerToken}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.status === 200) {
+    return true;
+  }
+
+  if (response.status === 404) {
+    return false;
+  }
+
+  const body = await response.text();
+
+  throw new Error(
+    `Failed checking IDAM user ${userId}. ` +
+      `Expected 200 or 404, got ${response.status}. Response: ${body}`,
+  );
+}
+
 export async function setupTestUsers(): Promise<void> {
   configureIdamUrls();
 
@@ -115,45 +146,12 @@ export async function setupTestUsers(): Promise<void> {
     });
 
     for (const user of getUsers()) {
-      console.log(`Checking IDAM user: ${user.email}`);
+      const exists = await idamUserExists(user.id, bearerToken);
 
-      let userExists = false;
-
-      try {
-        const existingUser = await idamUtils.getUserInfo({
-          id: user.id,
-          bearerToken,
-        });
-
-        if (existingUser.id !== user.id ||
-            existingUser.email.toLowerCase() !== user.email.toLowerCase()) {
-          throw new Error(
-            `IDAM user mismatch for ${user.email}. ` +
-            `Expected ID: ${user.id}, received: ${existingUser.id}. ` +
-            `Received email: ${existingUser.email}`,
-          );
-        }
-
-        userExists = true;
-
-        console.log(
-          `IDAM user already exists: ${existingUser.email} (${existingUser.id})`,
-        );
-      } catch (error) {
-        const message =
-          error instanceof Error ? error.message : String(error);
-
-        // Only create the user when IDAM confirms they do not exist.
-        if (!/Status Code:\s*404\b/i.test(message)) {
-          throw error;
-        }
-      }
-
-      if (userExists) {
+      if (exists) {
+        console.log(`IDAM user identified: ${user.email} (${user.id})`);
         continue;
       }
-
-      console.log(`Creating IDAM user: ${user.email}`);
 
       const createdUser = await idamUtils.createUser({
         bearerToken,
@@ -167,9 +165,7 @@ export async function setupTestUsers(): Promise<void> {
         },
       });
 
-      console.log(
-        `Created IDAM user: ${createdUser.email} (${createdUser.id})`,
-      );
+      console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
     }
 
     console.log('IDAM test user setup completed successfully.');
