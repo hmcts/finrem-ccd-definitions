@@ -39,7 +39,7 @@ function getIdamSecret(): string {
   return process.env.IDAM_SECRET_AAT?.trim() || requireEnv('IDAM_SECRET');
 }
 
-function configureIdamUrls(): void {
+function configureIdamUrls(): string {
   const env = getIdamEnvironment();
 
   process.env.IDAM_API_URL =
@@ -50,6 +50,8 @@ function configureIdamUrls(): void {
 
   process.env.IDAM_TESTING_SUPPORT_URL =
     `https://idam-testing-support-api.${env}.platform.hmcts.net`;
+
+  return env;
 }
 
 type SolicitorParty = 'applicant' | 'respondent';
@@ -133,7 +135,8 @@ async function idamUserExists(
 }
 
 export async function setupTestUsers(): Promise<void> {
-  configureIdamUrls();
+  const idamEnv = configureIdamUrls();
+  console.log(`IDAM environment: ${idamEnv}`);
 
   const idamUtils = new IdamUtils();
 
