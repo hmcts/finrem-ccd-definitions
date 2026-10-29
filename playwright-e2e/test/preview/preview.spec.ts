@@ -1,52 +1,50 @@
-import { test } from '../../fixtures/fixtures';
-import { createCaseTabDataPreview } from '../../resources/tab_content/consented/create_case_tabs';
-import { ConsentedCaseFactory } from '../../data-utils/factory/consented/ConsentedCaseFactory';
-import { ContestedCaseFactory } from '../../data-utils/factory/contested/ContestedCaseFactory';
+import {test} from '../../fixtures/fixtures';
+import {createCaseTabDataPreview} from '../../resources/tab_content/consented/create_case_tabs';
+import {ConsentedCaseFactory} from '../../data-utils/factory/consented/ConsentedCaseFactory';
+import {ContestedCaseFactory} from '../../data-utils/factory/contested/ContestedCaseFactory';
 import {createCaseTabData} from '../../resources/tab_content/contested/solicitor_create_case_tabs.ts';
 
-test.describe.skip('Disabling consented case creation test for shuttering of case type.', () => {
-  test(
-    'Consented Tab Verification',
-    {tag: ['@preview']},
-    async (
-      {
-        loginPage,
-        manageCaseDashboardPage,
-        caseDetailsPage
-      }
-    ) => {
-      const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
-
-      // Login as caseworker
-      await manageCaseDashboardPage.visit();
-      await loginPage.loginCaseworker();
-      await manageCaseDashboardPage.navigateToCase(caseId);
-
-      // Assert tab data
-      await caseDetailsPage.assertTabData(createCaseTabDataPreview);
+test(
+  'Consented Tab Verification',
+  {tag: ['@preview']},
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
     }
-  );
+  ) => {
+    const caseId = await ConsentedCaseFactory.createConsentedCaseUpToHWFDecision();
+
+    // Login as caseworker
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginCaseworker();
+    await manageCaseDashboardPage.navigateToCase(caseId);
+
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabDataPreview);
+  }
+);
 
 
-    test(
-      'Contested Tab Verification',
-      { tag: ['@preview'] },
-      async (
-        {
-          loginPage,
-          manageCaseDashboardPage,
-          caseDetailsPage
-        }
-      ) => {
-        const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
+test(
+  'Contested Tab Verification',
+  {tag: ['@preview']},
+  async (
+    {
+      loginPage,
+      manageCaseDashboardPage,
+      caseDetailsPage
+    }
+  ) => {
+    const caseId = await ContestedCaseFactory.createAndProcessFormACaseUpToIssueApplication();
 
-        // Login as caseworker
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginCaseworker();
-        await manageCaseDashboardPage.navigateToCase(caseId);
+    // Login as caseworker
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginCaseworker();
+    await manageCaseDashboardPage.navigateToCase(caseId);
 
-        // Assert tab data
-        await caseDetailsPage.assertTabData(createCaseTabData);
-      }
-    );
-});
+    // Assert tab data
+    await caseDetailsPage.assertTabData(createCaseTabData);
+  }
+);
