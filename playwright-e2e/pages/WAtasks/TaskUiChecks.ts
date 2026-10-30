@@ -271,4 +271,21 @@ export class TaskUiChecks {
       .locator('xpath=following-sibling::dd[1]');
   }
 
+  async cancelCheckHelpWithFeesTask(): Promise<void> {
+    await this.waitForTaskVisibility('Check Help With Fees', true);
+
+    const hwfTask = this.page.locator('exui-case-task').filter({ hasText: 'Check Help With Fees' });
+    const cancelLink = hwfTask.locator('#action_cancel');
+
+    await expect(cancelLink).toBeVisible();
+    await cancelLink.click();
+    await expect(cancelLink).not.toBeVisible();
+
+    const confirmationButton = this.page.locator('#submit-button');
+    await expect(confirmationButton).toBeVisible();
+    await confirmationButton.click();
+
+    await this.assertTaskNotVisible('Check Help With Fees');
+  }
+
 }

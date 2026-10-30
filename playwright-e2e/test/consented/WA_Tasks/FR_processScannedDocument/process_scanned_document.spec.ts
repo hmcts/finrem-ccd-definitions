@@ -7,9 +7,9 @@ import type { ManageCaseDashboardPage } from '../../../../pages/ManageCaseDashbo
 import type { SigninPage } from '../../../../pages/SigninPage.ts';
 import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
 import {
-  ATTACH_SCANNED_DOCUMENT,
-  processScannedDocuments,
-  processScannedDocumentUserScenarios
+    ATTACH_SCANNED_DOCUMENT,
+    processScannedDocuments,
+    processScannedDocumentUserScenarios
 } from './process_scanned_documents.scenario.ts';
 
 const TASK_NAME = processScannedDocuments.taskName;
@@ -19,207 +19,212 @@ type LoginCredentials = {
 };
 
 type SessionPages = {
-  loginPage: SigninPage;
-  manageCaseDashboardPage: ManageCaseDashboardPage;
+    loginPage: SigninPage;
+    manageCaseDashboardPage: ManageCaseDashboardPage;
 };
 
 const loginAndOpenCase = async (
-  credentials: LoginCredentials,
-  caseId: string,
-  { loginPage, manageCaseDashboardPage }: SessionPages
+    credentials: LoginCredentials,
+    caseId: string,
+    { loginPage, manageCaseDashboardPage }: SessionPages
 ): Promise<void> => {
-  await manageCaseDashboardPage.visit();
-  await loginPage.loginWaitForPath(
-    credentials.email,
-    credentials.password,
-    config.manageCaseBaseURL,
-    config.loginPaths.cases
-  );
-  await manageCaseDashboardPage.navigateToCase(caseId);
+    await manageCaseDashboardPage.visit();
+    await loginPage.loginWaitForPath(
+        credentials.email,
+        credentials.password,
+        config.manageCaseBaseURL,
+        config.loginPaths.cases
+    );
+    await manageCaseDashboardPage.navigateToCase(caseId);
 };
 
 const createProcessScannedDocumentTask = async (): Promise<string> => {
-  const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
+    const caseId = await ConsentedCaseFactory
+        .createConsentedCaseUpToApplicationPaymentSubmission();
 
-  await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
+    await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
-  return caseId;
+    return caseId;
 };
 
 test.describe('Process scanned document task tests', () => {
-  test.describe.configure({ mode: 'parallel' });
+    test.describe.configure({ mode: 'parallel' });
 
-  for (const { user, completionAction } of processScannedDocumentUserScenarios) {
+    for (const { user, completionAction } of processScannedDocumentUserScenarios) {
+        test(
+            `${user.name} performs the ${completionAction} action`,
+            { tag: completionAction === ATTACH_SCANNED_DOCUMENT ? ['@waTasks', '@preview'] : ['@waTasks'] },
+            async ({
+                       loginPage,
+                       manageCaseDashboardPage,
+                       attachScannedDocumentsPage,
+                       taskUiChecks
+                   }) => {
+                const sessionPages = {
+                    loginPage,
+                    manageCaseDashboardPage
+                };
+                const caseId = await createProcessScannedDocumentTask();
+
+                const completeTask = async (
+                    action: TaskCompletionAction
+                ): Promise<void> => {
+                    if (action === 'Mark as done') {
+                        await taskUiChecks.markTaskAsDone();
+                        return;
+                    }
+
+                    if (action === 'Cancel task') {
+                        await taskUiChecks.cancelTask();
+                        return;
+                    }
+
+                    await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
+                    await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
+                };
+
+                await test.step(`${user.name} can see and assign the task`, async () => {
+                    await loginAndOpenCase(user, caseId, sessionPages);
+                    await taskUiChecks.cancelCheckHelpWithFeesTask();
+
+                    await taskUiChecks.assertTaskUI(
+                        {
+                            name: TASK_NAME,
+                            priority: 'low',
+                            dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
+                            assignedTo: 'Unassigned'
+                        },
+                        processScannedDocuments.roles[user.role].unassignedActions
+                    );
+
+                    await taskUiChecks.assignTaskToMe();
+
+                    await taskUiChecks.assertOnlyManagementActions(
+                        processScannedDocuments.roles[user.role].assignedActions
+                    );
+                    await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
+                });
+
+                await test.step(
+                    `${user.name} completes the task using ${completionAction}`,
+                    async () => {
+                        await completeTask(completionAction);
+                        await taskUiChecks.assertTaskNotVisible(TASK_NAME);
+                    }
+                );
+            }
+        );
+    }
+
     test(
-      `${user.name} performs the ${completionAction} action`,
-      { tag: completionAction === ATTACH_SCANNED_DOCUMENT ? ['@waTasks', '@preview'] : ['@waTasks'] },
-      async ({
-        loginPage,
-        manageCaseDashboardPage,
-        attachScannedDocumentsPage,
-        taskUiChecks
-      }) => {
-        const sessionPages = {
-          loginPage,
-          manageCaseDashboardPage
-        };
-        const caseId = await createProcessScannedDocumentTask();
+        'CTSC Admin retains the task when supplementary evidence is not handled',
+        { tag: ['@waTasks'] },
+        async ({
+                   loginPage,
+                   manageCaseDashboardPage,
+                   attachScannedDocumentsPage,
+                   taskUiChecks
+               }) => {
+            const caseId = await createProcessScannedDocumentTask();
 
-        const completeTask = async (
-          action: TaskCompletionAction
-        ): Promise<void> => {
-          if (action === 'Mark as done') {
-            await taskUiChecks.markTaskAsDone();
-            return;
-          }
+            await loginAndOpenCase(
+                config.ctsc_admin,
+                caseId,
+                { loginPage, manageCaseDashboardPage }
+            );
+            await taskUiChecks.cancelCheckHelpWithFeesTask();
+            await taskUiChecks.assertTaskUI(
+                {
+                    name: TASK_NAME,
+                    priority: 'low',
+                    dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
+                    assignedTo: 'Unassigned'
+                },
+                processScannedDocuments.roles.admin.unassignedActions
+            );
+            await taskUiChecks.assignTaskToMe();
+            await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
 
-          if (action === 'Cancel task') {
-            await taskUiChecks.cancelTask();
-            return;
-          }
+            await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(false);
 
-          await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
-          await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(true);
-        };
-
-        await test.step(`${user.name} can see and assign the task`, async () => {
-          await loginAndOpenCase(user, caseId, sessionPages);
-
-          await taskUiChecks.assertTaskUI(
-            {
-              name: TASK_NAME,
-              priority: 'low',
-              dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
-              assignedTo: 'Unassigned'
-            },
-            processScannedDocuments.roles[user.role].unassignedActions
-          );
-          await taskUiChecks.assignTaskToMe();
-
-          await taskUiChecks.assertOnlyManagementActions(
-            processScannedDocuments.roles[user.role].assignedActions
-          );
-          await taskUiChecks.assertNextStepVisible(ATTACH_SCANNED_DOCUMENT);
-        });
-
-        await test.step(
-          `${user.name} completes the task using ${completionAction}`,
-          async () => {
-            await completeTask(completionAction);
-            await taskUiChecks.assertTaskNotVisible(TASK_NAME);
-          }
-        );
-      }
+            await manageCaseDashboardPage.navigateToCase(caseId);
+            await taskUiChecks.assertTaskVisible(TASK_NAME);
+        }
     );
-  }
 
-  test(
-    'CTSC Admin retains the task when supplementary evidence is not handled',
-    { tag: ['@waTasks'] },
-    async ({
-      loginPage,
-      manageCaseDashboardPage,
-      attachScannedDocumentsPage,
-      taskUiChecks
-    }) => {
-      const caseId = await createProcessScannedDocumentTask();
+    test(
+        'CTSC Team Leader reassigns their task to CTSC Admin',
+        { tag: ['@waTasks'] },
+        async ({
+                   loginPage,
+                   manageCaseDashboardPage,
+                   taskUiChecks
+               }) => {
+            test.setTimeout(15 * 60 * 1000);
 
-      await loginAndOpenCase(
-        config.ctsc_admin,
-        caseId,
-        { loginPage, manageCaseDashboardPage }
-      );
-      await taskUiChecks.assertTaskUI(
-        {
-          name: TASK_NAME,
-          priority: 'low',
-          dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
-          assignedTo: 'Unassigned'
-        },
-        processScannedDocuments.roles.admin.unassignedActions
-      );
-      await taskUiChecks.assignTaskToMe();
-      await taskUiChecks.selectTaskNextStep(ATTACH_SCANNED_DOCUMENT);
+            const sessionPages = {
+                loginPage,
+                manageCaseDashboardPage
+            };
+            const caseId = await createProcessScannedDocumentTask();
 
-      await attachScannedDocumentsPage.completeAttachScannedDocumentsEvent(false);
+            await test.step('Team Leader assigns the task to themselves', async () => {
+                await loginAndOpenCase(
+                    config.ctsc_teamleader,
+                    caseId,
+                    sessionPages
+                );
+                await taskUiChecks.cancelCheckHelpWithFeesTask();
+                await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
+                    TASK_NAME,
+                    'All work',
+                    caseId,
+                    processScannedDocuments.roles.teamLeader.unassignedActions
+                );
+                await manageCaseDashboardPage.navigateToCase(caseId);
+                await taskUiChecks.assertTaskUI(
+                    {
+                        name: TASK_NAME,
+                        priority: 'low',
+                        dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
+                        assignedTo: 'Unassigned'
+                    },
+                    processScannedDocuments.roles.teamLeader.unassignedActions
+                );
+                await taskUiChecks.cancelCheckHelpWithFeesTask();
+                await taskUiChecks.assignTaskToMe();
+                await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
+                    TASK_NAME,
+                    'My work',
+                    caseId,
+                    processScannedDocuments.roles.teamLeader.assignedActions
+                );
+                await manageCaseDashboardPage.navigateToCase(caseId);
+                await taskUiChecks.navigateToTasks();
+            });
 
-      await manageCaseDashboardPage.navigateToCase(caseId);
-      await taskUiChecks.assertTaskVisible(TASK_NAME);
-    }
-  );
+            await test.step('Team Leader reassigns their task to CTSC Admin', async () => {
+                await taskUiChecks.reassignTaskToUser(
+                    'CTSC Admin',
+                    config.ctsc_admin.email
+                );
+                await manageCaseDashboardPage.signOut();
+            });
 
-  test(
-    'CTSC Team Leader reassigns their task to CTSC Admin',
-    { tag: ['@waTasks'] },
-    async ({
-      loginPage,
-      manageCaseDashboardPage,
-      taskUiChecks
-    }) => {
-      test.setTimeout(15 * 60 * 1000);
-
-      const sessionPages = {
-        loginPage,
-        manageCaseDashboardPage
-      };
-      const caseId = await createProcessScannedDocumentTask();
-
-      await test.step('Team Leader assigns the task to themselves', async () => {
-        await loginAndOpenCase(
-          config.ctsc_teamleader,
-          caseId,
-          sessionPages
-        );
-        await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
-          TASK_NAME,
-          'All work',
-          caseId,
-          processScannedDocuments.roles.teamLeader.unassignedActions
-        );
-        await manageCaseDashboardPage.navigateToCase(caseId);
-        await taskUiChecks.assertTaskUI(
-          {
-            name: TASK_NAME,
-            priority: 'low',
-            dueDate: DateHelper.getFormattedDateAfterWorkingDays(5),
-            assignedTo: 'Unassigned'
-          },
-          processScannedDocuments.roles.teamLeader.unassignedActions
-        );
-        await taskUiChecks.assignTaskToMe();
-        await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
-          TASK_NAME,
-          'My work',
-          caseId,
-          processScannedDocuments.roles.teamLeader.assignedActions
-        );
-        await manageCaseDashboardPage.navigateToCase(caseId);
-        await taskUiChecks.navigateToTasks();
-      });
-
-      await test.step('Team Leader reassigns their task to CTSC Admin', async () => {
-        await taskUiChecks.reassignTaskToUser(
-          'CTSC Admin',
-          config.ctsc_admin.email
-        );
-        await manageCaseDashboardPage.signOut();
-      });
-
-      await test.step('The task is visible to CTSC Admin', async () => {
-        await manageCaseDashboardPage.visit();
-        await loginPage.loginWaitForPath(
-          config.ctsc_admin.email,
-          config.ctsc_admin.password,
-          config.manageCaseBaseURL,
-          config.loginPaths.cases
-        );
-        await taskUiChecks.assertTaskVisibleInWorkAllocationTab(
-          TASK_NAME,
-          'My work',
-          caseId
-        );
-      });
-    }
-  );
+            await test.step('The task is visible to CTSC Admin', async () => {
+                await manageCaseDashboardPage.visit();
+                await loginPage.loginWaitForPath(
+                    config.ctsc_admin.email,
+                    config.ctsc_admin.password,
+                    config.manageCaseBaseURL,
+                    config.loginPaths.cases
+                );
+                await taskUiChecks.assertTaskVisibleInWorkAllocationTab(
+                    TASK_NAME,
+                    'My work',
+                    caseId
+                );
+            });
+        }
+    );
 });
