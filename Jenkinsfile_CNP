@@ -251,7 +251,7 @@ def setPlaywrightIdamEnv() {
 }
 
 // Configure branches to sync with master branch
-def branchesToSync = ['demo', 'ithc', 'perftest']
+def branchesToSync = ['demo', 'perftest']
 properties([
     copyArtifactPermission('*'),
 ])
