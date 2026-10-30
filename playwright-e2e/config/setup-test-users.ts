@@ -30,7 +30,7 @@ function getIdamEnvironment(): string {
 }
 
 function getIdamSecret(): string {
-  const env = getIdamEnvironment(); 
+  const env = getIdamEnvironment();
 
   if (env === 'demo') {
     return process.env.IDAM_SECRET_DEMO?.trim() || requireEnv('IDAM_SECRET');
@@ -39,7 +39,7 @@ function getIdamSecret(): string {
   return process.env.IDAM_SECRET_AAT?.trim() || requireEnv('IDAM_SECRET');
 }
 
-function configureIdamUrls(): void {
+function configureIdamUrls(): string {
   const env = getIdamEnvironment();
 
   process.env.IDAM_API_URL =
@@ -50,11 +50,15 @@ function configureIdamUrls(): void {
 
   process.env.IDAM_TESTING_SUPPORT_URL =
     `https://idam-testing-support-api.${env}.platform.hmcts.net`;
+
+  return env;
 }
 
 type SolicitorParty = 'applicant' | 'respondent';
 
-function getSolicitorName(party: SolicitorParty): { forename: string; surname: string } {
+function getSolicitorName(
+  party: SolicitorParty,
+): { forename: string; surname: string } {
   const isDemo = getIdamEnvironment() === 'demo';
 
   if (party === 'applicant') {
@@ -80,53 +84,59 @@ function getRespondentSolicitorId(): string {
     : requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID');
 }
 
-const users = [
-  {
-    id: getApplicantSolicitorId(),
-    email: config.applicant_solicitor.email,
-    password: config.applicant_solicitor.password,
-    ...getSolicitorName('applicant'),
-    roleNames: SOLICITOR_ROLES,
-  },
-  {
-    id: getRespondentSolicitorId(),
-    email: config.respondent_solicitor.email,
-    password: config.respondent_solicitor.password,
-    ...getSolicitorName('respondent'),
-    roleNames: SOLICITOR_ROLES,
-  },
-];
-
-async function deleteUser(email: string): Promise<void> {
-  const idamApiUrl = requireEnv('IDAM_API_URL');
-
-  const response = await fetch(
-    `${idamApiUrl}/testing-support/accounts/${encodeURIComponent(email)}`,
+function getUsers() {
+  return [
     {
-      method: 'DELETE',
+      id: getApplicantSolicitorId(),
+      email: config.applicant_solicitor.email,
+      password: config.applicant_solicitor.password,
+      ...getSolicitorName('applicant'),
+      roleNames: SOLICITOR_ROLES,
     },
-  );
+    {
+      id: getRespondentSolicitorId(),
+      email: config.respondent_solicitor.email,
+      password: config.respondent_solicitor.password,
+      ...getSolicitorName('respondent'),
+      roleNames: SOLICITOR_ROLES,
+    },
+  ];
+}
+
+async function idamUserExists(
+  userId: string,
+  bearerToken: string,
+): Promise<boolean> {
+  const url =
+    `${requireEnv('IDAM_TESTING_SUPPORT_URL')}/test/idam/users/${encodeURIComponent(userId)}`;
+
+  const response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${bearerToken}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  if (response.status === 200) {
+    return true;
+  }
 
   if (response.status === 404) {
-    console.log(`IDAM user does not exist, nothing to delete: ${email}`);
-    return;
+    return false;
   }
 
-  if (response.status !== 204) {
-    const responseBody = await response.text();
+  const body = await response.text();
 
-    throw new Error(
-      `Failed to delete IDAM user ${email}. ` +
-        `Expected 204 but received ${response.status}. ` +
-        `Response: ${responseBody}`,
-    );
-  }
-
-  console.log(`Deleted IDAM user: ${email}`);
+  throw new Error(
+    `Failed checking IDAM user ${userId}. ` +
+      `Expected 200 or 404, got ${response.status}. Response: ${body}`,
+  );
 }
 
 export async function setupTestUsers(): Promise<void> {
-  configureIdamUrls();
+  const idamEnv = configureIdamUrls();
+  console.log(`IDAM environment: ${idamEnv}`);
 
   const idamUtils = new IdamUtils();
 
@@ -138,10 +148,13 @@ export async function setupTestUsers(): Promise<void> {
       scope: 'profile roles',
     });
 
-    for (const user of users) {
-      console.log(`Refreshing IDAM user: ${user.email}`);
+    for (const user of getUsers()) {
+      const exists = await idamUserExists(user.id, bearerToken);
 
-      await deleteUser(user.email);
+      if (exists) {
+        console.log(`IDAM user identified: ${user.email} (${user.id})`);
+        continue;
+      }
 
       const createdUser = await idamUtils.createUser({
         bearerToken,
@@ -155,12 +168,10 @@ export async function setupTestUsers(): Promise<void> {
         },
       });
 
-      console.log(
-        `Created IDAM user: ${createdUser.email} (${createdUser.id})`,
-      );
+      console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
     }
 
-    console.log('IDAM test users refreshed successfully.');
+    console.log('IDAM test user setup completed successfully.');
   } finally {
     await idamUtils.dispose();
   }

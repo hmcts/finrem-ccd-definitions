@@ -397,19 +397,17 @@ export class CaseDetailsPage {
   
   async openCfv(): Promise<void> {
     const cfvTab = this.page.getByRole('tab', {
-      name: 'Case File View'
+      name: 'Case File View',
+      exact: true
     });
 
-    const scrollLeft = this.page.locator(
-      'button.mat-tab-header-pagination-before'
-    );
+    await expect(cfvTab).toBeAttached();
 
-    // Scroll tabs to the beginning
-    while (await scrollLeft.isVisible() && await scrollLeft.isEnabled()) {
-      await scrollLeft.click();
-    }
+    await cfvTab.focus();
+    await cfvTab.press('Enter');
 
-    await cfvTab.click();
+    // Confirm Case File View has opened
+    await expect(cfvTab).toHaveAttribute('aria-selected', 'true');
     await expect(this.page.getByRole('tree')).toBeVisible();
   }
 
