@@ -38,3 +38,16 @@ export const assignedTaskActions: Readonly<Record<
     'Unassign task'
   ]
 };
+
+export const TaskName = {
+  CheckHelpWithFees: 'Check Help With Fees'
+} as const;
+
+export type TaskName = typeof TaskName[keyof typeof TaskName];
+
+export const TaskCompletionEventName = {
+  HWFApplicationAccepted: 'HWF Application Accepted',
+  FeeAccountDebited: 'Fee Account Debited'
+} as const;
+
+export type TaskCompletionEventName = typeof TaskCompletionEventName[keyof typeof TaskCompletionEventName];
