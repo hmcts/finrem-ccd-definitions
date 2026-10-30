@@ -2681,5 +2681,23 @@
     "FieldType": "SearchCriteria",
     "SecurityClassification": "Public",
     "Searchable": "Y"
+  },
+  {
+    "LiveFrom": "19/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderApprovedCoverLetterApp",
+    "Label": "Applicant's covert letter for approved consent order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
+  },
+  {
+    "LiveFrom": "19/10/2026",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "ID": "consentOrderApprovedCoverLetterResp",
+    "Label": "Respondent's covert letter for approved consent order",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N"
   }
 ]
