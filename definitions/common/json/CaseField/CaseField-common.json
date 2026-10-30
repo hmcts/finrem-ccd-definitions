@@ -127,7 +127,8 @@
     "Label": "Case Location",
     "FieldType": "CaseLocation",
     "SecurityClassification": "Public",
-    "Searchable": "N"
+    "Searchable": "N",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "18/09/2026",
