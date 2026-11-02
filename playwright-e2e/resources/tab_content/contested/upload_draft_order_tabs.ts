@@ -9,7 +9,11 @@ export const upload_draft_order_tabs: Tab[] = [
       'Draft Orders 1',
       { tabItem: 'Type of Hearing', value: 'First Directions Appointment (FDA)'},
       { tabItem: 'Hearing Date', value: DateHelper.getFormattedDateTwelveWeeksLater()},
-      { tabItem: 'Hearing Time', value: '10:00'},
+      {
+        tabItem: 'Hearing Time',
+        value: '10:00',
+        exact: false
+      },
       'Uploaded draft orders',
       'Uploaded draft orders 1',
       { tabItem: 'Order status', value: 'To be reviewed'},
@@ -49,7 +53,11 @@ export const approved_upload_draft_order_tabs: Tab[] = [
       'Draft Orders 1',
       { tabItem: 'Type of Hearing', value: 'First Directions Appointment (FDA)'},
       { tabItem: 'Hearing Date', value: DateHelper.getFormattedDateTwelveWeeksLater()},
-      { tabItem: 'Hearing Time', value: '10:00'},
+      {
+        tabItem: 'Hearing Time',
+        value: '10:00',
+        exact: false
+      },
       'Uploaded draft orders',
       'Uploaded draft orders 1',
       { tabItem: 'Order status', value: 'Approved by judge'},

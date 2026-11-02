@@ -17,7 +17,11 @@ export const sendOrderTableDataWithUploadApprovedOrder: Table = {
     { cellItem: 'Send?', value: 'Yes' },
     'Case documents tab [Approved Order] - approvedOrder.pdf',
     { cellItem: 'Send?', value: 'Yes' },
-    { cellItem: 'Include supporting documents', value: 'Yes' },
+    {
+      cellItem: 'Include supporting documents',
+      value: 'Yes',
+      rowType: 'label-value-adjacent'
+    },
     'additionalAttachment.pdf',
     { cellItem: 'Send?', value: 'Yes' },
     { cellItem: 'Who should receive this order?', value: 'Applicant - Frodo Baggins\nRespondent - Smeagol Gollum' },
