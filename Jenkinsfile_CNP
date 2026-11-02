@@ -11,7 +11,6 @@ AppPipelineConfig pipelineConf
 
 def yarnBuilder = new uk.gov.hmcts.contino.YarnBuilder(this)
 
-
 def prodFinremSecrets = [
         secret('fixedlists-consented-judgedetails-1', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_1'),
         secret('fixedlists-consented-judgedetails-2', 'FIXEDLISTS_CONSENTED_JUDGEDETAILS_2'),
