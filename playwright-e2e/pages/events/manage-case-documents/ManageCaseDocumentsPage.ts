@@ -100,8 +100,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     await expect(removeButton).toBeVisible();
     await removeButton.click();
     await expect(this.page.getByRole('heading', { name: 'Are you sure you want to remove the item?' })).toBeVisible();
-    await this.page.getByRole('button', { name: 'Remove' }).click();
-  }
+    await this.page.getByRole('button', { name: 'Remove', exact: true }).click();  }
 
   async navigateAddNew(): Promise<void> {
     await this.addNewRadio.check();
