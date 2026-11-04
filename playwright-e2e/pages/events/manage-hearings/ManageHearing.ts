@@ -248,14 +248,6 @@ export class ManageHearingPage extends BaseJourneyPage {
     }
   }
 
-  async removeContent() {
-    const removeButton = this.page.getByRole('button', { name: 'Remove', exact: true });
-    await expect(removeButton).toBeVisible();
-    await removeButton.click({ force: true });
-    await expect(removeButton).toBeVisible();
-    await removeButton.click({ force: true });
-  }
-
   async selectAdjournOrVacateHearingRadio() {
     await expect(this.vacateHearingRadio).toBeVisible();
     await this.vacateHearingRadio.check();
