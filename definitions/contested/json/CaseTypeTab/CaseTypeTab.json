@@ -7467,7 +7467,6 @@
     "TabLabel": "Applicant Documents",
     "TabDisplayOrder": 20,
     "CaseFieldID": "applicantScanDocuments",
-    "TabFieldDisplayOrder": 15,
     "DisplayContextParameter": "#TABLE(url,fileName,scannedDate)",
     "TabFieldDisplayOrder": 16
   },
@@ -7523,7 +7522,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respFormEExhibitsCollection",
-    "TabFieldDisplayOrder": 1
+    "TabFieldDisplayOrder": 1,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7532,7 +7532,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respChronologiesCollection",
-    "TabFieldDisplayOrder": 2
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7541,7 +7542,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respQACollection",
-    "TabFieldDisplayOrder": 3
+    "TabFieldDisplayOrder": 3,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7550,7 +7552,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respStatementsExhibitsCollection",
-    "TabFieldDisplayOrder": 4
+    "TabFieldDisplayOrder": 4,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "21/09/2026",
@@ -7559,7 +7562,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respUpdatingDisclosureCollection",
-    "TabFieldDisplayOrder": 5
+    "TabFieldDisplayOrder": 5,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7568,7 +7572,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respCaseSummariesCollection",
-    "TabFieldDisplayOrder": 6
+    "TabFieldDisplayOrder": 6,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7577,7 +7582,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respFormsHCollection",
-    "TabFieldDisplayOrder": 7
+    "TabFieldDisplayOrder": 7,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7586,7 +7592,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respExpertEvidenceCollection",
-    "TabFieldDisplayOrder": 8
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7595,7 +7602,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respCorrespondenceDocsColl",
-    "TabFieldDisplayOrder": 9
+    "TabFieldDisplayOrder": 9,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/02/2021",
@@ -7604,7 +7612,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respOtherCollection",
-    "TabFieldDisplayOrder": 10
+    "TabFieldDisplayOrder": 10,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7613,7 +7622,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respCorrespondenceCollection",
-    "TabFieldDisplayOrder": 11
+    "TabFieldDisplayOrder": 11,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7622,7 +7632,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respFRFormsCollection",
-    "TabFieldDisplayOrder": 12
+    "TabFieldDisplayOrder": 12,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7631,7 +7642,9 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respEvidenceCollection",
-    "TabFieldDisplayOrder": 13
+    "TabFieldDisplayOrder": 13,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
+
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7640,7 +7653,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respTrialBundleCollection",
-    "TabFieldDisplayOrder": 14
+    "TabFieldDisplayOrder": 14,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7649,7 +7663,8 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respConfidentialDocsCollection",
-    "TabFieldDisplayOrder": 15
+    "TabFieldDisplayOrder": 15,
+    "DisplayContextParameter": "#TABLE(caseDocuments,caseDocumentType,caseDocumentUploadDateTime)"
   },
   {
     "LiveFrom": "01/06/2020",
@@ -7658,7 +7673,9 @@
     "TabLabel": "Respondent Documents",
     "TabDisplayOrder": 21,
     "CaseFieldID": "respondentScanDocuments",
-    "TabFieldDisplayOrder": 16
+    "TabFieldDisplayOrder": 16,
+    "DisplayContextParameter": "#TABLE(url,fileName,scannedDate)"
+
   },
   {
     "LiveFrom": "01/06/2020",
