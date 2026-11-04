@@ -287,7 +287,7 @@ export abstract class BaseJourneyPage {
     await expect(removeDocumentButton).toBeEnabled();
     await removeDocumentButton.click();
 
-    const removeDocumentConfirmButton = this.page.getByRole('button', { name: 'Remove' });
+    const removeDocumentConfirmButton = this.page.getByRole('button', { name: 'Remove', exact: true });
     await expect(removeDocumentConfirmButton).toBeVisible();
     await expect(removeDocumentConfirmButton).toBeEnabled();
     await removeDocumentConfirmButton.click();
