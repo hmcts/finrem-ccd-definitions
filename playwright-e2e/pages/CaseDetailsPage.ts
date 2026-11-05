@@ -397,8 +397,7 @@ export class CaseDetailsPage {
   
   async openCfv(): Promise<void> {
     const cfvTab = this.page.getByRole('tab', {
-      name: 'Case File View',
-      exact: true
+      name: 'Case File View'
     });
 
     await expect(cfvTab).toBeAttached();
