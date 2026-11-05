@@ -284,7 +284,7 @@ test.describe('Contested Manage Case Documents', { tag: ['@ManageCaseDocuments']
         const originalDocument = page.getByRole('button', { name: SEEDED_DOCUMENT_FILENAME });
         await expect(originalDocument).toBeVisible();
 
-        await manageCaseDocumentsPage.removeDocument();
+        await manageCaseDocumentsPage.removeContent();
         await expect(originalDocument).toBeHidden({ timeout: 200 });
 
         await manageCaseDocumentsPage.navigateContinue();
@@ -353,7 +353,7 @@ test.describe('Contested Manage Case Documents', { tag: ['@ManageCaseDocuments']
     await test.step('Delete document via UI and submit event', async (): Promise<void> => {
       await caseDetailsPage.selectNextStep(ContestedEvents.manageCaseDocuments);
       await manageCaseDocumentsPage.amendDoc();
-      await manageCaseDocumentsPage.removeDocument();
+      await manageCaseDocumentsPage.removeContent();
       await manageCaseDocumentsPage.navigateContinue();
       await manageCaseDocumentsPage.navigateSubmit();
     });
@@ -380,7 +380,7 @@ test.describe('Contested Manage Case Documents', { tag: ['@ManageCaseDocuments']
     await openAmendDocumentFlowStep(manageCaseDocumentsPage, page);
 
     await test.step('Remove existing document', async () => {
-      await manageCaseDocumentsPage.removeDocument();
+      await manageCaseDocumentsPage.removeContent();
       await manageCaseDocumentsPage.navigateContinue();
     });
 
