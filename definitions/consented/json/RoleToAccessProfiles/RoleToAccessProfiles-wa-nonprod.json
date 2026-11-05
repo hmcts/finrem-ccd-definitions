@@ -14,10 +14,10 @@
     "ReadOnly": "N"
   },
   {
-  "RoleName" : "specific-access-legal-operations",
+  "RoleName" : "specific-access-legal-ops",
   "Authorisation": "",
   "CaseTypeID": "FinancialRemedyMVP2",
-  "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+  "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
   "ReadOnly": "N"
   },
   {
@@ -31,42 +31,42 @@
     "RoleName" : "specific-access-ctsc",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
     "ReadOnly": "N"
   },
   {
     "RoleName" : "specific-access-judiciary",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,GS_profile",
     "ReadOnly": "N"
   },
   {
-    "RoleName" : "specific-access-approver-legal-operations",
+    "RoleName" : "challenged-access-legal-operations",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "challenged-access-admin",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
     "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
     "ReadOnly": "N"
   },
   {
-    "RoleName" : "specific-access-approver-admin",
+    "RoleName" : "challenged-access-ctsc",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
     "ReadOnly": "N"
   },
   {
-    "RoleName" : "specific-access-approver-ctsc",
+    "RoleName" : "challenged-access-judiciary",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
-    "ReadOnly": "N"
-  },
-  {
-    "RoleName" : "specific-access-approver-judiciary",
-    "Authorisation": "",
-    "CaseTypeID": "FinancialRemedyMVP2",
-    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,GS_profile",
     "ReadOnly": "N"
   }
 ]
