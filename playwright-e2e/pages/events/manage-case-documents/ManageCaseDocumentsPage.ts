@@ -91,18 +91,7 @@ export class ManageCaseDocumentsPage extends BaseJourneyPage {
     const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
     await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, uploadInput, filePayload);
   }
-
-  async removeDocument(collectionIndex: number = 0) {
-    const buttonName = collectionIndex === 0
-      ? 'Remove Add new case document(s)'
-      : `Remove Add new case document(s) ${collectionIndex + 1}`;
-    const removeButton = this.page.getByRole('button', { name: buttonName, exact: true });
-    await expect(removeButton).toBeVisible();
-    await removeButton.click();
-    await expect(this.page.getByRole('heading', { name: 'Are you sure you want to remove the item?' })).toBeVisible();
-    await this.page.getByRole('button', { name: 'Remove' }).click();
-  }
-
+  
   async navigateAddNew(): Promise<void> {
     await this.addNewRadio.check();
     await this.continueButton.click();
