@@ -76,6 +76,7 @@ finrem-cos:
       MANAGE_CASE_DOCS_DELETE_ENABLED: true
       ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: true
       PAPER_ESTIMATED_ASSETS_CHECKLIST_V3_ENABLED: true
+      ALWAY_GENERATE_CUI_ACCESS_CODES_ENABLED: true
       AUTH_PROVIDER_SERVICE_CLIENT_BASEURL: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal
       IDAM_API_URL: https://idam-api.aat.platform.hmcts.net
       IDAM_OIDC_URL: https://idam-web-public.aat.platform.hmcts.net
