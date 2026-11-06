@@ -36,81 +36,17 @@
     "Searchable": "N"
   },
   {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentType",
-    "FieldType": "FixedList",
-    "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
-    "ElementLabel": "Type",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "18/06/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "isFDR",
-    "FieldType": "YesOrNo",
-    "ElementLabel": "Financial dispute resolution",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentEmailContent",
-    "FieldType": "TextArea",
-    "ElementLabel": "Email content",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentLink",
-    "FieldType": "Document",
-    "ElementLabel": "Document Url",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentDateAdded",
-    "FieldType": "Date",
-    "ElementLabel": "Date received",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentComment",
-    "FieldType": "Text",
-    "ElementLabel": "Comment",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "DocumentFileName",
-    "FieldType": "Text",
-    "ElementLabel": "File name",
-    "SecurityClassification": "Public",
-    "Searchable": "N"
-  },
-  {
-    "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenApplicantDocument",
-    "ListElementCode": "generalDocumentUploadDateTime",
+    "LiveFrom": "21/10/2026",
+    "ID": "FR_accessCodeEntry",
+    "ListElementCode": "createdAt",
     "FieldType": "DateTime",
-    "ElementLabel": "Upload DateTime",
+    "ElementLabel": "Date and time access code was created",
     "SecurityClassification": "Public",
     "Searchable": "N"
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentType",
     "FieldType": "FixedList",
     "FieldTypeParameter": "CU_fl_citizenUploadDocuments",
@@ -120,7 +56,7 @@
   },
   {
     "LiveFrom": "18/06/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "isFDR",
     "FieldType": "YesOrNo",
     "ElementLabel": "Financial dispute resolution",
@@ -129,7 +65,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentEmailContent",
     "FieldType": "TextArea",
     "ElementLabel": "Email content",
@@ -138,7 +74,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentLink",
     "FieldType": "Document",
     "ElementLabel": "Document Url",
@@ -147,7 +83,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentDateAdded",
     "FieldType": "Date",
     "ElementLabel": "Date received",
@@ -156,7 +92,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentComment",
     "FieldType": "Text",
     "ElementLabel": "Comment",
@@ -165,7 +101,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "DocumentFileName",
     "FieldType": "Text",
     "ElementLabel": "File name",
@@ -174,7 +110,7 @@
   },
   {
     "LiveFrom": "06/05/2026",
-    "ID": "CU_ct_citizenRespondentDocument",
+    "ID": "CU_ct_citizenUploadedDocument",
     "ListElementCode": "generalDocumentUploadDateTime",
     "FieldType": "DateTime",
     "ElementLabel": "Upload DateTime",
