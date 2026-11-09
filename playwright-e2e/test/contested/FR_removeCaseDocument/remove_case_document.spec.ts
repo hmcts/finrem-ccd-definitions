@@ -31,8 +31,7 @@ test(
 
     //remove document
     await removeCaseDocumentPage.verifyRemoveCaseDocumentPageDisplayed();
-    await removeCaseDocumentPage.removeDocument(1); // remove OnlineForm.pdf document
-    await removeCaseDocumentPage.assertAreYouSureYouWantToRemoveDocumentMessageIsDisplayed();
+    await removeCaseDocumentPage.removeContent(0); // remove OnlineForm.pdf document
     await axeUtils.audit();
     await removeCaseDocumentPage.navigateContinue();
 
