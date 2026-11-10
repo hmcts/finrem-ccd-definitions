@@ -1,7 +1,7 @@
 apiVersion: v2
 description: Financial Remedy - CCD Definitions
 name: finrem-ccd-definitions
-version: 2.2.68
+version: 2.2.70
 dependencies:
   - name: nodejs
     version: 3.3.1
@@ -45,7 +45,7 @@ dependencies:
     alias: servicebusPrimary
     condition: servicebusPrimary.enabled
   - name: wa
-    version: 1.1.2
+    version: 1.1.3
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: wa.enabled
   - name: ccd-message-publisher
@@ -53,7 +53,7 @@ dependencies:
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: ccd-message-publisher.enabled
   - name: rd-caseworker-ref-api
-    version: 1.0.19
+    version: 1.0.20
     repository: 'oci://hmctsprod.azurecr.io/helm'
     condition: rd-caseworker-ref-api.enabled
   - name: am-org-role-mapping-service
