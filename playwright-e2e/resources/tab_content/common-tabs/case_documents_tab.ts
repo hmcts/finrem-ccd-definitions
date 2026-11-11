@@ -1,5 +1,6 @@
 import { DateHelper } from '../../../data-utils/DateHelper';
 import { Tab } from '../../../pages/components/tab';
+import { buildDraftOrderCaseDocumentsContent } from '../contested/upload_draft_order_tabs';
 
 export function createGeneralEmailTabData(date?: string, tabName: string = 'Case Documents'): Tab[] { 
   return [
@@ -36,15 +37,19 @@ export function buildNoticeOfChangeTabData(caseType : string, nocRequestedByEmai
 
 export const processOrderCaseDocumentsTabData: Tab[] = [{
   tabName: 'Case documents',
-  tabContent: [
-    'Agreed draft orders following a hearing 1', 
-    { tabItem: 'Draft order', value: 'agreed-draft-order-document.pdf'},
-    { tabItem: 'Cover Letter', value: 'agreed-draft-order-document - cover letter.pdf'},
-    { tabItem: 'Document status', value: 'Processed' },
-    { tabItem: 'Submitted by', value: 'Claire Mumford' },
-    { tabItem: 'Uploaded on behalf of', value: 'The applicant' },
-    'This is not a resubmission.'
-  ]
+  expandAccordions: true,
+  tabContent: buildDraftOrderCaseDocumentsContent(
+    'Agreed draft orders following a hearing',
+    [{
+      fileName: 'agreed-draft-order-document.pdf',
+      submittedBy: 'Claire Mumford',
+      details: [
+        { tabItem: 'Cover Letter', value: 'agreed-draft-order-document - cover letter.pdf' },
+        { tabItem: 'Document status', value: 'Processed' },
+        { tabItem: 'Uploaded on behalf of', value: 'The applicant' }
+      ]
+    }]
+  )
 }];
 
 export const UploadApprovedOrderCaseDocumentsTabData: Tab[] = [{

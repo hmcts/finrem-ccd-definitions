@@ -3,7 +3,7 @@ export interface TabContent {
     value: string;
     exact?: boolean; // Optional property for matching content
     clickable?: boolean; // Optional property to indicate if the item is clickable
-    position?: number; // 
+    position?: number;
     valueColumn?: number;
 }
   
@@ -12,5 +12,6 @@ export type TabContentItem = TabContent | string;
 export interface Tab {
     tabName: string;
     tabContent: TabContentItem[];
+    expandAccordions?: boolean; // Expand complex-panel rows before validation
     excludedContent?: string[]; // Optional property
 }

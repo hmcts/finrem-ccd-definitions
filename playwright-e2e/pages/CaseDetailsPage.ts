@@ -96,6 +96,9 @@ export class CaseDetailsPage {
             .waitFor({ state: 'attached', timeout: firstContentTimeout });
         }
       }
+      if (tab.expandAccordions) {
+        await this.expandComplexPanelAccordions();
+      }
       await this.assertTabContent(tab.tabContent, contentAssertionTimeout);
       if (tab.excludedContent) {
         await this.assertExcludedContent(tab.excludedContent);
@@ -141,6 +144,30 @@ export class CaseDetailsPage {
    * ensuring assertions are made against the correct DOM element.
    * Tab array items should be in right order, as they are displayed in the UI.
    */
+  private async expandComplexPanelAccordions(): Promise<void> {
+
+    const table = this.page.locator('table.complex-panel-table').filter({
+      has: this.page.getByRole('columnheader', { name: /Draft order/ })
+    }).first();
+    await expect(table).toBeVisible();
+
+    const rows = table.locator(':scope > tbody > tr.accordion-heading');
+    const count = await rows.count();
+
+    for (let i = 0; i < count; i++) {
+      const row = rows.nth(i);
+      const icon = row.locator('img.accordion-image');
+      await expect(icon).toBeVisible();
+      const src = await icon.getAttribute('src');
+
+      if (src?.includes('accordion-plus.png')) {
+        await icon.locator('xpath=..').click();
+      } else if (!src?.includes('accordion-minus.png')) {
+        throw new Error(`Unrecognised accordion icon: ${src}`);
+      }
+    }
+  }
+
   private async assertTabContent(
     tabContent: TabContentItem[],
     timeout?: number
@@ -177,11 +204,12 @@ export class CaseDetailsPage {
         const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
         await customExpect(tabItem).toBeVisible();
 
-        const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
         if (content.clickable) {
           await tabItem.click();
           await this.page.waitForLoadState();
         }
+
+        if (content.value === '') continue; // Visibility-only assertion
 
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
 
