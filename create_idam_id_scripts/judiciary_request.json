@@ -31,6 +31,12 @@
          },
          {
             "code":"leadership-judge"
+         },
+         {
+            "code":"task-supervisor"
+         },
+         {
+            "code":"case-allocator"
          }
       ]
    },
@@ -106,7 +112,13 @@
             "code":"hmcts-judiciary"
          },
          {
+            "code":"leadership-judge"
+         },
+         {
             "code":"case-allocator"
+         },
+         {
+            "code":"task-supervisor"
          }
       ]
    },
@@ -235,6 +247,70 @@
          },
          {
             "code":"hmcts-judiciary"
+         }
+      ]
+   },
+   {
+      "id": "9b2f3e71-c8a6-4cdb-95ef-75f3a8d6410b",
+      "email":"HHJ.Betty.Matthews@ejudiciary.net",
+      "forename":"Betty",
+      "surname":"Matthews",
+      "roles":[
+         {
+            "code":"caseworker"
+         },
+         {
+            "code":"caseworker-divorce"
+         },
+         {
+            "code":"caseworker-divorce-financialremedy"
+         },
+         {
+            "code":"caseworker-divorce-financialremedy-judiciary"
+         },
+         {
+            "code":"caseworker-divorce-courtadmin-la"
+         },
+         {
+            "code":"caseworker-divorce-courtadmin"
+         },
+         {
+            "code":"caseworker-divorce-judge"
+         },
+         {
+            "code":"hmcts-judiciary"
+         }
+      ]
+   },
+   {
+      "id": "e26fe46b-4d8c-4516-aaeb-332c15a23eb5",
+      "email": "TribunalJudge.Kramer1@ejudiciary.net",
+      "forename": "Tribunal Judge",
+      "surname": "Kramer",
+      "roles": [
+         {
+            "code": "caseworker"
+         },
+         {
+            "code": "caseworker-divorce"
+         },
+         {
+            "code": "caseworker-divorce-financialremedy"
+         },
+         {
+            "code": "caseworker-divorce-financialremedy-judiciary"
+         },
+         {
+            "code": "caseworker-divorce-courtadmin-la"
+         },
+         {
+            "code": "caseworker-divorce-courtadmin"
+         },
+         {
+            "code": "caseworker-divorce-judge"
+         },
+         {
+            "code": "hmcts-judiciary"
          }
       ]
    }
