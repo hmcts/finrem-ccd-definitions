@@ -182,19 +182,19 @@ wa:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-termination-batch"
 
-wa-initiation-failures-batch:
-  enabled: ${ENABLE_WA}
-  global:
-    activeCronCluster: true
-  job:
-    kind: CronJob
-    schedule: "*/1 * * * *"
-    releaseNameOverride: "{{ .Release.Name }}-wa-initiation-failures"
-    aadIdentityName: wa
-    keyVaults:
-      wa:
-        secrets:
-          - s2s-secret-task-monitor
+  wa-initiation-failures-batch:
+    enabled: ${ENABLE_WA}
+    global:
+      activeCronCluster: true
+    job:
+      kind: CronJob
+      schedule: "*/1 * * * *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-initiation-failures"
+      aadIdentityName: wa
+      keyVaults:
+        wa:
+          secrets:
+            - s2s-secret-task-monitor
     environment:
       S2S_URL: "http://rpe-service-auth-provider-aat.service.core-compute-aat.internal"
       S2S_MICROSERVICE_NAME_TASK_MONITOR: "wa_task_monitor"
