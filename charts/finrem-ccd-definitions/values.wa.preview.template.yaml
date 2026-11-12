@@ -182,6 +182,11 @@ wa:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-termination-batch"
 
+  wa-initiation-batch:
+    job:
+      schedule: "0 0 31 2 *"
+      releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
+
   wa-initiation-failures-batch:
     enabled: ${ENABLE_WA}
     global:
