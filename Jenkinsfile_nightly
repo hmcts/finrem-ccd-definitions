@@ -1,6 +1,6 @@
 #!groovy
 properties([
-        pipelineTriggers([cron('30 15 * * 1-5')]),
+        pipelineTriggers([cron('30 07 * * 1-5')]),
         parameters([
                 string(
                         name: 'RUNNING_ENV',

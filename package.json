@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "engines": {
-    "node": ">=11.10.1 <23.0.0"
+    "node": ">=24.22.0"
   },
   "config": {
     "local": {
@@ -175,7 +175,8 @@
     "js-yaml": "4.3.2",
     "nanoid": "5.1.16",
     "qs": "6.16.1",
-    "proxy-addr": "^2.0.8"
+    "proxy-addr": "^2.0.8",
+    "follow-redirects": "^1.16.1"
   },
-  "packageManager": "yarn@4.18.0"
+  "packageManager": "yarn@4.18.1"
 }
