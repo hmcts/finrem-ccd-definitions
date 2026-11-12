@@ -181,29 +181,35 @@ export class CaseDetailsPage {
    * ensuring assertions are made against the correct DOM element.
    * Tab array items should be in right order, as they are displayed in the UI.
    */
+  
   private async expandComplexPanelAccordions(): Promise<void> {
+    const rows = this.page.locator(
+      'table.complex-panel-table > tbody > tr.accordion-heading'
+    );
 
-    const table = this.page.locator('table.complex-panel-table').filter({
-      has: this.page.getByRole('columnheader', { name: /Draft order/ })
-    }).first();
-    await expect(table).toBeVisible();
-
-    const rows = table.locator(':scope > tbody > tr.accordion-heading');
     const count = await rows.count();
 
     for (let i = 0; i < count; i++) {
       const row = rows.nth(i);
       const icon = row.locator('img.accordion-image');
+
       await expect(icon).toBeVisible();
+
       const src = await icon.getAttribute('src');
 
       if (src?.includes('accordion-plus.png')) {
         await icon.locator('xpath=..').click();
+
+        await expect(icon).toHaveAttribute(
+          'src',
+          /accordion-minus\.png/
+        );
       } else if (!src?.includes('accordion-minus.png')) {
         throw new Error(`Unrecognised accordion icon: ${src}`);
       }
     }
   }
+
 
   private async assertTabContent(
     tabContent: TabContentItem[],
