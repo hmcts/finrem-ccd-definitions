@@ -29,7 +29,7 @@ test.describe('Contested - Ready For Hearing', () => {
         typeOfHearing: 'First Directions Appointment (FDA)',
         court: 'Manchester County And Family Court',
         attendance: 'In Person',
-        hearingDate: DateHelper.getFormattedDateTwelveWeeksLater(),
+        hearingDate: DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay(),
         hearingTime: '10:00am',
         duration: '1hr 20mins',
         whoShouldSeeOrder: 'Applicant - Frodo Baggins, Respondent - Smeagol Gollum',
