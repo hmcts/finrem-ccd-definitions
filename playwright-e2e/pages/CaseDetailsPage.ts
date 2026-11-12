@@ -37,22 +37,59 @@ export class CaseDetailsPage {
     await tabHeader.click();
   }
 
-  async selectNextStep(event: CaseEvent) {
-    try {
-      await this.runNextStep(event);
-    } catch {
-      // Some pages can populate slowly; refresh once and retry.
+
+ 
+  async selectNextStep(event: CaseEvent): Promise<void> {
+    const maxAttempts = 2;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      await expect(this.selectNextStepDropDown).toBeVisible();
+      await this.assertEventExistsInNextStepList(event.listItem);
+      await this.selectNextStepDropDown.selectOption(event.listItem);
+
+      const currentUrl = this.page.url();
+
+      console.log(
+        `[CaseDetailsPage] Selecting ${event.listItem} - attempt ${attempt}`
+      );
+
+      // Start monitoring before clicking Go
+      const navigationPromise = this.page.waitForURL(
+        url =>
+        {return url.toString() !== currentUrl &&
+        url.pathname.includes('/trigger/');},
+        {
+          timeout: 20000,
+          waitUntil: 'commit'
+        }
+      ).then(() => {return true;}).catch(() => {return false;});
+
+      await this.goButton.click({ noWaitAfter: true });
+
+      const navigated = await navigationPromise;
+
+      if (navigated) {
+        console.log(
+          `[CaseDetailsPage] Navigated successfully: ${this.page.url()}`
+        );
+        return;
+      }
+
+      if (attempt === maxAttempts) {
+        throw new Error(
+          `[CaseDetailsPage] Failed to navigate to ${event.listItem} after ${maxAttempts} attempts. URL: ${this.page.url()}`
+        );
+      }
+
+      console.log(
+        '[CaseDetailsPage] URL unchanged. Refreshing and retrying...'
+      );
+
       await this.page.reload({ waitUntil: 'domcontentloaded' });
-      await this.runNextStep(event);
     }
   }
 
-  private async runNextStep(event: CaseEvent): Promise<void> {
-    await expect(this.selectNextStepDropDown).toBeVisible();
-    await this.assertEventExistsInNextStepList(event.listItem);
-    await this.selectNextStepDropDown.selectOption(event.listItem);
-    await this.goButton.click();
-  }
+
 
   private async assertEventExistsInNextStepList(eventName: string): Promise<void> {
     const options = await this.selectNextStepDropDown.locator('option').allTextContents();
