@@ -10,6 +10,24 @@
     "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
   },
   {
+    "LiveFrom": "03/11/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "appDocuments",
+    "TabLabel": "Applicant Documents",
+    "TabDisplayOrder": 20,
+    "CaseFieldID": "formCApplicantCitizen",
+    "TabFieldDisplayOrder": 18
+  },
+  {
+    "LiveFrom": "03/11/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "resDocuments",
+    "TabLabel": "Respondent Documents",
+    "TabDisplayOrder": 21,
+    "CaseFieldID": "formCRespondentCitizen",
+    "TabFieldDisplayOrder": 18
+  },
+  {
     "LiveFrom": "22/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
     "TabID": "resDocuments",
