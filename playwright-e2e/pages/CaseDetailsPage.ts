@@ -37,22 +37,59 @@ export class CaseDetailsPage {
     await tabHeader.click();
   }
 
-  async selectNextStep(event: CaseEvent) {
-    try {
-      await this.runNextStep(event);
-    } catch {
-      // Some pages can populate slowly; refresh once and retry.
+
+ 
+  async selectNextStep(event: CaseEvent): Promise<void> {
+    const maxAttempts = 2;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      await expect(this.selectNextStepDropDown).toBeVisible();
+      await this.assertEventExistsInNextStepList(event.listItem);
+      await this.selectNextStepDropDown.selectOption(event.listItem);
+
+      const currentUrl = this.page.url();
+
+      console.log(
+        `[CaseDetailsPage] Selecting ${event.listItem} - attempt ${attempt}`
+      );
+
+      // Start monitoring before clicking Go
+      const navigationPromise = this.page.waitForURL(
+        url =>
+        {return url.toString() !== currentUrl &&
+        url.pathname.includes('/trigger/');},
+        {
+          timeout: 20000,
+          waitUntil: 'commit'
+        }
+      ).then(() => {return true;}).catch(() => {return false;});
+
+      await this.goButton.click({ noWaitAfter: true });
+
+      const navigated = await navigationPromise;
+
+      if (navigated) {
+        console.log(
+          `[CaseDetailsPage] Navigated successfully: ${this.page.url()}`
+        );
+        return;
+      }
+
+      if (attempt === maxAttempts) {
+        throw new Error(
+          `[CaseDetailsPage] Failed to navigate to ${event.listItem} after ${maxAttempts} attempts. URL: ${this.page.url()}`
+        );
+      }
+
+      console.log(
+        '[CaseDetailsPage] URL unchanged. Refreshing and retrying...'
+      );
+
       await this.page.reload({ waitUntil: 'domcontentloaded' });
-      await this.runNextStep(event);
     }
   }
 
-  private async runNextStep(event: CaseEvent): Promise<void> {
-    await expect(this.selectNextStepDropDown).toBeVisible();
-    await this.assertEventExistsInNextStepList(event.listItem);
-    await this.selectNextStepDropDown.selectOption(event.listItem);
-    await this.goButton.click();
-  }
+
 
   private async assertEventExistsInNextStepList(eventName: string): Promise<void> {
     const options = await this.selectNextStepDropDown.locator('option').allTextContents();
@@ -95,6 +132,9 @@ export class CaseDetailsPage {
             .first()
             .waitFor({ state: 'attached', timeout: firstContentTimeout });
         }
+      }
+      if (tab.expandAccordions) {
+        await this.expandComplexPanelAccordions();
       }
       await this.assertTabContent(tab.tabContent, contentAssertionTimeout);
       if (tab.excludedContent) {
@@ -141,6 +181,36 @@ export class CaseDetailsPage {
    * ensuring assertions are made against the correct DOM element.
    * Tab array items should be in right order, as they are displayed in the UI.
    */
+  
+  private async expandComplexPanelAccordions(): Promise<void> {
+    const rows = this.page.locator(
+      'table.complex-panel-table > tbody > tr.accordion-heading'
+    );
+
+    const count = await rows.count();
+
+    for (let i = 0; i < count; i++) {
+      const row = rows.nth(i);
+      const icon = row.locator('img.accordion-image');
+
+      await expect(icon).toBeVisible();
+
+      const src = await icon.getAttribute('src');
+
+      if (src?.includes('accordion-plus.png')) {
+        await icon.locator('xpath=..').click();
+
+        await expect(icon).toHaveAttribute(
+          'src',
+          /accordion-minus\.png/
+        );
+      } else if (!src?.includes('accordion-minus.png')) {
+        throw new Error(`Unrecognised accordion icon: ${src}`);
+      }
+    }
+  }
+
+
   private async assertTabContent(
     tabContent: TabContentItem[],
     timeout?: number
@@ -177,11 +247,12 @@ export class CaseDetailsPage {
         const tabItem = await this.getVisibleTabContent(content.tabItem, position, content.exact ?? true);
         await customExpect(tabItem).toBeVisible();
 
-        const tabValue = tabItem.locator('xpath=../following-sibling::td[1]');
         if (content.clickable) {
           await tabItem.click();
           await this.page.waitForLoadState();
         }
+
+        if (content.value === '') continue; // Visibility-only assertion
 
         const expectedValues = content.value.split('|').map(v => {return v.trim();});
 
