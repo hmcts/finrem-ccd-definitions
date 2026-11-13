@@ -1,18 +1,18 @@
-import { test } from '../../../../fixtures/fixtures.ts';
+import {test} from '../../../../fixtures/fixtures.ts';
 import config from '../../../../config/config.ts';
-import { DateHelper } from '../../../../data-utils/DateHelper.ts';
-import { ConsentedEvents } from '../../../../config/case-data.ts';
-import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
-import { ConsentedEventApi } from '../../../../data-utils/api/consented/ConsentedEventApi.ts';
+import {DateHelper} from '../../../../data-utils/DateHelper.ts';
+import {ConsentedEvents} from '../../../../config/case-data.ts';
+import {ConsentedCaseFactory} from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
 
-import type { ManageCaseDashboardPage } from '../../../../pages/ManageCaseDashboardPage.ts';
-import type { SigninPage } from '../../../../pages/SigninPage.ts';
-import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
+import type {ManageCaseDashboardPage} from '../../../../pages/ManageCaseDashboardPage.ts';
+import type {SigninPage} from '../../../../pages/SigninPage.ts';
+import type {TaskCompletionAction} from '../../../../pages/WAtasks/TaskScenario.ts';
 import {
-  ISSUE_APPLICATION,
   checkIssueApplication,
-  checkIssueApplicationUserScenarios
+  checkIssueApplicationUserScenarios,
+  ISSUE_APPLICATION
 } from './check_issue_application.scenario.ts';
+import {TaskCompletionEventName, TaskName} from '../../../../pages/WAtasks/TaskTypes.ts';
 
 const TASK_NAME = checkIssueApplication.taskName;
 type LoginCredentials = {
@@ -39,25 +39,6 @@ const loginAndOpenCase = async (
   );
   await manageCaseDashboardPage.navigateToCase(caseId);
 };
-
-const createCheckIssueApplicationTaskHWF = async (): Promise<string> => {
-  const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
-
-  await ConsentedEventApi.caseWorkerHWFDecisionMade(caseId);
-  
-  return caseId;
-};
-
-const createCheckIssueApplicationTaskFAB = async (): Promise<string> => {
-  const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
-
-  await ConsentedEventApi.caseWorkerHwfFeeAccountDebited(caseId);
-  
-  return caseId;
-};
-
 test.describe('Check and Issue Application task tests', () => {
   test.describe.configure({ mode: 'parallel' });
 
@@ -76,7 +57,8 @@ test.describe('Check and Issue Application task tests', () => {
           loginPage,
           manageCaseDashboardPage
         };
-        const caseId = await createCheckIssueApplicationTaskHWF();
+        const caseId = await ConsentedCaseFactory
+          .createConsentedCaseUpToApplicationPaymentSubmission();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -99,6 +81,7 @@ test.describe('Check and Issue Application task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.submitTask(TaskName.CheckHelpWithFees, TaskCompletionEventName.HWFApplicationAccepted);
 
           await taskUiChecks.assertTaskUI(
             {
@@ -142,7 +125,8 @@ test.describe('Check and Issue Application task tests', () => {
         loginPage,
         manageCaseDashboardPage
       };
-      const caseId = await createCheckIssueApplicationTaskFAB();
+      const caseId = await ConsentedCaseFactory
+        .createConsentedCaseUpToApplicationPaymentSubmission();
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
@@ -150,6 +134,7 @@ test.describe('Check and Issue Application task tests', () => {
           caseId,
           sessionPages
         );
+        await taskUiChecks.submitTask(TaskName.CheckHelpWithFees, TaskCompletionEventName.FeeAccountDebited);
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',
