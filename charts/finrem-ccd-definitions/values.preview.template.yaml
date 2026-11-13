@@ -62,6 +62,7 @@ finrem-cos:
     releaseNameOverride: ${SERVICE_NAME}-finrem-cos
     ingressHost: cos-${SERVICE_FQDN}
     environment:
+      ALWAY_GENERATE_CUI_ACCESS_CODES_ENABLED: true
       FEATURE_MANAGE_BUNDLE: true
       FEATURE_CASEWORKER_NOC: true
       FEATURE_RESPONDENT_JOURNEY: true
