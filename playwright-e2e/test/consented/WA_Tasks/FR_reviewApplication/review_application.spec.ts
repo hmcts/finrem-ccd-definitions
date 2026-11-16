@@ -126,7 +126,7 @@ test.describe('Review Application task tests', () => {
 
     test(
       `${user.name} completes the task using ${completionAction}`,
-      { tag: completionAction === APPROVE_APPLICATION ? ['@waTasks', '@preview'] : ['@waTasks'] },
+      { tag: ['@waTasks'] },
       async ({
         loginPage,
         manageCaseDashboardPage,
