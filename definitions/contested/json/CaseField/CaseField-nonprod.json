@@ -118,5 +118,27 @@
     "FieldTypeParameter": "CU_ct_citizenUploadedDocument",
     "SecurityClassification": "Public",
     "Searchable": "N"
+  },
+  {
+    "LiveFrom": "03/11/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "formCApplicantCitizen",
+    "Label": "Form C Applicant Citizen",
+    "HintText": "Form C Applicant Citizen",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
+  },
+  {
+    "LiveFrom": "03/11/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "ID": "formCRespondentCitizen",
+    "Label": "Form C Respondent Citizen",
+    "HintText": "Form C Respondent Citizen",
+    "FieldType": "Document",
+    "SecurityClassification": "Public",
+    "Searchable": "N",
+    "CategoryID": "hearingNotices"
   }
 ]
