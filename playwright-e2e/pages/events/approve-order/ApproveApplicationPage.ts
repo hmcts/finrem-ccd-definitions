@@ -33,7 +33,15 @@ export class ApproveApplicationPage extends BaseJourneyPage {
   }
 
   async selectJudge(judge: string){
-    await this.judgeDropDown.selectOption(judge); 
+    await this.judgeDropDown.selectOption(judge);
+  }
+
+  async selectPensionProviderResponsibility(responsibility: string) {
+    await this.page.getByRole('radio', { name: responsibility, exact: true }).check();
+  }
+
+  async enterJudgeName(name: string) {
+    await this.page.locator('#orderDirectionJudgeName').fill(name);
   }
 
   async uploadConsentOrderFile(documentName: string) {

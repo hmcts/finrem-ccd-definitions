@@ -57,6 +57,21 @@ const configuration = {
     password: process.env.PASSWORD_JUDGE || '',
   },
 
+  // Work allocation judicial users. Cases must be created in the judge's region.
+  waLeadJudge: {
+    name: 'Ms Amanda Love',
+    email: process.env.WA_LEAD_JUDGE_USERNAME || 'DJ.Karen.Howard@ejudiciary.net',
+    password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+  },
+
+  // Optional reassignment recipient in the same region (South West). Fee-paid
+  // judges need a court booking first, so a salaried judge is preferred.
+  waReassignJudge: {
+    name: process.env.WA_REASSIGN_JUDGE_NAME || 'Betty Matthews',
+    email: process.env.WA_REASSIGN_JUDGE_USERNAME || 'HHJ.Betty.Matthews@ejudiciary.net',
+    password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+  },
+
   caseWorker: {
     email: process.env.USERNAME_CASEWORKER || '',
     password: process.env.PASSWORD_CASEWORKER || '',

@@ -1,11 +1,13 @@
 import { CaseDataBuilder } from '../CaseDataBuilder';
 import { ConsentedEvents, CaseType, PayloadPath } from '../../../config/case-data';
 import { ConsentedEventApi } from '../../api/consented/ConsentedEventApi';
+import type { ReplacementAction } from '../../../types/replacement-action';
 
 export class ConsentedCaseFactory {
 
   private static async buildConsentedCaseWithSteps(
-    steps: ((caseId: string) => Promise<void>)[]
+    steps: ((caseId: string) => Promise<void>)[],
+    replacements: ReplacementAction[] = []
   ): Promise<string> {
     const caseId = await new CaseDataBuilder(
       CaseType.Consented,
@@ -13,6 +15,7 @@ export class ConsentedCaseFactory {
     )
       .withSolicitorUser()
       .withPayload(PayloadPath.Consented.base)
+      .addReplacements(...replacements)
       .create();
     for (const step of steps) {
       await step(caseId);
@@ -44,11 +47,13 @@ export class ConsentedCaseFactory {
     ]);
   }
 
-  static async createConsentedCaseUpToIssueApplication(): Promise<string> {
+  static async createConsentedCaseUpToIssueApplication(
+    replacements: ReplacementAction[] = []
+  ): Promise<string> {
     return this.buildConsentedCaseWithSteps([
       (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
       (id) => {return ConsentedEventApi.caseWorkerIssueApplication(id);}
-    ]);
+    ], replacements);
   }
 
   static async createConsentedCaseUpToCreateFlag(): Promise<string> {

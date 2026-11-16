@@ -106,7 +106,8 @@ export class TaskUiChecks {
 
   async reassignTaskToUser(
     userName: string,
-    userEmail: string
+    userEmail: string,
+    roleType: 'CTSC' | 'Judicial' = 'CTSC'
   ): Promise<void> {
     const reassignTaskLink = this.getManageSection().getByText(
       'Reassign task',
@@ -117,7 +118,7 @@ export class TaskUiChecks {
     await reassignTaskLink.click();
 
     const roleTypeOption = this.page.getByRole('radio', {
-      name: 'CTSC',
+      name: roleType,
       exact: true
     });
 
@@ -213,6 +214,19 @@ export class TaskUiChecks {
   ): Promise<void> {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
+    await this.assertOnlyManagementActions(actions);
+  }
+
+  // Judicial users see "Task created" in the case Tasks tab, not Priority or Due date.
+  async assertJudicialTaskUI(
+    task: { name: string; taskCreated: string; assignedTo: string },
+    actions: readonly TaskManagementAction[]
+  ): Promise<void> {
+    await this.waitForTaskVisibility(task.name, true);
+    await expect(this.activeTasksHeading).toBeVisible();
+    await expect(this.page.getByText(task.name, { exact: true })).toBeVisible();
+    await this.assertLabelAndValue('Task created', task.taskCreated);
+    await this.assertLabelAndValue('Assigned to', task.assignedTo);
     await this.assertOnlyManagementActions(actions);
   }
 
