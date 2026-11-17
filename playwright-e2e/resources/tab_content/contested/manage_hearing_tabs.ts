@@ -58,7 +58,7 @@ export function getVacatedHearingTabData(params?: {
   otherReasonForVacating?: string
 }): Tab {
   const vacatedOrAdjournedDate = params?.vacatedOrAdjournedDate ?? DateHelper.getFormattedDateTwelveWeeksLater();
-  const hearingDate = params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksLater();
+  const hearingDate = params?.hearingDate ?? DateHelper.getFormattedDateTwelveWeeksLaterWithZeroPaddedDay();
   const hearingTime = params?.hearingTime ?? '10:00am';
   const hearingStatus = params?.hearingStatus ?? 'Vacated';
   const hearingDocuments = (params?.uploadFiles ?? ['HearingNotice.pdf']).join('\n');
