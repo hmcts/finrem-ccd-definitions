@@ -76,38 +76,36 @@ const completeTask = async (
 
   case APPROVE_APPLICATION:
     await taskUiChecks.selectTaskNextStep(APPROVE_APPLICATION);
-    await approveApplicationPage.selectIsSubjectTo(false);
-    await approveApplicationPage.selectIsPensionProvider(true);
-    await approveApplicationPage.selectPensionProviderResponsibility('The Court');
-    await approveApplicationPage.selectJudge(JUDGE_TITLE);
-    await approveApplicationPage.enterJudgeName(JUDGE_SURNAME);
-    await approveApplicationPage.navigateContinue();
-    await approveApplicationPage.navigateSubmit();
+    await approveApplicationPage.completeApproveApplication({
+      subjectToDecreeAbsolute: false,
+      servePensionProvider: true,
+      pensionProviderResponsibility: 'The Court',
+      judgeTitle: JUDGE_TITLE,
+      judgeName: JUDGE_SURNAME
+    });
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.approveApplication.listItem);
     return;
 
   case UPLOAD_APPROVED_ORDER:
     await taskUiChecks.selectTaskNextStep(UPLOAD_APPROVED_ORDER);
-    await approveApplicationPage.selectIsSubjectTo(false);
-    await approveApplicationPage.selectIsPensionProvider(false);
-    await approveApplicationPage.selectJudge(JUDGE_TITLE);
-    await approveApplicationPage.enterJudgeName(JUDGE_SURNAME);
-    // A duplicate file name leaves the task open (DFR-5924), so keep it unique.
-    await approveApplicationPage.uploadConsentOrderFile(`approved-order-${Date.now()}.pdf`);
-    await approveApplicationPage.navigateContinue();
-    await approveApplicationPage.navigateSubmit();
+    await approveApplicationPage.completeUploadApprovedOrder({
+      subjectToDecreeAbsolute: false,
+      servePensionProvider: false,
+      judgeTitle: JUDGE_TITLE,
+      judgeName: JUDGE_SURNAME,
+      // A duplicate file name leaves the task open (DFR-5924), so keep it unique.
+      fileName: `approved-order-${Date.now()}.pdf`
+    });
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.uploadApprovedOrder.listItem);
     return;
 
   case APPLICATION_NOT_APPROVED:
     await taskUiChecks.selectTaskNextStep(APPLICATION_NOT_APPROVED);
-    await consentOrderNotApprovedPage.selectReasonsForRefusal(['The D81 form is incomplete']);
-    await consentOrderNotApprovedPage.selectJudge(JUDGE_TITLE);
-    await consentOrderNotApprovedPage.enterJudgeName(JUDGE_SURNAME);
-    await consentOrderNotApprovedPage.navigateContinue();
-    // Draft order preview page
-    await consentOrderNotApprovedPage.navigateContinue();
-    await consentOrderNotApprovedPage.navigateSubmit();
+    await consentOrderNotApprovedPage.completeApplicationNotApproved({
+      reasons: ['The D81 form is incomplete'],
+      judgeTitle: JUDGE_TITLE,
+      judgeName: JUDGE_SURNAME
+    });
     await caseDetailsPage.checkHasBeenUpdated(ConsentedEvents.orderRefusal.listItem);
     return;
 

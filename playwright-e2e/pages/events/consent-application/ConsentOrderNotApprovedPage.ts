@@ -94,4 +94,20 @@ export class ConsentOrderNotApprovedPage extends BaseJourneyPage {
     await expect(this.judgeName).toBeVisible();
     await this.judgeName.fill(name);
   }
+
+  // Fills in and submits the Application Not Approved event, including the
+  // draft order preview page.
+  async completeApplicationNotApproved(details: {
+    reasons: string[];
+    judgeTitle: string;
+    judgeName: string;
+  }): Promise<void> {
+    await this.selectReasonsForRefusal(details.reasons);
+    await this.selectJudge(details.judgeTitle);
+    await this.enterJudgeName(details.judgeName);
+    await this.navigateContinue();
+    // Draft order preview page
+    await this.navigateContinue();
+    await this.navigateSubmit();
+  }
 }
