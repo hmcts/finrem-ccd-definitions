@@ -43,8 +43,13 @@ export class TaskUiChecks {
     await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
   }
 
+  /**
+   * Asserts the expected actions are shown. By default every other action must be
+   * hidden; pass checkOthersHidden: false to only check the expected ones.
+   */
   async assertOnlyManagementActions(
-    actions: readonly TaskManagementAction[]
+    actions: readonly TaskManagementAction[],
+    { checkOthersHidden = true }: { checkOthersHidden?: boolean } = {}
   ): Promise<void> {
     const manageSection = this.getManageSection();
 
@@ -56,7 +61,9 @@ export class TaskUiChecks {
         continue;
       }
 
-      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      if (checkOthersHidden) {
+        await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      }
     }
   }
 
@@ -220,14 +227,15 @@ export class TaskUiChecks {
   // Judicial users see "Task created" in the case Tasks tab, not Priority or Due date.
   async assertJudicialTaskUI(
     task: { name: string; taskCreated: string; assignedTo: string },
-    actions: readonly TaskManagementAction[]
+    actions: readonly TaskManagementAction[],
+    options: { checkOthersHidden?: boolean } = {}
   ): Promise<void> {
     await this.waitForTaskVisibility(task.name, true);
     await expect(this.activeTasksHeading).toBeVisible();
     await expect(this.page.getByText(task.name, { exact: true })).toBeVisible();
     await this.assertLabelAndValue('Task created', task.taskCreated);
     await this.assertLabelAndValue('Assigned to', task.assignedTo);
-    await this.assertOnlyManagementActions(actions);
+    await this.assertOnlyManagementActions(actions, options);
   }
 
   async closeTask(taskName: TaskName, action: TaskManagementAction): Promise<void> {

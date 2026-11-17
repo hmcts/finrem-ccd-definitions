@@ -14,8 +14,7 @@ import type {TaskCompletionAction} from '../../../../pages/WAtasks/TaskScenario.
 import {
   APPLICATION_NOT_APPROVED,
   APPROVE_APPLICATION,
-  bristolCourtReplacements,
-  pensionDocumentReplacements,
+  reassignScenario,
   reviewApplication,
   reviewApplicationUserScenarios,
   UPLOAD_APPROVED_ORDER
@@ -121,7 +120,10 @@ test.describe('Review Application task tests', () => {
   test.describe.configure({ mode: 'parallel' });
 
   for (const scenario of reviewApplicationUserScenarios) {
-    const { user, completionAction } = scenario;
+    const { user, completionAction, courtReplacements } = scenario;
+    const actionOptions = {
+      checkOthersHidden: 'checkOtherActionsHidden' in scenario ? scenario.checkOtherActionsHidden : true
+    };
     const expectedState = 'expectedState' in scenario ? scenario.expectedState : undefined;
 
     test(
@@ -137,11 +139,8 @@ test.describe('Review Application task tests', () => {
       }) => {
         test.skip(!user.password, 'Set WA_JUDGE_PASSWORD to run judicial WA task tests');
 
-        const replacements = completionAction === APPROVE_APPLICATION
-          ? [...bristolCourtReplacements, ...pensionDocumentReplacements]
-          : bristolCourtReplacements;
         const caseId = await ConsentedCaseFactory
-          .createConsentedCaseUpToIssueApplication(replacements);
+          .createConsentedCaseUpToIssueApplication([...courtReplacements]);
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, { loginPage, manageCaseDashboardPage });
@@ -153,12 +152,14 @@ test.describe('Review Application task tests', () => {
               taskCreated: DateHelper.getFormattedDateAfterWorkingDays(0),
               assignedTo: 'Unassigned'
             },
-            reviewApplication.roles[user.role].unassignedActions
+            reviewApplication.roles[user.role].unassignedActions,
+            actionOptions
           );
           await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
-            reviewApplication.roles[user.role].assignedActions
+            reviewApplication.roles[user.role].assignedActions,
+            actionOptions
           );
           await taskUiChecks.assertNextStepVisible(APPROVE_APPLICATION);
           await taskUiChecks.assertNextStepVisible(UPLOAD_APPROVED_ORDER);
@@ -193,18 +194,15 @@ test.describe('Review Application task tests', () => {
       manageCaseDashboardPage,
       taskUiChecks
     }) => {
-      const recipient = config.waReassignJudge;
-      test.skip(
-        !config.waLeadJudge.password || !recipient.email || !recipient.name,
-        'Set WA_JUDGE_PASSWORD, WA_REASSIGN_JUDGE_USERNAME and WA_REASSIGN_JUDGE_NAME to run'
-      );
+      const { leadJudge, recipient } = reassignScenario;
+      test.skip(!leadJudge.password, 'Set WA_JUDGE_PASSWORD to run judicial WA task tests');
       test.setTimeout(15 * 60 * 1000);
 
       const caseId = await ConsentedCaseFactory
-        .createConsentedCaseUpToIssueApplication(bristolCourtReplacements);
+        .createConsentedCaseUpToIssueApplication([...reassignScenario.courtReplacements]);
 
       await test.step('Lead judge assigns the task to themselves', async () => {
-        await loginAndOpenCase(config.waLeadJudge, caseId, { loginPage, manageCaseDashboardPage });
+        await loginAndOpenCase(leadJudge, caseId, { loginPage, manageCaseDashboardPage });
         await taskUiChecks.navigateToTasks();
         await taskUiChecks.assertJudicialTaskUI(
           {
