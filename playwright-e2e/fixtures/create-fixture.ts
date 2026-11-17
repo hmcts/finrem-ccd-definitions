@@ -90,7 +90,7 @@ import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
 import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
 import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
-import {AmendFinalOrderPage} from "../pages/events/amend-final-order/AmendFinalOrderPage.ts";
+import {AmendFinalOrderPage} from '../pages/events/amend-final-order/AmendFinalOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
