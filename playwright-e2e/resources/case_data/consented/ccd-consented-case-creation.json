@@ -87,5 +87,18 @@
       "document_binary_url": "DOCUMENT_BINARY_URL",
       "document_filename": "test.pdf"
     },
+    "pensionDocuments": [
+      {
+        "id": "ID",
+        "value": {
+          "typeOfDocument": "Form P1",
+          "uploadedDocument": {
+            "document_url": "DOCUMENT_URL",
+            "document_filename": "test.pdf",
+            "document_binary_url": "DOCUMENT_BINARY_URL"
+          }
+        }
+      }
+    ],
     "otherCollection": []
 }
