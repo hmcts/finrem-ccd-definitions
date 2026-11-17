@@ -40,7 +40,6 @@ export const assignedTaskActions: Readonly<Record<
     'Reassign task',
     'Unassign task'
   ],
-  // From the story (CancelOwn, CompleteOwn, Unclaim); not yet verified in the UI.
   judge: ['Cancel task', 'Mark as done', 'Unassign task'],
   leadJudge: [
     'Cancel task',

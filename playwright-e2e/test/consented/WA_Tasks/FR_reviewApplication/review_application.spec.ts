@@ -155,6 +155,14 @@ test.describe('Review Application task tests', () => {
             reviewApplication.roles[user.role].unassignedActions,
             actionOptions
           );
+          // Priority and due date (10 working day SLA) are not shown to judges yet.
+          // Uncomment once DFR-5986 has been fixed.
+          // await taskUiChecks.assertTaskDetails({
+          //   name: TASK_NAME,
+          //   priority: 'low',
+          //   dueDate: DateHelper.getFormattedDateAfterWorkingDays(reviewApplication.dueInWorkingDays),
+          //   assignedTo: 'Unassigned'
+          // });
           await taskUiChecks.assignTaskToMe();
 
           await taskUiChecks.assertOnlyManagementActions(
@@ -212,6 +220,14 @@ test.describe('Review Application task tests', () => {
           },
           reviewApplication.roles.leadJudge.unassignedActions
         );
+        // Priority and due date (10 working day SLA) are not shown to judges yet.
+        // Uncomment once DFR-5986 has been fixed.
+        // await taskUiChecks.assertTaskDetails({
+        //   name: TASK_NAME,
+        //   priority: 'low',
+        //   dueDate: DateHelper.getFormattedDateAfterWorkingDays(reviewApplication.dueInWorkingDays),
+        //   assignedTo: 'Unassigned'
+        // });
         await taskUiChecks.assignTaskToMe();
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
