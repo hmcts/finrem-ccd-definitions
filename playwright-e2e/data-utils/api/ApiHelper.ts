@@ -13,10 +13,13 @@ export async function axiosRequest<T = any>(
     return response;
   } catch (error: any) {
     const serverMessage = error.response?.data
-      ? ` \nServer response: ${JSON.stringify(error.response.data)}`
-      : '';
+        ? ` \nServer response: ${JSON.stringify(error.response.data)}`
+        : '';
+
+    console.log('FAILED PAYLOAD:', JSON.stringify(requestParams.data, null, 2));
+
     throw new Error(
-      `Request to ${requestParams.url} failed: ${error.message}${serverMessage}`
+        `Request to ${requestParams.url} failed: ${error.message}${serverMessage}`
     );
   }
 }
