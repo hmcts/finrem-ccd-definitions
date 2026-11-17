@@ -57,19 +57,35 @@ const configuration = {
     password: process.env.PASSWORD_JUDGE || '',
   },
 
-  // Work allocation judicial users. Cases must be created in the judge's region.
-  waLeadJudge: {
-    name: 'Ms Amanda Love',
-    email: process.env.WA_LEAD_JUDGE_USERNAME || 'DJ.Karen.Howard@ejudiciary.net',
-    password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
-  },
-
-  // Optional reassignment recipient in the same region (South West). Fee-paid
-  // judges need a court booking first, so a salaried judge is preferred.
-  waReassignJudge: {
-    name: process.env.WA_REASSIGN_JUDGE_NAME || 'Betty Matthews',
-    email: process.env.WA_REASSIGN_JUDGE_USERNAME || 'HHJ.Betty.Matthews@ejudiciary.net',
-    password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+  // Work allocation judicial users (salaried, so no court booking is needed).
+  // A judge only sees tasks on cases in their own region, so each test creates
+  // its case at a court in the region of the judge who runs it.
+  waJudges: {
+    // South West (Bristol), lead judge
+    amandaLove: {
+      name: 'Amanda Love',
+      email: 'HHJ.Amanda.Love@ejudiciary.net',
+      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+    },
+    // London, lead judge
+    lopez: {
+      name: 'Mr Justice Lopez',
+      email: 'MrJustice.Lopez@ejudiciary.net',
+      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+    },
+    // North East (Cleveland), lead judge
+    karenHoward: {
+      name: 'Karen Howard',
+      email: 'DJ.Karen.Howard@ejudiciary.net',
+      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+    },
+    // North East (Cleveland), judge role. Known issue: she also gets lead judge
+    // actions from other jurisdictions (being fixed by another team).
+    bettyMatthews: {
+      name: 'Betty Matthews',
+      email: 'HHJ.Betty.Matthews@ejudiciary.net',
+      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+    },
   },
 
   caseWorker: {
