@@ -411,5 +411,8 @@ export const test = base.extend<CreateFixtures>({
   },
   attachScannedDocumentsPage: async ({ page }, use) => {
     await use(new AttachScannedDocumentsPage(page));
+  },
+  amendFinalOrderPage: async ({ page }, use) => {
+    await use(new AmendFinalOrderPage(page));
   }
 });
