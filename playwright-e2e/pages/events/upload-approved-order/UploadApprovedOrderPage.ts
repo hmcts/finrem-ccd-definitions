@@ -90,17 +90,17 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
   }
 
   async selectIsThisFinalOrder(answer: YesNoRadioEnum): Promise<void> {
-    expect(this.IsThisFinalOrderQuestion).toBeVisible();
+    await expect(this.IsThisFinalOrderQuestion).toBeVisible();
     await this.IsThisFinalOrderQuestion.getByLabel(answer).click();
   }
 
   async selectServeOrderCopyQuestion(answer: YesNoRadioEnum): Promise<void> {
-    expect(this.ServeOrderCopyQuestion).toBeVisible();
+    await expect(this.ServeOrderCopyQuestion).toBeVisible();
     await this.ServeOrderCopyQuestion.getByLabel(answer).click();
   }
 
   async selectDoYouWantToAddHearing(answer: YesNoRadioEnum): Promise<void> {
-    expect(this.DoYouWantToAddHearingQuestion).toBeVisible();
+    await expect(this.DoYouWantToAddHearingQuestion).toBeVisible();
     await this.DoYouWantToAddHearingQuestion.getByLabel(answer).click();
   }
 
