@@ -23,15 +23,10 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page, commonActionsHelper);
 
-    this.IsThisFinalOrderQuestion = page.getByRole('group', {
-      name: /Subject to Decree Absolute\/Final Order/i
-    });
-    this.ServeOrderCopyQuestion = page.getByRole('group', {
-      name: /Does a copy of this order need to be served to the pension provider/i
-    });
-    this.DoYouWantToAddHearingQuestion = page.getByRole('group', {
-      name: /Do you want to add a hearing/i
-    });
+    this.IsThisFinalOrderQuestion = page.getByRole('group', { name: 'Is this the final order?' });
+    this.ServeOrderCopyQuestion = page.getByRole('group', { name: 'Does a copy of this order need to be served' +
+          ' to the pension provider?' });
+    this.DoYouWantToAddHearingQuestion = page.getByRole('group', { name: 'Do you want to add a hearing?' });
     this.uploadApprovedOrderGroup = page.locator('div[id$=\'uploadHearingOrder\']');
     this.courtDayDetails = page.locator('#orderApprovedDate-day');
     this.courtMonthDetails = page.locator('#orderApprovedDate-month');
