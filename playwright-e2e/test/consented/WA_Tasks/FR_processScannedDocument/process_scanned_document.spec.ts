@@ -11,6 +11,7 @@ import {
   processScannedDocuments,
   processScannedDocumentUserScenarios
 } from './process_scanned_documents.scenario.ts';
+import {TaskName} from '../../../../pages/WAtasks/TaskTypes.ts';
 
 const TASK_NAME = processScannedDocuments.taskName;
 type LoginCredentials = {
@@ -38,15 +39,6 @@ const loginAndOpenCase = async (
   await manageCaseDashboardPage.navigateToCase(caseId);
 };
 
-const createProcessScannedDocumentTask = async (): Promise<string> => {
-  const caseId = await ConsentedCaseFactory
-    .createConsentedCaseUpToApplicationPaymentSubmission();
-
-  await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
-
-  return caseId;
-};
-
 test.describe('Process scanned document task tests', () => {
   test.describe.configure({ mode: 'parallel' });
 
@@ -64,7 +56,8 @@ test.describe('Process scanned document task tests', () => {
           loginPage,
           manageCaseDashboardPage
         };
-        const caseId = await createProcessScannedDocumentTask();
+        const caseId = await ConsentedCaseFactory
+          .createConsentedCaseUpToApplicationPaymentSubmission();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -85,6 +78,8 @@ test.describe('Process scanned document task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
+          await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+          await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
           await taskUiChecks.assertTaskUI(
             {
@@ -123,13 +118,17 @@ test.describe('Process scanned document task tests', () => {
       attachScannedDocumentsPage,
       taskUiChecks
     }) => {
-      const caseId = await createProcessScannedDocumentTask();
+      const caseId = await ConsentedCaseFactory
+        .createConsentedCaseUpToApplicationPaymentSubmission();
 
       await loginAndOpenCase(
         config.ctsc_admin,
         caseId,
         { loginPage, manageCaseDashboardPage }
       );
+      await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+      await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
+
       await taskUiChecks.assertTaskUI(
         {
           name: TASK_NAME,
@@ -163,7 +162,10 @@ test.describe('Process scanned document task tests', () => {
         loginPage,
         manageCaseDashboardPage
       };
-      const caseId = await createProcessScannedDocumentTask();
+      const caseId = await ConsentedCaseFactory
+        .createConsentedCaseUpToApplicationPaymentSubmission();
+      await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+      await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
