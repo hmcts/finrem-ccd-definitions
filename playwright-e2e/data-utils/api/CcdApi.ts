@@ -108,7 +108,8 @@ export class CcdApi {
     caseType: string,
     eventId: string,
     dataLocation: string,
-    replacements: ReplacementAction[] = []
+    replacements: ReplacementAction[] = [],
+    ignoreWarning: boolean = false
   ): Promise<any> {
     if (!process.env.CI) {
       console.info('Updating CCD case id %s with event %s...', caseId, eventId);
@@ -144,7 +145,8 @@ export class CcdApi {
         summary: 'Updating Case',
         description: 'For CCD E2E Test'
       },
-      event_token: eventToken
+      event_token: eventToken,
+      ignore_warning: ignoreWarning
     };
     
     const saveCaseResponse = await this.saveCase(

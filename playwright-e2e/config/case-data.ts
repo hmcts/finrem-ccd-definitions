@@ -97,6 +97,30 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Fee Account Debited",
     ccdCallback: "FR_paymentMadeFromHWF"
   },
+  awaitingInformation: {
+    listItem: "Awaiting Information",
+    ccdCallback: "FR_awaitingInfo"
+  },
+  issueApplicationFromInfoReceived: {
+    listItem: "Issue Application",
+    ccdCallback: "FR_issueApplicationFromInfoReceived"
+  },
+  solicitorUploadDocument: {
+    listItem: "Solicitor Upload document",
+    ccdCallback: "FR_solUploadDocumentv2"
+  },
+  createGeneralLetter: {
+    listItem: "Create General Letter",
+    ccdCallback: "FR_generalLetter"
+  },
+  generalOrderFromInfoReceived: {
+    listItem: "General Order",
+    ccdCallback: "FR_generalOrderFromInfoReceived"
+  },
+  listForHearing: {
+    listItem: "List for hearing",
+    ccdCallback: "FR_listForHearing"
+  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -268,7 +292,8 @@ export const PayloadPath = {
     // Payload Submissions
     applicationPaymentSubmission: "./playwright-e2e/resources/payload/consented/solicitor/case-submission.json",
     issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
-    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
+    solicitorUploadDocument: "./playwright-e2e/resources/payload/consented/solicitor/solicitor-upload-document.json"
   },
   Contested: {
     // Base case data
