@@ -71,34 +71,62 @@ export const pensionDocumentReplacements: ReplacementAction[] = [
 
 const { amandaLove, lopez, karenHoward, bettyMatthews } = config.waJudges;
 
+// A judge can only be logged in once at a time, so tests that log in as the
+// same judge must not run at the same time. Each test belongs to the group of
+// judges it logs in as: groups run in parallel, and the tests in a group run
+// one after another. The reassign test logs in as both North East judges, so
+// they share one group.
+export const JudgeLoginGroup = {
+  SouthWest: 'South West judge (Amanda Love)',
+  London: 'London judge (Mr Justice Lopez)',
+  NorthEast: 'North East judges (Karen Howard, Betty Matthews)'
+} as const;
+
+export type JudgeLoginGroup = typeof JudgeLoginGroup[keyof typeof JudgeLoginGroup];
+
 export interface ReviewApplicationScenario extends TaskUserScenario {
   readonly expectedState?: string;
   readonly courtReplacements: readonly ReplacementAction[];
   readonly checkOtherActionsHidden?: boolean;
+  readonly loginGroup: JudgeLoginGroup;
+  // Only add the re-review test for this scenario.
+  readonly reReviewOnly?: boolean;
 }
 
-// A different judge per scenario where possible, so the tests can run in
-// parallel. Only four salaried judges see Review Application on preview
-// (South West, London and two in North East), so Mr Justice Lopez runs two
-// scenarios and the reassignment test reuses the North East pair.
+// Only four salaried judges see Review Application on preview (South West,
+// London and two in North East), so some judges run more than one scenario.
+// The scenarios are spread so that each judge group takes about as long as
+// the others, as the slowest group sets the length of the run.
 export const reviewApplicationUserScenarios = [
   {
     user: { ...amandaLove, role: 'leadJudge' },
     completionAction: APPROVE_APPLICATION,
     expectedState: CaseState.ConsentOrderApproved,
-    courtReplacements: [...bristolCourtReplacements, ...pensionDocumentReplacements]
+    courtReplacements: [...bristolCourtReplacements, ...pensionDocumentReplacements],
+    loginGroup: JudgeLoginGroup.SouthWest
+  },
+  {
+    user: { ...amandaLove, role: 'leadJudge' },
+    completionAction: 'Cancel task',
+    courtReplacements: bristolCourtReplacements,
+    loginGroup: JudgeLoginGroup.SouthWest
   },
   {
     user: { ...lopez, role: 'leadJudge' },
     completionAction: UPLOAD_APPROVED_ORDER,
     expectedState: CaseState.ConsentOrderApproved,
-    courtReplacements: londonCourtReplacements
+    courtReplacements: londonCourtReplacements,
+    loginGroup: JudgeLoginGroup.London
   },
   {
-    user: { ...karenHoward, role: 'leadJudge' },
+    user: { ...lopez, role: 'leadJudge' },
     completionAction: APPLICATION_NOT_APPROVED,
     expectedState: CaseState.ConsentOrderNotApproved,
-    courtReplacements: clevelandCourtReplacements
+    courtReplacements: londonCourtReplacements,
+    loginGroup: JudgeLoginGroup.London,
+    // Every re-review test first refuses the application with Application
+    // Not Approved, so a first-review test for it would repeat that.
+    reReviewOnly: true
   },
   {
     user: { ...bettyMatthews, role: 'judge' },
@@ -107,12 +135,8 @@ export const reviewApplicationUserScenarios = [
     // jurisdictions. Another team is fixing it; until then only check that the
     // judge actions are shown, not that the lead judge ones are hidden.
     checkOtherActionsHidden: false,
-    courtReplacements: clevelandCourtReplacements
-  },
-  {
-    user: { ...lopez, role: 'leadJudge' },
-    completionAction: 'Cancel task',
-    courtReplacements: londonCourtReplacements
+    courtReplacements: clevelandCourtReplacements,
+    loginGroup: JudgeLoginGroup.NorthEast
   }
 ] as const satisfies readonly ReviewApplicationScenario[];
 
@@ -120,5 +144,6 @@ export const reviewApplicationUserScenarios = [
 export const reassignScenario = {
   leadJudge: karenHoward,
   recipient: bettyMatthews,
-  courtReplacements: clevelandCourtReplacements
+  courtReplacements: clevelandCourtReplacements,
+  loginGroup: JudgeLoginGroup.NorthEast
 } as const;

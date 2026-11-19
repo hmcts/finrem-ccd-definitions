@@ -15,7 +15,9 @@ export class ConsentOrderNotApprovedPage extends BaseJourneyPage {
     this.consentOrderNotApprovedTitle = this.page.getByText('Consent Order Not Approved');
     this.andAfterTextArea = this.page.locator('#orderRefusalOnScreen_orderRefusalAfterText');
     this.selectJudgeDropdown = this.page.locator('#orderRefusalOnScreen_orderRefusalJudge');
-    this.judgeName = this.page.getByLabel('Name of Judge');
+    // By id, because a second refusal also shows the earlier refusal's
+    // "Name of Judge" field.
+    this.judgeName = this.page.locator('#orderRefusalOnScreen_orderRefusalJudgeName');
     this.dateOfOrder = this.page.locator('#orderRefusalDate');
     this.additionalComments = this.page.locator('#orderRefusalOnScreen_orderRefusalAddComments');
   }

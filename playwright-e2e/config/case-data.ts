@@ -93,6 +93,18 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Application Not Approved",
     ccdCallback: "FR_orderRefusal"
   },
+  sendRefusedOrder: {
+    listItem: "Send Order",
+    ccdCallback: "FR_sendOrder"
+  },
+  respondToOrder: {
+    listItem: "Respond To Order",
+    ccdCallback: "FR_respondToOrder"
+  },
+  assignToJudgeFromRespondToOrder: {
+    listItem: "Assign To Judge",
+    ccdCallback: "FR_referToJudgeFromRespondToOrder"
+  },
   updateFrCourtInfo: {
     listItem: "Update FR Court Info",
     ccdCallback: "FR_updateCourtInfo"
@@ -272,7 +284,9 @@ export const PayloadPath = {
     // Payload Submissions
     applicationPaymentSubmission: "./playwright-e2e/resources/payload/consented/solicitor/case-submission.json",
     issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
-    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json"
+    createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
+    respondToOrder: "./playwright-e2e/resources/payload/consented/solicitor/respond-to-order.json",
+    assignToJudgeFromRespondToOrder: "./playwright-e2e/resources/payload/consented/caseworker/assign-to-judge-from-respond-to-order.json"
   },
   Contested: {
     // Base case data

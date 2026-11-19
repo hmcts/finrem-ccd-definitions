@@ -49,6 +49,14 @@ const configuration = {
         : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
     ),
 
+  // Case Document Access Management. PR environments use AAT's CDAM and dm-store.
+  cdamApiUrl:
+    process.env.CDAM_API_URL
+    || (() => {
+      const cdamEnv = env.startsWith('pr-') ? 'aat' : env;
+      return `http://ccd-case-document-am-api-${cdamEnv}.service.core-compute-${cdamEnv}.internal`;
+    })(),
+
   run_accessibility:
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 
@@ -64,18 +72,25 @@ const configuration = {
     // South West (Bristol), lead judge
     amandaLove: {
       name: 'Amanda Love',
+      // Typed into judge fields on orders.
+      judgeTitle: 'Her Honour Judge',
+      surname: 'Love',
       email: 'HHJ.Amanda.Love@ejudiciary.net',
       password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
     },
     // London, lead judge
     lopez: {
       name: 'Mr Justice Lopez',
+      judgeTitle: 'The Honourable Mr Justice',
+      surname: 'Lopez',
       email: 'MrJustice.Lopez@ejudiciary.net',
       password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
     },
     // North East (Cleveland), lead judge
     karenHoward: {
       name: 'Karen Howard',
+      judgeTitle: 'District Judge',
+      surname: 'Howard',
       email: 'DJ.Karen.Howard@ejudiciary.net',
       password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
     },
@@ -83,6 +98,8 @@ const configuration = {
     // actions from other jurisdictions (being fixed by another team).
     bettyMatthews: {
       name: 'Betty Matthews',
+      judgeTitle: 'Her Honour Judge',
+      surname: 'Matthews',
       email: 'HHJ.Betty.Matthews@ejudiciary.net',
       password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
     },

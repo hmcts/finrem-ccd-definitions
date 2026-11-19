@@ -18,12 +18,14 @@ export class TaskUiChecks {
   private readonly tasksTab: Locator;
   private readonly activeTasksHeading: Locator;
   private readonly workAllocationPage: WorkAllocationTabsPage;
+  private readonly callbackError: Locator;
 
   public constructor(page: Page) {
     this.page = page;
     this.tasksTab = page.getByRole('tab', { name: 'Tasks', exact: true });
     this.activeTasksHeading = page.getByRole('heading', { name: 'Active tasks', exact: true });
     this.workAllocationPage = new WorkAllocationTabsPage(page);
+    this.callbackError = page.getByRole('group', { name: 'The callback data failed validation' });
   }
 
   async navigateToTasks(): Promise<void> {
@@ -213,6 +215,20 @@ export class TaskUiChecks {
     await expect(nextStepLink).toBeVisible();
     await nextStepLink.click();
     await this.page.waitForLoadState('domcontentloaded');
+    await this.assertEventStarted(nextStep);
+  }
+
+  // Manage Case only opens the event page (/trigger/) once the event's
+  // about-to-start callback has passed. If the callback fails it shows an error
+  // on the case page instead, so fail straight away rather than waiting for
+  // the event's fields until the test times out.
+  private async assertEventStarted(nextStep: string): Promise<void> {
+    await expect.poll(async () => {
+      return this.page.url().includes('/trigger/') || await this.callbackError.isVisible();
+    }, { message: `${nextStep} did not open`, timeout: 60_000 }).toBe(true);
+    if (await this.callbackError.isVisible()) {
+      throw new Error(`${nextStep} could not start: ${await this.callbackError.innerText()}`);
+    }
   }
 
   async assertTaskUI(
