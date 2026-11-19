@@ -62,7 +62,9 @@ const configuration = {
 
   judge: {
     email: process.env.USERNAME_JUDGE || '',
-    password: process.env.PASSWORD_JUDGE || '',
+    password: env.startsWith('demo')
+      ? (process.env.PASSWORD_JUDGE_DEMO || process.env.PASSWORD_JUDGE || '')
+      : (process.env.PASSWORD_JUDGE || ''),
   },
 
   // Work allocation judicial users (salaried, so no court booking is needed).
