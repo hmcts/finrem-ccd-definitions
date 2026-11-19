@@ -11,6 +11,20 @@ const SOLICITOR_ROLES = [
   'caseworker-divorce-solicitor',
 ];
 
+const JUDGE_ROLES = [
+  'caseworker-divorce-financialremedy-judiciary',
+  'caseworker-divorce-courtadmin-la',
+  'caseworker',
+  'case-allocator',
+  'task-supervisor',
+  'caseworker-divorce-financialremedy',
+  'leadership-judge',
+  'hmcts-judiciary',
+  'caseworker-divorce-judge',
+  'caseworker-divorce',
+  'caseworker-divorce-courtadmin',
+];
+
 function requireEnv(name: string): string {
   const value = process.env[name]?.trim();
 
@@ -99,6 +113,14 @@ function getUsers() {
       password: config.respondent_solicitor.password,
       ...getSolicitorName('respondent'),
       roleNames: SOLICITOR_ROLES,
+    },
+    {
+      id: '32253507-e52b-47cd-94e4-e1f7cb257e6f',
+      email: 'MrJustice.Lopez@ejudiciary.net',
+      password: config.judge.password,
+      forename: 'Mario',
+      surname: 'Lopez',
+      roleNames: JUDGE_ROLES,
     },
   ];
 }
