@@ -24,13 +24,13 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
     super(page, commonActionsHelper);
 
     this.IsThisFinalOrderQuestion = page.locator('fieldset').filter({
-      hasText: /Subject to Decree Absolute\/Final Order/i
+      hasText: 'Subject to Decree Absolute/Final Order?'
     });
     this.ServeOrderCopyQuestion = page.locator('fieldset').filter({
-      hasText: /Does a copy of this order need to be served to the pension provider/i
+      hasText: 'Does a copy of this order need to be served to the pension provider?'
     });
     this.DoYouWantToAddHearingQuestion = page.locator('fieldset').filter({
-      hasText: /Do you want to add a hearing/i
+      hasText: 'Do you want to add a hearing?'
     });
     this.uploadApprovedOrderGroup = page.locator('div[id$=\'uploadHearingOrder\']');
     this.courtDayDetails = page.locator('#orderApprovedDate-day');
