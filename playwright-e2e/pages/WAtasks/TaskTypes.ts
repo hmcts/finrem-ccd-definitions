@@ -40,8 +40,7 @@ export const assignedTaskActions: Readonly<Record<
 };
 
 export const TaskName = {
-  CheckHelpWithFees: 'Check Help With Fees',
-  CheckAndIssueApplication: 'Check and Issue Application'
+  CheckHelpWithFees: 'Check Help With Fees'
 } as const;
 
 export type TaskName = typeof TaskName[keyof typeof TaskName];
