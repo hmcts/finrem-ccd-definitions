@@ -77,7 +77,7 @@ test.describe('Process approve order task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
-          await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+          await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Cancel task');
 
           await taskUiChecks.assertTaskUI(
             {
