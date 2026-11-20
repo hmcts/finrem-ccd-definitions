@@ -11,7 +11,7 @@ import {
   processApprovedOrderUserScenarios
 } from './process_approved_order.scenario.ts';
 import {TaskName} from '../../../../pages/WAtasks/TaskTypes.ts';
-import {ConsentedEventApi} from "../../../../data-utils/api/consented/ConsentedEventApi.ts";
+import {ConsentedEventApi} from '../../../../data-utils/api/consented/ConsentedEventApi.ts';
 
 const TASK_NAME = processApprovedOrder.taskName;
 type LoginCredentials = {
