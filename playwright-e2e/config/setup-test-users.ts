@@ -159,7 +159,23 @@ async function idamUserExists(
 function isUsernameAlreadyExists(error: unknown): boolean {
   const message = error instanceof Error ? error.message : String(error);
 
-  return message.includes('USERNAME_ALREADY_EXISTS') || message.includes('(Status Code: 409)');
+  return message.includes('(Status Code: 409)') && message.includes('USERNAME_ALREADY_EXISTS');
+}
+
+async function logExistingUser(
+  idamUtils: IdamUtils,
+  bearerToken: string,
+  email: string,
+): Promise<void> {
+  try {
+    const existing = await idamUtils.getUserInfo({ bearerToken, email });
+    console.warn(
+      `  Existing IDAM id: ${existing.id}; roles: ${(existing.roleNames ?? []).join(', ') || '(none)'}`,
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.warn(`  Could not look up existing IDAM user ${email}: ${message}`);
+  }
 }
 
 export async function setupTestUsers(): Promise<void> {
@@ -207,6 +223,7 @@ export async function setupTestUsers(): Promise<void> {
             `IDAM user ${user.email} already exists in ${idamEnv} under a different id ` +
               `than ${user.id}; using the existing account.`,
           );
+          await logExistingUser(idamUtils, bearerToken, user.email);
           continue;
         }
 
