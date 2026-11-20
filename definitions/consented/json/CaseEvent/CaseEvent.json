@@ -604,7 +604,8 @@
     "RetriesTimeoutURLSubmittedEvent": "0",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",
-    "ShowEventNotes": "Y"
+    "ShowEventNotes": "Y",
+    "Publish": "${CCD_DEF_PUBLISH}"
   },
   {
     "LiveFrom": "01/01/2017",
@@ -933,7 +934,7 @@
     "Name": "Solicitor Upload document",
     "Description": "Solicitor Upload document",
     "DisplayOrder": 49,
-    "PreConditionState(s)": "awaitingInfo;readyForHearing",
+    "PreConditionState(s)": "awaitingInfo;awaitingResponse;readyForHearing",
     "PostConditionState": "*",
     "SecurityClassification": "Public",
     "ShowSummary": "Y",

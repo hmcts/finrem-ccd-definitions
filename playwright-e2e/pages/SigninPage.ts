@@ -43,6 +43,9 @@ export class SigninPage extends BaseJourneyPage {
    *
    * A single path can be supplied for users with one expected landing page,
    * or multiple paths where more than one landing page is valid.
+   *
+   * If Manage Case remains stalled on the loading page, refresh once
+   * and retry before failing.
    */
   async loginWaitForPath(
     email: string,
@@ -57,40 +60,61 @@ export class SigninPage extends BaseJourneyPage {
 
     const expectedOrigin = new URL(expectedUrl).origin;
 
-    const normalisedPaths = paths.map(path => {return this.normalisePath(path);});
+    const normalisedPaths = paths.map(path => {
+      return this.normalisePath(path);
+    });
 
     const acceptedPathSet = new Set(normalisedPaths);
 
     // Some environments send users to either Cases or Worklist after sign-in.
     if (
-      acceptedPathSet.has(this.normalisePath(config.loginPaths.cases))
-      || acceptedPathSet.has(this.normalisePath(config.loginPaths.worklist))
+      acceptedPathSet.has(this.normalisePath(config.loginPaths.cases)) ||
+      acceptedPathSet.has(this.normalisePath(config.loginPaths.worklist))
     ) {
       acceptedPathSet.add(this.normalisePath(config.loginPaths.cases));
       acceptedPathSet.add(this.normalisePath(config.loginPaths.worklist));
-      acceptedPathSet.add('/');
     }
 
     const acceptedPaths = [...acceptedPathSet];
 
     const isExpectedLandingPath = (url: URL): boolean => {
       const currentPath = url.pathname.replace(/\/+$/, '') || '/';
-      return url.origin === expectedOrigin && acceptedPaths.includes(currentPath);
+
+      return (
+        url.origin === expectedOrigin &&
+        acceptedPaths.includes(currentPath) &&
+        currentPath !== '/'
+      );
     };
 
     await this.login(email, password);
 
-    try {
-      await expect(this.page).toHaveURL(
-        url => {return isExpectedLandingPath(url);}
-      );
-    } catch (error) {
-      throw new Error(
-        'Sign-in succeeded but the user did not land on an expected page.\n' +
-        `Expected one of: ${acceptedPaths.join(', ')}\n` +
-        `Actual URL: ${this.page.url()}\n` +
-        `Cause: ${error instanceof Error ? error.message : String(error)}`
-      );
+    const maxAttempts = 2;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        // Wait for Manage Case to reach a valid landing page
+        await expect(this.page).toHaveURL(
+          isExpectedLandingPath,
+          { timeout: 20000 }
+        );
+
+        return;
+      } catch {
+        if (attempt === maxAttempts) {
+          throw new Error(
+            `[SigninPage] Manage Case failed to load after ${maxAttempts} attempts.\n` +
+            `Expected paths: ${acceptedPaths.join(', ')}\n` +
+            `Actual URL: ${this.page.url()}`
+          );
+        }
+
+        console.log(
+          '[SigninPage] Manage Case still loading. Refreshing and retrying...'
+        );
+
+        await this.page.reload({ waitUntil: 'domcontentloaded' });
+      }
     }
   }
 }
