@@ -70,4 +70,11 @@ export class ConsentedEventApi {
       { event: ConsentedEvents.createFlag.ccdCallback , payload: PayloadPath.Consented.createFlag }
     ]);
   }
+
+  static async caseworkerUploadApprovedOrder(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ConsentedEvents.uploadApprovedOrder.ccdCallback , payload: PayloadPath.Consented.uploadApprovedOrder }
+    ]);
+  }
 }

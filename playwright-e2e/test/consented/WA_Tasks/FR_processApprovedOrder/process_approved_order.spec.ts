@@ -2,7 +2,6 @@ import { test } from '../../../../fixtures/fixtures.ts';
 import config from '../../../../config/config.ts';
 import { DateHelper } from '../../../../data-utils/DateHelper.ts';
 import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
-import { ConsentedEventApi } from '../../../../data-utils/api/consented/ConsentedEventApi.ts';
 import type { ManageCaseDashboardPage } from '../../../../pages/ManageCaseDashboardPage.ts';
 import type { SigninPage } from '../../../../pages/SigninPage.ts';
 import type { TaskCompletionAction } from '../../../../pages/WAtasks/TaskScenario.ts';
@@ -49,7 +48,6 @@ test.describe('Process approve order task tests', () => {
       async ({
         loginPage,
         manageCaseDashboardPage,
-        uploadApprovedOrderPage,
         amendFinalOrderPage,
         taskUiChecks
       }) => {
@@ -58,9 +56,7 @@ test.describe('Process approve order task tests', () => {
           manageCaseDashboardPage
         };
         const caseId = await ConsentedCaseFactory
-          .createConsentedCaseUpToApplicationPaymentSubmission();
-
-        await uploadApprovedOrderPage.completeUploadApprovedOrderEvent();
+          .createConsentedCaseUpToUploadApprovedOrder();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -117,7 +113,6 @@ test.describe('Process approve order task tests', () => {
     async ({
       loginPage,
       manageCaseDashboardPage,
-      uploadApprovedOrderPage,
       taskUiChecks
     }) => {
       test.setTimeout(15 * 60 * 1000);
@@ -127,9 +122,8 @@ test.describe('Process approve order task tests', () => {
         manageCaseDashboardPage
       };
       const caseId = await ConsentedCaseFactory
-        .createConsentedCaseUpToApplicationPaymentSubmission();
+        .createConsentedCaseUpToUploadApprovedOrder();
       await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
-      await uploadApprovedOrderPage.completeUploadApprovedOrderEvent();
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
