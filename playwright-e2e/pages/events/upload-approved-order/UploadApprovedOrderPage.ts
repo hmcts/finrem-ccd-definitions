@@ -23,12 +23,8 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page, commonActionsHelper);
 
-    this.IsThisFinalOrderQuestion = page.locator('fieldset').filter({
-      hasText: 'Subject to Decree Absolute/Final Order?'
-    });
-    this.ServeOrderCopyQuestion = page.locator('fieldset').filter({
-      hasText: 'Does a copy of this order need to be served to the pension provider?'
-    });
+    this.IsThisFinalOrderQuestion = page.locator('#orderDirectionAbsolute');
+    this.ServeOrderCopyQuestion = page.locator('#servePensionProvider');
     this.DoYouWantToAddHearingQuestion = page.locator('fieldset').filter({
       hasText: 'Do you want to add a hearing?'
     });
