@@ -57,11 +57,4 @@ export class ConsentedCaseFactory {
       (id) => {return ConsentedEventApi.caseworkerCreateFlag(id);}
     ]);
   }
-
-  static async createConsentedCaseUpToUploadApprovedOrder(): Promise<string> {
-    return this.buildConsentedCaseWithSteps([
-      (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},
-      (id) => {return ConsentedEventApi.caseworkerUploadApprovedOrder(id);}
-    ]);
-  }
 }

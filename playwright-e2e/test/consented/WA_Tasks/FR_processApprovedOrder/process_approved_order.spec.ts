@@ -11,6 +11,7 @@ import {
   processApprovedOrderUserScenarios
 } from './process_approved_order.scenario.ts';
 import {TaskName} from '../../../../pages/WAtasks/TaskTypes.ts';
+import {ConsentedEventApi} from "../../../../data-utils/api/consented/ConsentedEventApi.ts";
 
 const TASK_NAME = processApprovedOrder.taskName;
 type LoginCredentials = {
@@ -56,7 +57,7 @@ test.describe('Process approve order task tests', () => {
           manageCaseDashboardPage
         };
         const caseId = await ConsentedCaseFactory
-          .createConsentedCaseUpToUploadApprovedOrder();
+          .createConsentedCaseUpToApplicationPaymentSubmission();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -77,7 +78,8 @@ test.describe('Process approve order task tests', () => {
 
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
-          await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Cancel task');
+          await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+          await ConsentedEventApi.caseworkerUploadApprovedOrder(caseId);
 
           await taskUiChecks.assertTaskUI(
             {
@@ -122,8 +124,9 @@ test.describe('Process approve order task tests', () => {
         manageCaseDashboardPage
       };
       const caseId = await ConsentedCaseFactory
-        .createConsentedCaseUpToUploadApprovedOrder();
+        .createConsentedCaseUpToApplicationPaymentSubmission();
       await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+      await ConsentedEventApi.caseworkerUploadApprovedOrder(caseId);
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
