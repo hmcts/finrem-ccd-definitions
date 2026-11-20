@@ -156,6 +156,12 @@ async function idamUserExists(
   );
 }
 
+function isUsernameAlreadyExists(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+
+  return message.includes('USERNAME_ALREADY_EXISTS') || message.includes('(Status Code: 409)');
+}
+
 export async function setupTestUsers(): Promise<void> {
   const idamEnv = configureIdamUrls();
   console.log(`IDAM environment: ${idamEnv}`);
@@ -178,19 +184,34 @@ export async function setupTestUsers(): Promise<void> {
         continue;
       }
 
-      const createdUser = await idamUtils.createUser({
-        bearerToken,
-        password: user.password,
-        user: {
-          id: user.id,
-          email: user.email,
-          forename: user.forename,
-          surname: user.surname,
-          roleNames: user.roleNames,
-        },
-      });
+      try {
+        const createdUser = await idamUtils.createUser({
+          bearerToken,
+          password: user.password,
+          user: {
+            id: user.id,
+            email: user.email,
+            forename: user.forename,
+            surname: user.surname,
+            roleNames: user.roleNames,
+          },
+        });
 
-      console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
+        console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
+      } catch (error) {
+        // The id lookup can miss a user that already exists under a different id
+        // (e.g. AAT ids used against demo, where the same email has another id).
+        // The account is already there, so don't fail setup over it.
+        if (isUsernameAlreadyExists(error)) {
+          console.warn(
+            `IDAM user ${user.email} already exists in ${idamEnv} under a different id ` +
+              `than ${user.id}; using the existing account.`,
+          );
+          continue;
+        }
+
+        throw error;
+      }
     }
 
     console.log('IDAM test user setup completed successfully.');
