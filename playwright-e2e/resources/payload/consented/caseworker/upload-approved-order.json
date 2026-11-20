@@ -11,7 +11,7 @@
         },
         "consentOrder": {
           "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f185b058-3abf-4329-889a-e62542f61c47",
-          "document_filename": "test.pdf",
+          "document_filename": "ConsentOrder.pdf",
           "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/f185b058-3abf-4329-889a-e62542f61c47/binary"
         },
         "pensionDocuments": [
@@ -21,7 +21,7 @@
               "typeOfDocument": "Form P1",
               "uploadedDocument": {
                 "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d0fb986c-ceb4-4cd3-8e4d-38d11b3ac801",
-                "document_filename": "test1.pdf",
+                "document_filename": "PensionFormP1.pdf",
                 "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/d0fb986c-ceb4-4cd3-8e4d-38d11b3ac801/binary"
               }
             }
@@ -31,10 +31,11 @@
     }
   ],
   "orderDirectionJudgeName": "Admin",
+  "servePensionProvider": "No",
   "divorceDecreeAbsoluteDate": "2026-01-01",
   "uploadApprovedConsentOrder": {
     "document_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1c4063d5-b31f-4966-8984-6e38d94daa19",
-    "document_filename": "test.pdf",
+    "document_filename": "UploadApprovedConsentOrder.pdf",
     "document_binary_url": "http://dm-store-aat.service.core-compute-aat.internal/documents/1c4063d5-b31f-4966-8984-6e38d94daa19/binary"
   }
 }
