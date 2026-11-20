@@ -2,6 +2,16 @@ import { Locator, Page } from '@playwright/test';
 import { BaseJourneyPage } from '../../BaseJourneyPage';
 import {CommonActionsHelper} from '../../helpers/CommonActionsHelper.ts';
 
+// The order details shared by Approve Application and Upload Approved Order.
+export interface ApprovedOrderDetails {
+  subjectToDecreeAbsolute: boolean;
+  servePensionProvider: boolean;
+  // Only asked when servePensionProvider is true, e.g. 'The Court'.
+  pensionProviderResponsibility?: string;
+  judgeTitle: string;
+  judgeName: string;
+}
+
 export class ApproveApplicationPage extends BaseJourneyPage {
 
   private readonly subjectToRadio: Locator;
@@ -33,12 +43,47 @@ export class ApproveApplicationPage extends BaseJourneyPage {
   }
 
   async selectJudge(judge: string){
-    await this.judgeDropDown.selectOption(judge); 
+    await this.judgeDropDown.selectOption(judge);
+  }
+
+  async selectPensionProviderResponsibility(responsibility: string) {
+    await this.page.getByRole('radio', { name: responsibility, exact: true }).check();
+  }
+
+  async enterJudgeName(name: string) {
+    await this.page.locator('#orderDirectionJudgeName').fill(name);
   }
 
   async uploadConsentOrderFile(documentName: string) {
     const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
     await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadConsentOrderFileUpload, filePayload);
+  }
+
+  // Fills in and submits the Approve Application event.
+  async completeApproveApplication(details: ApprovedOrderDetails): Promise<void> {
+    await this.fillOrderDetails(details);
+    await this.navigateContinue();
+    await this.navigateSubmit();
+  }
+
+  // Fills in and submits the (consented) Upload Approved Order event.
+  async completeUploadApprovedOrder(
+    details: ApprovedOrderDetails & { fileName: string }
+  ): Promise<void> {
+    await this.fillOrderDetails(details);
+    await this.uploadConsentOrderFile(details.fileName);
+    await this.navigateContinue();
+    await this.navigateSubmit();
+  }
+
+  private async fillOrderDetails(details: ApprovedOrderDetails): Promise<void> {
+    await this.selectIsSubjectTo(details.subjectToDecreeAbsolute);
+    await this.selectIsPensionProvider(details.servePensionProvider);
+    if (details.servePensionProvider && details.pensionProviderResponsibility) {
+      await this.selectPensionProviderResponsibility(details.pensionProviderResponsibility);
+    }
+    await this.selectJudge(details.judgeTitle);
+    await this.enterJudgeName(details.judgeName);
   }
 
 }
