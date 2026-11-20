@@ -57,7 +57,7 @@ test.describe('Process approve order task tests', () => {
           manageCaseDashboardPage
         };
         const caseId = await ConsentedCaseFactory
-          .createConsentedCaseUpToApplicationPaymentSubmission();
+          .createConsentedCaseUpToIssueApplication();
 
         const completeTask = async (
           action: TaskCompletionAction
@@ -124,7 +124,7 @@ test.describe('Process approve order task tests', () => {
         manageCaseDashboardPage
       };
       const caseId = await ConsentedCaseFactory
-        .createConsentedCaseUpToApplicationPaymentSubmission();
+        .createConsentedCaseUpToIssueApplication();
       await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
       await ConsentedEventApi.caseworkerUploadApprovedOrder(caseId);
 
