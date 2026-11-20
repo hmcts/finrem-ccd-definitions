@@ -213,7 +213,14 @@ withNightlyPipeline(type, product, component) {
 }
 
         stage('Create WA test users') {
-            steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
+            // WA test users (and their IDAM ids) only exist in AAT. Demo has the same
+            // emails under different ids, so this must not run for other environments.
+            // env.ENV is 'aat' for both RUNNING_ENV=aat and pr-xxxx (PR envs use AAT IDAM).
+            if (env.ENV == 'aat') {
+                steps.sh 'AZURE_CONFIG_DIR=/opt/jenkins/.azure-nonprod ./create_idam_id_scripts/run_jobs.sh'
+            } else {
+                echo "Skipping WA test user creation: RUNNING_ENV is '${params.RUNNING_ENV}' (IDAM env '${env.ENV}'), only runs for aat"
+            }
         }
 
         if (!params.TAGS_TO_RUN.isEmpty()) {
