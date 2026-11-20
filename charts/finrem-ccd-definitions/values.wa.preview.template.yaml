@@ -91,6 +91,7 @@ wa:
       devmemoryLimits: 4Gi
       environment:
         CAMUNDA_DB_CONN_OPTIONS: "?stringtype=unspecified&reWriteBatchedInserts=true&sslmode=require"
+        S2S_SECRET_CAMUNDA_BPM: ${S2S_SECRET_CAMUNDA_BPM}
 
   wa-task-management-api:
     java:
@@ -175,6 +176,11 @@ wa:
     job:
       schedule: "*/1 * * * *"
       releaseNameOverride: "{{ .Release.Name }}-wa-task-batch"
+
+  wa-initiation-failures-batch:
+    job:
+      kind: CronJob
+      schedule: "*/1 * * * *"
 
   wa-reconfiguration-batch:
     job:
