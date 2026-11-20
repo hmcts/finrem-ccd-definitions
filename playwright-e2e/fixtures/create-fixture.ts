@@ -88,6 +88,9 @@ import {RemoveCaseDocumentPage} from '../pages/events/remove-case-document/Remov
 import { StopRepresentingClientPage } from '../pages/events/stop-representing-client/StopRepresentingClientPage.ts';
 import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
 import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
+import { CreateGeneralLetterPage } from '../pages/events/create-general-letter/CreateGeneralLetterPage.ts';
+import { ListForHearingPage } from '../pages/events/list-for-hearing/ListForHearingPage.ts';
+import { CaseHistoryPage } from '../pages/CaseHistoryPage.ts';
 import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
 
@@ -171,6 +174,9 @@ type CreateFixtures = {
   stopRepresentingClientPage: StopRepresentingClientPage;
   removeCaseDocumentPage: RemoveCaseDocumentPage;
   closeCasePage: CloseCasePage;
+  createGeneralLetterPage: CreateGeneralLetterPage;
+  listForHearingPage: ListForHearingPage;
+  caseHistoryPage: CaseHistoryPage;
   taskUiChecks: TaskUiChecks;
   attachScannedDocumentsPage: AttachScannedDocumentsPage;
 };
@@ -403,6 +409,15 @@ export const test = base.extend<CreateFixtures>({
   },
   closeCasePage: async ({ page }, use) => {    
     await use(new CloseCasePage(page, commonActionsHelper));
+  },
+  createGeneralLetterPage: async ({ page }, use) => {
+    await use(new CreateGeneralLetterPage(page));
+  },
+  listForHearingPage: async ({ page }, use) => {
+    await use(new ListForHearingPage(page, commonActionsHelper));
+  },
+  caseHistoryPage: async ({ page }, use) => {
+    await use(new CaseHistoryPage(page));
   },
   taskUiChecks: async ({ page }, use) => {
     await use(new TaskUiChecks(page));
