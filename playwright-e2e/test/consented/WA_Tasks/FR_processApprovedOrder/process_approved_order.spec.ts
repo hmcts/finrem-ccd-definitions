@@ -79,6 +79,7 @@ test.describe('Process approve order task tests', () => {
         await test.step(`${user.name} can see and assign the task`, async () => {
           await loginAndOpenCase(user, caseId, sessionPages);
           await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+          await ConsentedEventApi.caseWorkerIssueApplication(caseId);
           await ConsentedEventApi.caseworkerUploadApprovedOrder(caseId);
 
           await taskUiChecks.assertTaskUI(
@@ -126,6 +127,7 @@ test.describe('Process approve order task tests', () => {
       const caseId = await ConsentedCaseFactory
         .createConsentedCaseUpToApplicationPaymentSubmission();
       await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+      await ConsentedEventApi.caseWorkerIssueApplication(caseId);
       await ConsentedEventApi.caseworkerUploadApprovedOrder(caseId);
 
       await test.step('Team Leader assigns the task to themselves', async () => {
