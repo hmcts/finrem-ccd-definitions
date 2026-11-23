@@ -47,7 +47,8 @@ export type TaskName = typeof TaskName[keyof typeof TaskName];
 
 export const TaskCompletionEventName = {
   HWFApplicationAccepted: 'HWF Application Accepted',
-  FeeAccountDebited: 'Fee Account Debited'
+  FeeAccountDebited: 'Fee Account Debited',
+  AwaitingPaymentResponse: 'Awaiting Payment Response'
 } as const;
 
 export type TaskCompletionEventName = typeof TaskCompletionEventName[keyof typeof TaskCompletionEventName];
