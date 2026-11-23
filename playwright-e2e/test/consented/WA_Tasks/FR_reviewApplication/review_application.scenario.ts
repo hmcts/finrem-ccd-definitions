@@ -9,18 +9,26 @@ import {
   type TaskUserScenario
 } from '../../../../pages/WAtasks/TaskScenario.ts';
 import type { ReplacementAction } from '../../../../types/replacement-action.ts';
+import { ConsentedCaseFactory } from '../../../../data-utils/factory/consented/ConsentedCaseFactory.ts';
+import {
+  APPLICATION_NOT_APPROVED,
+  APPROVE_APPLICATION,
+  REVIEW_APPLICATION_TASK,
+  UPLOAD_APPROVED_ORDER,
+  type ActionOptions
+} from '../../../../pages/WAtasks/ReviewApplicationTask.ts';
 
-export const APPROVE_APPLICATION = 'Approve Application';
-export const UPLOAD_APPROVED_ORDER = 'Upload Approved Order';
-export const APPLICATION_NOT_APPROVED = 'Application Not Approved';
+export { APPLICATION_NOT_APPROVED, APPROVE_APPLICATION, UPLOAD_APPROVED_ORDER };
 
 export const CaseState = {
+  // Referred to Judge. Mark as done and Cancel task leave the case here.
+  AwaitingJudicialResponse: 'Awaiting Judicial Response',
   ConsentOrderApproved: 'Consent Order Approved',
   ConsentOrderNotApproved: 'Consent Order Not Approved'
 } as const;
 
 export const reviewApplication = defineTaskScenario({
-  taskName: 'Review Application',
+  taskName: REVIEW_APPLICATION_TASK,
   taskType: 'reviewApplication',
   dueInWorkingDays: 10,
   roles: {
@@ -85,7 +93,7 @@ export const JudgeLoginGroup = {
 export type JudgeLoginGroup = typeof JudgeLoginGroup[keyof typeof JudgeLoginGroup];
 
 export interface ReviewApplicationScenario extends TaskUserScenario {
-  readonly expectedState?: string;
+  readonly expectedState: string;
   readonly courtReplacements: readonly ReplacementAction[];
   readonly checkOtherActionsHidden?: boolean;
   readonly loginGroup: JudgeLoginGroup;
@@ -108,6 +116,7 @@ export const reviewApplicationUserScenarios = [
   {
     user: { ...amandaLove, role: 'leadJudge' },
     completionAction: 'Cancel task',
+    expectedState: CaseState.AwaitingJudicialResponse,
     courtReplacements: bristolCourtReplacements,
     loginGroup: JudgeLoginGroup.SouthWest
   },
@@ -131,6 +140,7 @@ export const reviewApplicationUserScenarios = [
   {
     user: { ...bettyMatthews, role: 'judge' },
     completionAction: 'Mark as done',
+    expectedState: CaseState.AwaitingJudicialResponse,
     // Known issue: Betty also gets lead judge actions from her roles in other
     // jurisdictions. Another team is fixing it; until then only check that the
     // judge actions are shown, not that the lead judge ones are hidden.
@@ -147,3 +157,58 @@ export const reassignScenario = {
   courtReplacements: clevelandCourtReplacements,
   loginGroup: JudgeLoginGroup.NorthEast
 } as const;
+
+export type Scenario = typeof reviewApplicationUserScenarios[number];
+
+// Creates an issued case at the scenario's court, which creates the Review
+// Application task. Each case gets its own documents: Approve Application
+// stamps the consent order, which fails if another parallel test has attached
+// the shared test document to its own case.
+export const createReviewApplicationCase = (
+  courtReplacements: readonly ReplacementAction[]
+): Promise<string> => {
+  return ConsentedCaseFactory.createConsentedCaseUpToIssueApplication(
+    [...courtReplacements],
+    { uniqueDocuments: true }
+  );
+};
+
+export const firstReviewScenarios = (loginGroup: JudgeLoginGroup): Scenario[] => {
+  return reviewApplicationUserScenarios.filter((scenario) => {
+    return scenario.loginGroup === loginGroup && !('reReviewOnly' in scenario && scenario.reReviewOnly);
+  });
+};
+
+export const reReviewScenarios = (loginGroup: JudgeLoginGroup): Scenario[] => {
+  return reviewApplicationUserScenarios.filter((scenario) => {
+    return scenario.loginGroup === loginGroup;
+  });
+};
+
+export const actionOptions = (scenario: Scenario): ActionOptions => {
+  return {
+    checkOthersHidden: 'checkOtherActionsHidden' in scenario ? scenario.checkOtherActionsHidden : true
+  };
+};
+
+// Approve Application runs on every PR build (@preview), as the main way a
+// judge completes the task.
+export const scenarioTags = (scenario: Scenario): string[] => {
+  return scenario.completionAction === APPROVE_APPLICATION ? ['@waTasks', '@preview'] : ['@waTasks'];
+};
+
+const roleNames = { leadJudge: 'Lead judge', judge: 'Judge' } as const;
+
+// Test titles name the judge's role, not the test account, e.g.
+// "Lead judge cancels the re-review task".
+export const scenarioTitle = (scenario: Scenario, task: 'Review Application task' | 're-review task'): string => {
+  const role = roleNames[scenario.user.role];
+  switch (scenario.completionAction) {
+  case 'Mark as done':
+    return `${role} marks the ${task} as done`;
+  case 'Cancel task':
+    return `${role} cancels the ${task}`;
+  default:
+    return `${role} completes the ${task} with ${scenario.completionAction}`;
+  }
+};
