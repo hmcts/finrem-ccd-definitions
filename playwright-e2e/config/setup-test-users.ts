@@ -11,6 +11,20 @@ const SOLICITOR_ROLES = [
   'caseworker-divorce-solicitor',
 ];
 
+const JUDGE_ROLES = [
+  'caseworker-divorce-financialremedy-judiciary',
+  'caseworker-divorce-courtadmin-la',
+  'caseworker',
+  'case-allocator',
+  'task-supervisor',
+  'caseworker-divorce-financialremedy',
+  'leadership-judge',
+  'hmcts-judiciary',
+  'caseworker-divorce-judge',
+  'caseworker-divorce',
+  'caseworker-divorce-courtadmin',
+];
+
 function requireEnv(name: string): string {
   const value = process.env[name]?.trim();
 
@@ -100,6 +114,14 @@ function getUsers() {
       ...getSolicitorName('respondent'),
       roleNames: SOLICITOR_ROLES,
     },
+    {
+      id: '32253507-e52b-47cd-94e4-e1f7cb257e6f',
+      email: 'MrJustice.Lopez@ejudiciary.net',
+      password: config.judge.password,
+      forename: 'Mario',
+      surname: 'Lopez',
+      roleNames: JUDGE_ROLES,
+    },
   ];
 }
 
@@ -134,6 +156,28 @@ async function idamUserExists(
   );
 }
 
+function isUsernameAlreadyExists(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+
+  return message.includes('(Status Code: 409)') && message.includes('USERNAME_ALREADY_EXISTS');
+}
+
+async function logExistingUser(
+  idamUtils: IdamUtils,
+  bearerToken: string,
+  email: string,
+): Promise<void> {
+  try {
+    const existing = await idamUtils.getUserInfo({ bearerToken, email });
+    console.warn(
+      `  Existing IDAM id: ${existing.id}; roles: ${(existing.roleNames ?? []).join(', ') || '(none)'}`,
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.warn(`  Could not look up existing IDAM user ${email}: ${message}`);
+  }
+}
+
 export async function setupTestUsers(): Promise<void> {
   const idamEnv = configureIdamUrls();
   console.log(`IDAM environment: ${idamEnv}`);
@@ -156,19 +200,35 @@ export async function setupTestUsers(): Promise<void> {
         continue;
       }
 
-      const createdUser = await idamUtils.createUser({
-        bearerToken,
-        password: user.password,
-        user: {
-          id: user.id,
-          email: user.email,
-          forename: user.forename,
-          surname: user.surname,
-          roleNames: user.roleNames,
-        },
-      });
+      try {
+        const createdUser = await idamUtils.createUser({
+          bearerToken,
+          password: user.password,
+          user: {
+            id: user.id,
+            email: user.email,
+            forename: user.forename,
+            surname: user.surname,
+            roleNames: user.roleNames,
+          },
+        });
 
-      console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
+        console.log(`IDAM user created: ${createdUser.email} (${createdUser.id})`);
+      } catch (error) {
+        // The id lookup can miss a user that already exists under a different id
+        // (e.g. AAT ids used against demo, where the same email has another id).
+        // The account is already there, so don't fail setup over it.
+        if (isUsernameAlreadyExists(error)) {
+          console.warn(
+            `IDAM user ${user.email} already exists in ${idamEnv} under a different id ` +
+              `than ${user.id}; using the existing account.`,
+          );
+          await logExistingUser(idamUtils, bearerToken, user.email);
+          continue;
+        }
+
+        throw error;
+      }
     }
 
     console.log('IDAM test user setup completed successfully.');

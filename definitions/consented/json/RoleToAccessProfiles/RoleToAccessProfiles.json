@@ -99,6 +99,55 @@
     "CaseAccessCategories": ""
   },
   {
+    "RoleName" : "judge",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "ctsc",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "ctsc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "hearing-centre-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "national-business-centre",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "nbc-team-leader",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-superuser",
+    "ReadOnly": "N"
+  },
+  {
     "RoleName" : "hmcts-admin",
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
@@ -124,6 +173,76 @@
     "Authorisation": "",
     "CaseTypeID": "FinancialRemedyMVP2",
     "AccessProfiles": "GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName": "idam:caseworker-wa-task-configuration",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-wa-task-configuration",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName": "idam:caseworker-ras-validation",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-ras-validation",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-legal-ops",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-ctsc",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "specific-access-judiciary",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "challenged-access-legal-ops",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "challenged-access-admin",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "challenged-access-ctsc",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-courtadmin,GS_profile",
+    "ReadOnly": "N"
+  },
+  {
+    "RoleName" : "challenged-access-judiciary",
+    "Authorisation": "",
+    "CaseTypeID": "FinancialRemedyMVP2",
+    "AccessProfiles": "caseworker-divorce-financialremedy-judiciary,GS_profile",
     "ReadOnly": "N"
   }
 ]
