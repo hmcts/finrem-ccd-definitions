@@ -18,6 +18,7 @@ interface WorkAllocationSearchStrategy {
 }
 
 const RENDER_TIMEOUT = 5_000;
+const TASK_LIST_RESPONSE_TIMEOUT = 5 * 60 * 1000;
 const searchStrategies: Readonly<Record<
   WorkAllocationTab,
   WorkAllocationSearchStrategy
@@ -116,7 +117,7 @@ export class WorkAllocationTabsPage {
       return response.request().method() === 'POST'
         && new URL(response.url()).pathname === '/workallocation/task'
         && response.ok();
-    });
+    }, { timeout: TASK_LIST_RESPONSE_TIMEOUT });
   }
 
   private getTab(tabName: WorkAllocationTab): Locator {

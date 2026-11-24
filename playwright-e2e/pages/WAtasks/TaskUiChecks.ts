@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { expect, type Locator, type Page, type Response } from '@playwright/test';
 import {
   taskManagementActions,
   type TaskDetails,
@@ -11,6 +11,7 @@ import {
 
 const DEFAULT_REFRESH_ATTEMPTS = 12;
 const DEFAULT_REFRESH_INTERVAL = 5_000;
+const TASK_LIST_RESPONSE_TIMEOUT = 5 * 60 * 1000;
 
 export class TaskUiChecks {
 
@@ -216,11 +217,11 @@ export class TaskUiChecks {
     for (let attempt = 1; attempt <= refreshAttempts; attempt++) {
       if (shouldBeVisible) {
         await this.navigateToTasks();
-      } else {
-        await this.reloadTasksAndWaitForTaskList();
-      }
 
-      if (await taskLocator.isVisible() === shouldBeVisible) {
+        if (await taskLocator.isVisible()) {
+          return;
+        }
+      } else if (!await this.isTaskInTaskList(taskName)) {
         return;
       }
 
@@ -319,16 +320,42 @@ export class TaskUiChecks {
     await expect(confirmationButton).not.toBeVisible();
   }
 
-  private async reloadTasksAndWaitForTaskList(): Promise<void> {
-    const taskListLoaded = this.page.waitForResponse((response) => {
+  private async isTaskInTaskList(taskName: string): Promise<boolean> {
+    const response = await this.reloadTasksAndWaitForTaskList();
+    const body: unknown = await response.json();
+    const tasks: unknown = Array.isArray(body)
+      ? body
+      : (body as { tasks?: unknown } | null)?.tasks;
+
+    if (!Array.isArray(tasks)) {
+      throw new Error(`Unexpected task list response from ${response.url()}`);
+    }
+
+    const taskTitles = tasks.flatMap((task: { name?: unknown; task_title?: unknown } | null) => {
+      return [task?.name, task?.task_title].filter((title): title is string => {
+        return typeof title === 'string';
+      });
+    });
+
+    if (tasks.length > 0 && taskTitles.length === 0) {
+      throw new Error(`Task list response from ${response.url()} has no task names`);
+    }
+
+    return taskTitles.some((title) => {
+      return title.toLowerCase() === taskName.toLowerCase();
+    });
+  }
+
+  private async reloadTasksAndWaitForTaskList(): Promise<Response> {
+    const taskListResponse = this.page.waitForResponse((response) => {
       return response.request().method() === 'POST'
         && response.url().includes('/workallocation/case/task/')
         && response.ok();
-    });
+    }, { timeout: TASK_LIST_RESPONSE_TIMEOUT });
 
     await this.page.reload({ waitUntil: 'domcontentloaded' });
     await this.navigateToTasks();
-    await taskListLoaded;
+    return taskListResponse;
   }
 
   private getTaskLocator(taskName: string): Locator {
