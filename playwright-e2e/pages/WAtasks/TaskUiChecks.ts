@@ -28,6 +28,11 @@ export class TaskUiChecks {
     this.callbackError = page.getByRole('group', { name: 'The callback data failed validation' });
   }
 
+  private getTaskContainer(taskName?: string): Locator {
+    const taskContainer = this.page.locator('exui-case-task');
+    return taskName ? taskContainer.filter({ hasText: taskName }) : taskContainer;
+  }
+
   async navigateToTasks(): Promise<void> {
     await expect(this.tasksTab).toBeVisible();
     await this.tasksTab.click();
@@ -69,46 +74,32 @@ export class TaskUiChecks {
     }
   }
 
-  async assignTaskToMe(): Promise<void> {
-    const assignToMeLink = this.page.locator('#action_claim');
+  async assignTaskToMe(taskName?: string): Promise<void> {
+    const assignToMeLink = this.getTaskContainer(taskName).locator('#action_claim');
 
     await expect(assignToMeLink).toBeVisible();
     await assignToMeLink.click();
     await expect(assignToMeLink).not.toBeVisible();
   }
 
-  async markTaskAsDone(): Promise<void> {
-    const markAsDoneLink = this.getManageSection().getByText(
-      'Mark as done',
-      { exact: true }
-    );
+  async markTaskAsDone(taskName?: string): Promise<void> {
+    const markAsDoneLink = this.getTaskContainer(taskName).getByText('Mark as done', { exact: true });
 
     await expect(markAsDoneLink).toBeVisible();
     await markAsDoneLink.click();
 
-    const confirmationButton = this.page.getByRole('button', {
-      name: 'Mark as done',
-      exact: true
-    });
-
+    const confirmationButton = this.page.getByRole('button', { name: 'Mark as done', exact: true });
     await expect(confirmationButton).toBeVisible();
     await confirmationButton.click();
   }
 
-  async cancelTask(): Promise<void> {
-    const cancelTaskLink = this.getManageSection().getByText(
-      'Cancel task',
-      { exact: true }
-    );
+  async cancelTask(taskName?: string): Promise<void> {
+    const cancelTaskLink = this.getTaskContainer(taskName).getByText('Cancel task', { exact: true });
 
     await expect(cancelTaskLink).toBeVisible();
     await cancelTaskLink.click();
 
-    const confirmationButton = this.page.getByRole('button', {
-      name: 'Cancel task',
-      exact: true
-    });
-
+    const confirmationButton = this.page.getByRole('button', { name: 'Cancel task', exact: true });
     await expect(confirmationButton).toBeVisible();
     await confirmationButton.click();
   }
@@ -256,12 +247,12 @@ export class TaskUiChecks {
 
   async closeTask(taskName: TaskName, action: TaskManagementAction): Promise<void> {
     await this.waitForTaskVisibility(taskName, true);
-    await this.assignTaskToMe();
+    await this.assignTaskToMe(taskName);
     if (action === 'Mark as done') {
-      await this.markTaskAsDone();
+      await this.markTaskAsDone(taskName);
     }
     else if (action === 'Cancel task') {
-      await this.cancelTask();
+      await this.cancelTask(taskName);
     }
     await this.assertTaskNotVisible(taskName);
   }

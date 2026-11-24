@@ -1,11 +1,13 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
+import { JudgeTitleEnum } from '../../helpers/enums/DropdownEnums';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import {ManageHearingPage} from '../manage-hearings/ManageHearing.ts';
 
 export class UploadApprovedOrderPage extends ManageHearingPage {
 
   private readonly IsThisFinalOrderQuestion: Locator;
+  private readonly ServeOrderCopyQuestion: Locator;
   private readonly DoYouWantToAddHearingQuestion: Locator;
   private readonly courtDayDetails: Locator;
   private readonly courtMonthDetails: Locator;
@@ -21,8 +23,11 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
   public constructor(page: Page, commonActionsHelper: CommonActionsHelper) {
     super(page, commonActionsHelper);
 
-    this.IsThisFinalOrderQuestion = page.getByRole('group', { name: 'Is this the final order?' });
-    this.DoYouWantToAddHearingQuestion = page.getByRole('group', { name: 'Do you want to add a hearing?' });
+    this.IsThisFinalOrderQuestion = page.locator('#orderDirectionAbsolute');
+    this.ServeOrderCopyQuestion = page.locator('#servePensionProvider');
+    this.DoYouWantToAddHearingQuestion = page.locator('fieldset').filter({
+      hasText: 'Do you want to add a hearing?'
+    });
     this.uploadApprovedOrderGroup = page.locator('div[id$=\'uploadHearingOrder\']');
     this.courtDayDetails = page.locator('#orderApprovedDate-day');
     this.courtMonthDetails = page.locator('#orderApprovedDate-month');
@@ -33,6 +38,11 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
     this.secondUploadApprovedOrderField = page.locator('#cwApprovedOrderCollection_1_uploadDraftDocument');
     this.firstUploadApprovedOrderAdditionalAttachmentAddNewBtn = page.locator('#cwApprovedOrderCollection_0_additionalDocuments').getByRole('button', { name: 'Add new' });
     this.firstUploadApprovedOrderAdditionalAttachmentField = page.locator('#cwApprovedOrderCollection_0_additionalDocuments_value');
+  }
+
+  async uploadHearingOrder(documentName: string) {
+    const filePayload = await this.commonActionsHelper.createAliasPDFPayload('./playwright-e2e/resources/file/test.pdf', documentName);
+    await this.commonActionsHelper.uploadWithRateLimitRetry(this.page, this.uploadApprovedOrderGroup, filePayload);
   }
 
   async uploadFirstUploadApprovedOrder(documentName: string) {
@@ -81,12 +91,30 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
   }
 
   async selectIsThisFinalOrder(answer: YesNoRadioEnum): Promise<void> {
-    expect(this.IsThisFinalOrderQuestion).toBeVisible();
+    await expect(this.IsThisFinalOrderQuestion).toBeVisible();
     await this.IsThisFinalOrderQuestion.getByLabel(answer).click();
   }
 
+  async selectServeOrderCopyQuestion(answer: YesNoRadioEnum): Promise<void> {
+    await expect(this.ServeOrderCopyQuestion).toBeVisible();
+    await this.ServeOrderCopyQuestion.getByLabel(answer).click();
+  }
+
   async selectDoYouWantToAddHearing(answer: YesNoRadioEnum): Promise<void> {
-    expect(this.DoYouWantToAddHearingQuestion).toBeVisible();
+    await expect(this.DoYouWantToAddHearingQuestion).toBeVisible();
     await this.DoYouWantToAddHearingQuestion.getByLabel(answer).click();
+  }
+
+  async completeUploadApprovedOrderEvent() {
+    await this.selectIsThisFinalOrder(YesNoRadioEnum.YES);
+    await this.selectServeOrderCopyQuestion(YesNoRadioEnum.NO);
+    await this.selectJudge(JudgeTitleEnum.DISTRICT_JUDGE);
+    await this.enterJudgeName('Phoenix Wright');
+    await this.enterCourtOrderDate('1', '1', '2026');
+    await this.uploadHearingOrder('test.pdf');
+
+    await this.navigateContinue();
+    await this.page.getByRole('button', { name: 'Submit' }).click();
+
   }
 }
