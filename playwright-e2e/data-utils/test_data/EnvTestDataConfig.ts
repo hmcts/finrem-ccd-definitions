@@ -2,7 +2,6 @@ const env = process.env.RUNNING_ENV || 'aat';
 
 const configs = {
   aat: {
-    ID: '8ad420c2-67be-4eec-bba2-a2567d49147c',
     DOCUMENT_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/fb21c3c0-4a60-42c7-9aaf-d07f42141c29',
     DOCUMENT_BINARY_URL: 'http://dm-store-aat.service.core-compute-aat.internal/documents/fb21c3c0-4a60-42c7-9aaf-d07f42141c29/binary',
     ORG_ID_1: 'Y707HZM',
@@ -14,7 +13,7 @@ const configs = {
     APP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
     APP_SOL_TOWN_CITY: 'London',
     APP_SOL_COUNTY: 'Greater London',
-    APP_SOL_POSTCODE: 'EC3A 2AD', 
+    APP_SOL_POSTCODE: 'EC3A 2AD',
     APP_SOL_NAME: 'APP APP',
     RESP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
     RESP_SOL_TOWN_CITY: 'London',
@@ -23,7 +22,6 @@ const configs = {
     RESP_SOL_NAME: 'Smeagol Gollum'
   },
   demo: {
-    ID: '8ad420c2-67be-4eec-bba2-a2567d49147c',
     DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/d441d7ff-a187-418a-8d47-31198c3e5042',
     DOCUMENT_BINARY_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/d441d7ff-a187-418a-8d47-31198c3e5042/binary',
     ORG_ID_1: 'KUOPA4B',
