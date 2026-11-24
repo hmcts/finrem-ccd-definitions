@@ -1,6 +1,5 @@
 import { type Page, expect, Locator } from '@playwright/test';
 import { YesNoRadioEnum } from '../../helpers/enums/RadioEnums';
-import { JudgeTitleEnum } from '../../helpers/enums/DropdownEnums';
 import { CommonActionsHelper } from '../../helpers/CommonActionsHelper';
 import {ManageHearingPage} from '../manage-hearings/ManageHearing.ts';
 
@@ -105,16 +104,4 @@ export class UploadApprovedOrderPage extends ManageHearingPage {
     await this.DoYouWantToAddHearingQuestion.getByLabel(answer).click();
   }
 
-  async completeUploadApprovedOrderEvent() {
-    await this.selectIsThisFinalOrder(YesNoRadioEnum.YES);
-    await this.selectServeOrderCopyQuestion(YesNoRadioEnum.NO);
-    await this.selectJudge(JudgeTitleEnum.DISTRICT_JUDGE);
-    await this.enterJudgeName('Phoenix Wright');
-    await this.enterCourtOrderDate('1', '1', '2026');
-    await this.uploadHearingOrder('test.pdf');
-
-    await this.navigateContinue();
-    await this.page.getByRole('button', { name: 'Submit' }).click();
-
-  }
 }
