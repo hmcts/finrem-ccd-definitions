@@ -3,6 +3,11 @@ dotenv.config();
 
 const env = process.env.RUNNING_ENV || 'aat';
 
+// Shared by the work allocation judges. Demo has its own password.
+const waJudgePassword = env.startsWith('demo')
+  ? (process.env.WA_JUDGE_PASSWORD_DEMO || process.env.WA_JUDGE_PASSWORD || '')
+  : (process.env.WA_JUDGE_PASSWORD || '');
+
 // Data which can be reused across multiple tests.
 // Called simply with "import config from '../config';" and then e.g. "config.caseworker.email" in a test.
 // Any new data added below will immediately be available wherever config is imported.
@@ -49,6 +54,14 @@ const configuration = {
         : `http://ccd-data-store-api-${env}.service.core-compute-${env}.internal`
     ),
 
+  // Case Document Access Management. PR environments use AAT's CDAM and dm-store.
+  cdamApiUrl:
+    process.env.CDAM_API_URL
+    || (() => {
+      const cdamEnv = env.startsWith('pr-') ? 'aat' : env;
+      return `http://ccd-case-document-am-api-${cdamEnv}.service.core-compute-${cdamEnv}.internal`;
+    })(),
+
   run_accessibility:
     process.env.TESTS_FOR_ACCESSIBILITY || false,
 
@@ -57,6 +70,46 @@ const configuration = {
     password: env.startsWith('demo')
       ? (process.env.PASSWORD_JUDGE_DEMO || process.env.PASSWORD_JUDGE || '')
       : (process.env.PASSWORD_JUDGE || ''),
+  },
+
+  // Work allocation judicial users (salaried, so no court booking is needed).
+  // A judge only sees tasks on cases in their own region, so each test creates
+  // its case at a court in the region of the judge who runs it.
+  waJudges: {
+    // South West (Bristol), lead judge
+    amandaLove: {
+      name: 'Amanda Love',
+      // Typed into judge fields on orders.
+      judgeTitle: 'Her Honour Judge',
+      surname: 'Love',
+      email: process.env.WA_JUDGE_AMANDA_LOVE_USERNAME || '',
+      password: waJudgePassword,
+    },
+    // London, lead judge
+    lopez: {
+      name: 'Mr Justice Lopez',
+      judgeTitle: 'The Honourable Mr Justice',
+      surname: 'Lopez',
+      email: process.env.WA_JUDGE_LOPEZ_USERNAME || '',
+      password: waJudgePassword,
+    },
+    // North East (Cleveland), lead judge
+    karenHoward: {
+      name: 'Karen Howard',
+      judgeTitle: 'District Judge',
+      surname: 'Howard',
+      email: process.env.WA_JUDGE_KAREN_HOWARD_USERNAME || '',
+      password: waJudgePassword,
+    },
+    // North East (Cleveland), judge role. Known issue: she also gets lead judge
+    // actions from other jurisdictions (being fixed by another team).
+    bettyMatthews: {
+      name: 'Betty Matthews',
+      judgeTitle: 'Her Honour Judge',
+      surname: 'Matthews',
+      email: process.env.WA_JUDGE_BETTY_MATTHEWS_USERNAME || '',
+      password: waJudgePassword,
+    },
   },
 
   caseWorker: {
