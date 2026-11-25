@@ -14,7 +14,7 @@ export interface TaskScenario {
   readonly taskName: string;
   readonly taskType: string;
   readonly dueInWorkingDays: number;
-  readonly roles: Readonly<Record<TaskUserRole, TaskRoleExpectation>>;
+  readonly roles: Readonly<Partial<Record<TaskUserRole, TaskRoleExpectation>>>;
 }
 
 export interface TaskUserScenario {
