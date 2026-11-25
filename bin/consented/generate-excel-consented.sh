@@ -3,7 +3,7 @@ ENABLE_WA=${ENABLE_WA:-false}
 if [ "$ENABLE_WA" = "true" ]; then
   waExclusion=""
 else
-  waExclusion="*-wa-nonprod.json"
+  waExclusion="*-wa-nonprod.json,*-wa-prod.json"
 fi
 
 if [ -z "$waExclusion" ] && [ -z "$EXCLUDE" ]; then
