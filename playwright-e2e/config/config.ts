@@ -3,6 +3,11 @@ dotenv.config();
 
 const env = process.env.RUNNING_ENV || 'aat';
 
+// Shared by the work allocation judges. Demo has its own password.
+const waJudgePassword = env.startsWith('demo')
+  ? (process.env.WA_JUDGE_PASSWORD_DEMO || process.env.WA_JUDGE_PASSWORD || '')
+  : (process.env.WA_JUDGE_PASSWORD || '');
+
 // Data which can be reused across multiple tests.
 // Called simply with "import config from '../config';" and then e.g. "config.caseworker.email" in a test.
 // Any new data added below will immediately be available wherever config is imported.
@@ -77,24 +82,24 @@ const configuration = {
       // Typed into judge fields on orders.
       judgeTitle: 'Her Honour Judge',
       surname: 'Love',
-      email: 'HHJ.Amanda.Love@ejudiciary.net',
-      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+      email: process.env.WA_JUDGE_AMANDA_LOVE_USERNAME || '',
+      password: waJudgePassword,
     },
     // London, lead judge
     lopez: {
       name: 'Mr Justice Lopez',
       judgeTitle: 'The Honourable Mr Justice',
       surname: 'Lopez',
-      email: 'MrJustice.Lopez@ejudiciary.net',
-      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+      email: process.env.WA_JUDGE_LOPEZ_USERNAME || '',
+      password: waJudgePassword,
     },
     // North East (Cleveland), lead judge
     karenHoward: {
       name: 'Karen Howard',
       judgeTitle: 'District Judge',
       surname: 'Howard',
-      email: 'DJ.Karen.Howard@ejudiciary.net',
-      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+      email: process.env.WA_JUDGE_KAREN_HOWARD_USERNAME || '',
+      password: waJudgePassword,
     },
     // North East (Cleveland), judge role. Known issue: she also gets lead judge
     // actions from other jurisdictions (being fixed by another team).
@@ -102,8 +107,8 @@ const configuration = {
       name: 'Betty Matthews',
       judgeTitle: 'Her Honour Judge',
       surname: 'Matthews',
-      email: 'HHJ.Betty.Matthews@ejudiciary.net',
-      password: process.env.WA_JUDGE_PASSWORD || 'Hmcts1234',
+      email: process.env.WA_JUDGE_BETTY_MATTHEWS_USERNAME || '',
+      password: waJudgePassword,
     },
   },
 

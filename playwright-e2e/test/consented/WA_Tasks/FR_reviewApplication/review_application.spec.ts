@@ -15,7 +15,7 @@ import {
 } from './review_application.scenario.ts';
 
 const TASK_NAME = reviewApplication.taskName;
-const SKIP_REASON = 'Set WA_JUDGE_PASSWORD to run judicial WA task tests';
+const SKIP_REASON = 'Set the WA_JUDGE_*_USERNAME emails and WA_JUDGE_PASSWORD (WA_JUDGE_PASSWORD_DEMO on Demo) to run judicial WA task tests';
 
 // A judge can only be logged in once at a time. The groups run in parallel,
 // and the tests in each group (which share judges) run one after another.
@@ -34,7 +34,7 @@ test.describe('Review Application task tests', () => {
           scenarioTitle(scenario, 'Review Application task'),
           { tag: scenarioTags(scenario) },
           async ({ judgeSession, reviewApplicationTask }) => {
-            test.skip(!user.password, SKIP_REASON);
+            test.skip(!user.email || !user.password, SKIP_REASON);
 
             const caseId = await test.step('Create an issued case at the judge\'s court', async () => {
               return createReviewApplicationCase(scenario.courtReplacements);
@@ -58,7 +58,7 @@ test.describe('Review Application task tests', () => {
           { tag: ['@waTasks'] },
           async ({ judgeSession, reviewApplicationTask, taskUiChecks, manageCaseDashboardPage }) => {
             const { leadJudge, recipient } = reassignScenario;
-            test.skip(!leadJudge.password, SKIP_REASON);
+            test.skip(!leadJudge.email || !recipient.email || !leadJudge.password, SKIP_REASON);
 
             const caseId = await test.step('Create an issued case at the judges\' court', async () => {
               return createReviewApplicationCase(reassignScenario.courtReplacements);
@@ -100,7 +100,7 @@ test.describe('Review Application task tests', () => {
           scenarioTitle(scenario, 're-review task'),
           { tag: scenarioTags(scenario) },
           async ({ judgeSession, reviewApplicationTask, manageCaseDashboardPage }) => {
-            test.skip(!user.password, SKIP_REASON);
+            test.skip(!user.email || !user.password, SKIP_REASON);
             const roleActions = reviewApplication.roles[user.role];
 
             const caseId = await test.step('Create an issued case at the judge\'s court', async () => {
