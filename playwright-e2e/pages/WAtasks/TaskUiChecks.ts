@@ -47,17 +47,38 @@ export class TaskUiChecks {
     await expect(taskCard.getByText('Manage', { exact: true })).toBeVisible();
   }
 
+  async assertAssignedTo(assignedTo: string): Promise<void> {
+    await this.assertLabelAndValue('Assigned to', assignedTo);
+  }
+
+  async assertNotUnassigned(): Promise<void> {
+    await expect(this.page.getByText('Assigned to', { exact: true })).toBeVisible();
+    await expect(this.page.getByText('Unassigned', { exact: true })).not.toBeVisible();
+  }
+
   /**
    * Asserts the expected actions are shown. By default every other action must be
    * hidden; pass checkOthersHidden: false to only check the expected ones.
    */
   async assertOnlyManagementActions(
     actions: readonly TaskManagementAction[],
-    { checkOthersHidden = true, taskName }: { checkOthersHidden?: boolean; taskName?: string } = {}
+    {
+      checkOthersHidden = true,
+      notChecked = [],
+      taskName
+    }: {
+      checkOthersHidden?: boolean;
+      notChecked?: readonly TaskManagementAction[];
+      taskName?: string;
+    } = {}
   ): Promise<void> {
     const manageSection = this.getManageSection(taskName);
 
     for (const action of taskManagementActions) {
+      if (notChecked.includes(action)) {
+        continue;
+      }
+
       const actionLocator = manageSection.getByText(action, { exact: true });
 
       if (actions.includes(action)) {
@@ -120,6 +141,48 @@ export class TaskUiChecks {
     refreshAttempts: number = DEFAULT_REFRESH_ATTEMPTS
   ): Promise<void> {
     await this.waitForTaskVisibility(taskName, false, refreshAttempts);
+  }
+
+  // For negative checks: the task must stay absent for the whole window, so a
+  // task that WA creates a little late still fails the test.
+  async assertTaskNeverAppears(
+    taskName: string,
+    windowMs: number = 60_000
+  ): Promise<void> {
+    const taskLocator = this.getTaskLocator(taskName);
+    const deadline = Date.now() + windowMs;
+
+    while (true) {
+      await this.navigateToTasks();
+      await expect(taskLocator).not.toBeVisible();
+
+      if (Date.now() >= deadline) {
+        return;
+      }
+
+      await this.page.waitForTimeout(DEFAULT_REFRESH_INTERVAL);
+      await this.page.reload({ waitUntil: 'domcontentloaded' });
+    }
+  }
+
+  async assertTaskRowInWorkAllocationTab(
+    taskName: string,
+    tabName: WorkAllocationTab,
+    caseId: string | number,
+    columns: Readonly<Record<string, string | RegExp>>,
+    actions: readonly TaskManagementAction[]
+  ): Promise<void> {
+    const task = await this.workAllocationPage.findTask(
+      tabName,
+      { taskName, caseId }
+    );
+
+    await task.expectColumnValues(columns);
+    await task.expectManagementActions(actions);
+  }
+
+  async assertWorkAllocationTabNotAvailable(tabName: WorkAllocationTab): Promise<void> {
+    await this.workAllocationPage.expectTabNotAvailable(tabName);
   }
 
   async assertTaskVisible(taskName: string): Promise<void> {
@@ -231,9 +294,14 @@ export class TaskUiChecks {
     // TODO: add check for more pages
     await this.waitForTaskVisibility(taskName, true);
     await this.assignTaskToMe();
-    await this.selectTaskNextStep(completionEventName);
-    await this.selectButton('Submit');
+    await this.submitEventFromTask(completionEventName);
     await this.assertTaskNotVisible(taskName);
+  }
+
+  // Runs a task's Next steps event that has no input pages, only Submit.
+  async submitEventFromTask(eventName: string): Promise<void> {
+    await this.selectTaskNextStep(eventName);
+    await this.selectButton('Submit');
   }
 
   private async selectButton(buttonName: string): Promise<void> {

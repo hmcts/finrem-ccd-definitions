@@ -34,7 +34,8 @@ export class ConsentedEventApi {
     );
   }
 
-  static async solicitorSubmitCaseWithPBA(caseId: string) {
+  // Submits the case paying by fee account (PBA) instead of Help With Fees.
+  static async solicitorSubmitCaseWithFeeAccount(caseId: string) {
     await ccdApi.updateCaseInCcd(
       config.applicant_solicitor.email,
       config.applicant_solicitor.password,

@@ -64,6 +64,7 @@ def secrets = [
                 secret('password-caseworker', 'PASSWORD_CASEWORKER'),
                 secret('fr-judge-username', 'USERNAME_JUDGE'),
                 secret('fr-judge-password', 'PASSWORD_JUDGE'),
+                secret('fr-judge-id', 'PLAYWRIGHT_JUDGE_ID'),
                 secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('barrister1-username', 'USERNAME_BARRISTER1'),
