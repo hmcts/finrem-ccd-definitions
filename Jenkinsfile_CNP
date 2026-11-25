@@ -43,6 +43,7 @@ def nonProdFinremSecrets = [
         secret('password-caseworker', 'PASSWORD_CASEWORKER'),
         secret('fr-judge-username','USERNAME_JUDGE'),
         secret('fr-judge-password', 'PASSWORD_JUDGE'),
+        secret('fr-judge-id', 'PLAYWRIGHT_JUDGE_ID'),
         secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
         secret('ccd-submission-s2s-auth-secret', 'CCD_SUBMIT_S2S_SECRET'),
         secret('finrem-doc-s2s-auth-secret', 'FINREM_DOC_GEN_SERVICE_S2S_KEY'),

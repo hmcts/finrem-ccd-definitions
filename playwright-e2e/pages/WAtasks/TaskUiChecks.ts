@@ -50,6 +50,15 @@ export class TaskUiChecks {
     await expect(this.page.getByText('Manage', { exact: true })).toBeVisible();
   }
 
+  async assertAssignedTo(assignedTo: string): Promise<void> {
+    await this.assertLabelAndValue('Assigned to', assignedTo);
+  }
+
+  async assertNotUnassigned(): Promise<void> {
+    await expect(this.page.getByText('Assigned to', { exact: true })).toBeVisible();
+    await expect(this.page.getByText('Unassigned', { exact: true })).not.toBeVisible();
+  }
+
   /**
    * Asserts the expected actions are shown. By default every other action must be
    * hidden; pass checkOthersHidden: false to only check the expected ones.
@@ -61,6 +70,10 @@ export class TaskUiChecks {
     const manageSection = this.getManageSection();
 
     for (const action of taskManagementActions) {
+      if (notChecked.includes(action)) {
+        continue;
+      }
+
       const actionLocator = manageSection.getByText(action, { exact: true });
 
       if (actions.includes(action)) {
@@ -104,18 +117,52 @@ export class TaskUiChecks {
     await confirmationButton.click();
   }
 
+  async unassignTask(): Promise<void> {
+    const unassignTaskLink = this.getManageSection().getByText(
+      'Unassign task',
+      { exact: true }
+    );
+
+    await expect(unassignTaskLink).toBeVisible();
+    await unassignTaskLink.click();
+
+    const confirmationButton = this.page.getByRole('button', {
+      name: 'Unassign',
+      exact: true
+    });
+
+    await expect(confirmationButton).toBeVisible();
+    await confirmationButton.click();
+  }
+
+  async assignTaskToUser(
+    userName: string,
+    userEmail: string
+  ): Promise<void> {
+    await this.chooseUserForTask('Assign task', 'Assign', userName, userEmail);
+  }
+
   async reassignTaskToUser(
     userName: string,
     userEmail: string,
     roleType: 'CTSC' | 'Judicial' = 'CTSC'
   ): Promise<void> {
-    const reassignTaskLink = this.getManageSection().getByText(
-      'Reassign task',
+    await this.chooseUserForTask('Reassign task', 'Reassign', userName, userEmail);
+  }
+
+  private async chooseUserForTask(
+    actionName: 'Assign task' | 'Reassign task',
+    confirmButtonName: 'Assign' | 'Reassign',
+    userName: string,
+    userEmail: string
+  ): Promise<void> {
+    const actionLink = this.getManageSection().getByText(
+      actionName,
       { exact: true }
     );
 
-    await expect(reassignTaskLink).toBeVisible();
-    await reassignTaskLink.click();
+    await expect(actionLink).toBeVisible();
+    await actionLink.click();
 
     const roleTypeOption = this.page.getByRole('radio', {
       name: roleType,
@@ -154,17 +201,59 @@ export class TaskUiChecks {
       await continueButton.click();
     }
 
-    const reassignButton = this.page.getByRole('button', {
-      name: 'Reassign',
+    const confirmButton = this.page.getByRole('button', {
+      name: confirmButtonName,
       exact: true
     });
 
-    await expect(reassignButton).toBeEnabled();
-    await reassignButton.click();
+    await expect(confirmButton).toBeEnabled();
+    await confirmButton.click();
   }
 
   async assertTaskNotVisible(taskName: string): Promise<void> {
     await this.waitForTaskVisibility(taskName, false);
+  }
+
+  // For negative checks: the task must stay absent for the whole window, so a
+  // task that WA creates a little late still fails the test.
+  async assertTaskNeverAppears(
+    taskName: string,
+    windowMs: number = 60_000
+  ): Promise<void> {
+    const taskLocator = this.getTaskLocator(taskName);
+    const deadline = Date.now() + windowMs;
+
+    while (true) {
+      await this.navigateToTasks();
+      await expect(taskLocator).not.toBeVisible();
+
+      if (Date.now() >= deadline) {
+        return;
+      }
+
+      await this.page.waitForTimeout(DEFAULT_REFRESH_INTERVAL);
+      await this.page.reload({ waitUntil: 'domcontentloaded' });
+    }
+  }
+
+  async assertTaskRowInWorkAllocationTab(
+    taskName: string,
+    tabName: WorkAllocationTab,
+    caseId: string | number,
+    columns: Readonly<Record<string, string | RegExp>>,
+    actions: readonly TaskManagementAction[]
+  ): Promise<void> {
+    const task = await this.workAllocationPage.findTask(
+      tabName,
+      { taskName, caseId }
+    );
+
+    await task.expectColumnValues(columns);
+    await task.expectManagementActions(actions);
+  }
+
+  async assertWorkAllocationTabNotAvailable(tabName: WorkAllocationTab): Promise<void> {
+    await this.workAllocationPage.expectTabNotAvailable(tabName);
   }
 
   async assertTaskVisible(taskName: string): Promise<void> {
@@ -261,9 +350,14 @@ export class TaskUiChecks {
     // TODO: add check for more pages
     await this.waitForTaskVisibility(taskName, true);
     await this.assignTaskToMe();
-    await this.selectTaskNextStep(completionEventName);
-    await this.selectButton('Submit');
+    await this.submitEventFromTask(completionEventName);
     await this.assertTaskNotVisible(taskName);
+  }
+
+  // Runs a task's Next steps event that has no input pages, only Submit.
+  async submitEventFromTask(eventName: string): Promise<void> {
+    await this.selectTaskNextStep(eventName);
+    await this.selectButton('Submit');
   }
 
   private async selectButton(buttonName: string): Promise<void> {
