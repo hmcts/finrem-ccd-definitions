@@ -1,6 +1,7 @@
 import { ReplacementAction } from '../../types/replacement-action';
 import { ccdApi } from '../../fixtures/fixtures';
 import config from '../../config/config';
+import { DocumentClient, type CaseDocument } from '../api/DocumentClient';
 
 export class CaseDataBuilder {
   private email: string;
@@ -9,6 +10,7 @@ export class CaseDataBuilder {
   private caseType: string;
   private eventType: string;
   private replacements: ReplacementAction[] = [];
+  private uniqueDocument = false;
 
   constructor(caseType: string, eventType: string) {
     this.caseType = caseType;
@@ -39,14 +41,29 @@ export class CaseDataBuilder {
     return this;
   }
 
+  /**
+   * Uploads a new document for this case and uses it in place of the shared
+   * test document, so CDAM links the document to this case only.
+   */
+  withUniqueDocument(): CaseDataBuilder {
+    this.uniqueDocument = true;
+    return this;
+  }
+
   async create(): Promise<string> {
+    let caseDocument: CaseDocument | undefined;
+    if (this.uniqueDocument) {
+      caseDocument = await new DocumentClient(this.email, this.password)
+        .uploadCaseDocument(this.caseType);
+    }
     return await ccdApi.createCaseInCcd(
       this.email,
       this.password,
       this.payloadPath,
       this.caseType,
       this.eventType,
-      this.replacements
+      this.replacements,
+      caseDocument
     );
   }
 }
