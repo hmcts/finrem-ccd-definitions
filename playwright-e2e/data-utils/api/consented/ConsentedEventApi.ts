@@ -1,7 +1,9 @@
 import { ccdApi } from '../../../fixtures/fixtures';
 import config from '../../../config/config';
 import { ConsentedEvents, CaseType, PayloadPath } from '../../../config/case-data';
+import { envTestData } from '../../test_data/EnvTestDataConfig';
 import { DocumentClient } from '../DocumentClient';
+
 
 export class ConsentedEventApi {
 
@@ -29,6 +31,24 @@ export class ConsentedEventApi {
       CaseType.Consented,
       ConsentedEvents.applicationPaymentSubmission.ccdCallback,
       PayloadPath.Consented.applicationPaymentSubmission
+    );
+  }
+
+  // Submits the case paying by fee account (PBA) instead of Help With Fees.
+  static async solicitorSubmitCaseWithFeeAccount(caseId: string) {
+    await ccdApi.updateCaseInCcd(
+      config.applicant_solicitor.email,
+      config.applicant_solicitor.password,
+      caseId,
+      CaseType.Consented,
+      ConsentedEvents.applicationPaymentSubmission.ccdCallback,
+      PayloadPath.Consented.applicationPaymentSubmission,
+      [
+        { action: 'insert', key: 'helpWithFeesQuestion', value: 'No' },
+        { action: 'delete', key: 'HWFNumber' },
+        { action: 'insert', key: 'PBANumber', value: envTestData.PBA_NUMBER },
+        { action: 'insert', key: 'PBAreference', value: 'Reference' }
+      ]
     );
   }
 
