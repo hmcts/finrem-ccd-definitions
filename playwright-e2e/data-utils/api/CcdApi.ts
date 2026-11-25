@@ -7,6 +7,8 @@ import {getServiceToken, getUserId, getUserToken} from './TokenHelperApi.ts';
 import {AxiosResponse} from 'axios';
 import {updateJsonFileWithEnvValues} from '../test_data/JsonEnvValReplacer.ts';
 import config from '../../config/config.ts';
+import {useCaseDocument} from '../test_data/CaseDocumentReplacer.ts';
+import type {CaseDocument} from './DocumentClient.ts';
 
 const ccdApiUrl = config.ccdDataStoreApi;
 
@@ -55,7 +57,9 @@ export class CcdApi {
     dataLocation: string,
     caseType: string,
     eventId: string,
-    dataModifications: ReplacementAction[] = []
+    dataModifications: ReplacementAction[] = [],
+    // When given, replaces the shared test document in the case data.
+    caseDocument?: CaseDocument
   ): Promise<string> {
     if (!process.env.CI) {
       console.info('Creating CCD case with event %s...', eventId);
@@ -78,6 +82,9 @@ export class CcdApi {
     const data = updateJsonFileWithEnvValues(rawData);
 
     this.makeModifications(dataModifications, data);
+    if (caseDocument) {
+      useCaseDocument(data, caseDocument);
+    }
 
     const payload = {
       data,
@@ -109,6 +116,8 @@ export class CcdApi {
     eventId: string,
     dataLocation: string,
     replacements: ReplacementAction[] = [],
+    // When given, replaces the shared test document in the event data.
+    caseDocument?: CaseDocument,
     ignoreWarning: boolean = false
   ): Promise<any> {
     if (!process.env.CI) {
@@ -137,6 +146,9 @@ export class CcdApi {
 
     // Apply the key-based mutations
     this.makeModifications(replacements, updatedDataObj);
+    if (caseDocument) {
+      useCaseDocument(updatedDataObj, caseDocument);
+    }
 
     const payload = {
       data: updatedDataObj,

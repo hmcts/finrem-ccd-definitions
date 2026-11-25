@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page, type Response } from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 import {
   taskManagementActions,
   type TaskDetails,
@@ -19,12 +19,14 @@ export class TaskUiChecks {
   private readonly tasksTab: Locator;
   private readonly activeTasksHeading: Locator;
   private readonly workAllocationPage: WorkAllocationTabsPage;
+  private readonly callbackError: Locator;
 
   public constructor(page: Page) {
     this.page = page;
     this.tasksTab = page.getByRole('tab', { name: 'Tasks', exact: true });
     this.activeTasksHeading = page.getByRole('heading', { name: 'Active tasks', exact: true });
     this.workAllocationPage = new WorkAllocationTabsPage(page);
+    this.callbackError = page.getByRole('group', { name: 'The callback data failed validation' });
   }
 
   async navigateToTasks(): Promise<void> {
@@ -45,9 +47,13 @@ export class TaskUiChecks {
     await expect(taskCard.getByText('Manage', { exact: true })).toBeVisible();
   }
 
+  /**
+   * Asserts the expected actions are shown. By default every other action must be
+   * hidden; pass checkOthersHidden: false to only check the expected ones.
+   */
   async assertOnlyManagementActions(
     actions: readonly TaskManagementAction[],
-    taskName?: string
+    { checkOthersHidden = true, taskName }: { checkOthersHidden?: boolean; taskName?: string } = {}
   ): Promise<void> {
     const manageSection = this.getManageSection(taskName);
 
@@ -59,7 +65,9 @@ export class TaskUiChecks {
         continue;
       }
 
-      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      if (checkOthersHidden) {
+        await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      }
     }
   }
 
@@ -88,15 +96,16 @@ export class TaskUiChecks {
     userEmail: string,
     taskName?: string
   ): Promise<void> {
-    await this.chooseTaskUser('Assign task', 'Assign', userName, userEmail, taskName);
+    await this.chooseTaskUser('Assign task', 'Assign', userName, userEmail, 'CTSC', taskName);
   }
 
   async reassignTaskToUser(
     userName: string,
     userEmail: string,
+    roleType: 'CTSC' | 'Judicial' = 'CTSC',
     taskName?: string
   ): Promise<void> {
-    await this.chooseTaskUser('Reassign task', 'Reassign', userName, userEmail, taskName);
+    await this.chooseTaskUser('Reassign task', 'Reassign', userName, userEmail, roleType, taskName);
   }
 
   async assertPersonNotAuthorised(): Promise<void> {
@@ -167,6 +176,20 @@ export class TaskUiChecks {
     await expect(nextStepLink).toBeVisible();
     await nextStepLink.click();
     await this.page.waitForLoadState('domcontentloaded');
+    await this.assertEventStarted(nextStep);
+  }
+
+  // Manage Case only opens the event page (/trigger/) once the event's
+  // about-to-start callback has passed. If the callback fails it shows an error
+  // on the case page instead, so fail straight away rather than waiting for
+  // the event's fields until the test times out.
+  private async assertEventStarted(nextStep: string): Promise<void> {
+    await expect.poll(async () => {
+      return this.page.url().includes('/trigger/') || await this.callbackError.isVisible();
+    }, { message: `${nextStep} did not open`, timeout: 60_000 }).toBe(true);
+    if (await this.callbackError.isVisible()) {
+      throw new Error(`${nextStep} could not start: ${await this.callbackError.innerText()}`);
+    }
   }
 
   async assertTaskUI(
@@ -175,7 +198,21 @@ export class TaskUiChecks {
   ): Promise<void> {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
-    await this.assertOnlyManagementActions(actions, task.name);
+    await this.assertOnlyManagementActions(actions, { taskName: task.name });
+  }
+
+  // Judicial users see "Task created" in the case Tasks tab, not Priority or Due date.
+  async assertJudicialTaskUI(
+    task: { name: string; taskCreated: string; assignedTo: string },
+    actions: readonly TaskManagementAction[],
+    options: { checkOthersHidden?: boolean } = {}
+  ): Promise<void> {
+    await this.waitForTaskVisibility(task.name, true);
+    await expect(this.activeTasksHeading).toBeVisible();
+    await expect(this.page.getByText(task.name, { exact: true })).toBeVisible();
+    await this.assertLabelAndValue('Task created', task.taskCreated);
+    await this.assertLabelAndValue('Assigned to', task.assignedTo);
+    await this.assertOnlyManagementActions(actions, options);
   }
 
   async closeTask(taskName: TaskName, action: TaskManagementAction): Promise<void> {
@@ -266,6 +303,7 @@ export class TaskUiChecks {
     confirmationButtonName: string,
     userName: string,
     userEmail: string,
+    roleType: 'CTSC' | 'Judicial',
     taskName?: string
   ): Promise<void> {
     const actionLink = this.getManageSection(taskName).getByText(action, { exact: true });
@@ -274,7 +312,7 @@ export class TaskUiChecks {
     await actionLink.click();
 
     const roleTypeOption = this.page.getByRole('radio', {
-      name: 'CTSC',
+      name: roleType,
       exact: true
     });
 
@@ -321,14 +359,13 @@ export class TaskUiChecks {
   }
 
   private async isTaskInTaskList(taskName: string): Promise<boolean> {
-    const response = await this.reloadTasksAndWaitForTaskList();
-    const body: unknown = await response.json();
+    const { body, url } = await this.reloadTasksAndWaitForTaskList();
     const tasks: unknown = Array.isArray(body)
       ? body
       : (body as { tasks?: unknown } | null)?.tasks;
 
     if (!Array.isArray(tasks)) {
-      throw new Error(`Unexpected task list response from ${response.url()}`);
+      throw new Error(`Unexpected task list response from ${url}`);
     }
 
     const taskTitles = tasks.flatMap((task: { name?: unknown; task_title?: unknown } | null) => {
@@ -338,7 +375,7 @@ export class TaskUiChecks {
     });
 
     if (tasks.length > 0 && taskTitles.length === 0) {
-      throw new Error(`Task list response from ${response.url()} has no task names`);
+      throw new Error(`Task list response from ${url} has no task names`);
     }
 
     return taskTitles.some((title) => {
@@ -346,16 +383,27 @@ export class TaskUiChecks {
     });
   }
 
-  private async reloadTasksAndWaitForTaskList(): Promise<Response> {
-    const taskListResponse = this.page.waitForResponse((response) => {
-      return response.request().method() === 'POST'
-        && response.url().includes('/workallocation/case/task/')
-        && response.ok();
+  private async reloadTasksAndWaitForTaskList(): Promise<{ body: unknown; url: string }> {
+    const reloadStartedAt = Date.now();
+    let body: unknown;
+    const taskListResponse = this.page.waitForResponse(async (response) => {
+      if (response.request().method() !== 'POST'
+        || !response.url().includes('/workallocation/case/task/')
+        || !response.ok()
+        || response.request().timing().startTime < reloadStartedAt) {
+        return false;
+      }
+
+      body = await response.json().catch(() => {
+        return undefined;
+      });
+      return body !== undefined;
     }, { timeout: TASK_LIST_RESPONSE_TIMEOUT });
 
     await this.page.reload({ waitUntil: 'domcontentloaded' });
     await this.navigateToTasks();
-    return taskListResponse;
+    const response = await taskListResponse;
+    return { body, url: response.url() };
   }
 
   private getTaskLocator(taskName: string): Locator {

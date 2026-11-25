@@ -16,8 +16,7 @@ import type { SigninPage } from '../../../../pages/SigninPage.ts';
 import type { TaskUiChecks } from '../../../../pages/WAtasks/TaskUiChecks.ts';
 import type {
   TaskDetails,
-  TaskManagementAction,
-  TaskUserRole
+  TaskManagementAction
 } from '../../../../pages/WAtasks/TaskTypes.ts';
 import {
   CONSENTED_CASE_TYPE,
@@ -58,7 +57,7 @@ export type ManageTaskAction = Extract<TaskManagementAction, 'Cancel task' | 'Ma
 type ClosingTaskAction = Exclude<ManageTaskAction, 'Reassign task'>;
 
 export interface CheckResponseReceivedManageTaskUser extends CheckResponseReceivedUser, TaskAssignee {
-  readonly role: TaskUserRole;
+  readonly role: keyof typeof checkResponseReceived.roles;
   readonly manageActions: readonly ManageTaskAction[];
   readonly assignTask?: {
     readonly unauthorisedPerson: TaskPerson;
@@ -396,7 +395,7 @@ export const describeCheckResponseReceivedManageTaskTests = (
             }
 
             await test.step(`${user.name} reassigns the task to ${reassignee.searchName}`, async () => {
-              await taskUiChecks.reassignTaskToUser(reassignee.searchName, reassignee.email, TASK_NAME);
+              await taskUiChecks.reassignTaskToUser(reassignee.searchName, reassignee.email, 'CTSC', TASK_NAME);
             });
 
             await checkTaskCard(taskUiChecks, reassignee.assignedToName, assignedActions, 'The task is reassigned');

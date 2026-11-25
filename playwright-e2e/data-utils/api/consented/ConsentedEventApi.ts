@@ -3,6 +3,7 @@ import config from '../../../config/config';
 import { ConsentedEvents, CaseType, PayloadPath } from '../../../config/case-data';
 import { DateHelper } from '../../DateHelper';
 import { envTestData } from '../../test_data/EnvTestDataConfig';
+import { DocumentClient } from '../DocumentClient';
 
 export class ConsentedEventApi {
 
@@ -108,6 +109,7 @@ export class ConsentedEventApi {
           value: DateHelper.getCurrentDate()
         }
       ],
+      undefined,
       true
     );
     return response.state;
@@ -117,6 +119,37 @@ export class ConsentedEventApi {
     await this.caseWorkerIssueApplication(caseId);
     await this.updateCaseWorkerSteps(caseId, [
       { event: ConsentedEvents.createFlag.ccdCallback , payload: PayloadPath.Consented.createFlag }
+    ]);
+  }
+
+  /**
+   * Takes a refused case (Consent Order Not Approved) back to the judge:
+   * Send Order, the solicitor's Respond To Order, then Assign To Judge, which
+   * creates the Review Application task again (the re-review).
+   * The amended consent order is a new upload, so it belongs to this case only.
+   */
+  static async returnRefusedOrderToJudge(caseId: string): Promise<void> {
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ConsentedEvents.sendRefusedOrder.ccdCallback }
+    ]);
+    const { email, password } = config.applicant_solicitor;
+    const amendedConsentOrder = await new DocumentClient(email, password)
+      .uploadCaseDocument(CaseType.Consented, 'amended-consent-order.pdf');
+    await ccdApi.updateCaseInCcd(
+      email,
+      password,
+      caseId,
+      CaseType.Consented,
+      ConsentedEvents.respondToOrder.ccdCallback,
+      PayloadPath.Consented.respondToOrder,
+      [],
+      amendedConsentOrder
+    );
+    await this.updateCaseWorkerSteps(caseId, [
+      {
+        event: ConsentedEvents.assignToJudgeFromRespondToOrder.ccdCallback,
+        payload: PayloadPath.Consented.assignToJudgeFromRespondToOrder
+      }
     ]);
   }
 }
