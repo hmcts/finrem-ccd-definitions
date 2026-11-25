@@ -18,12 +18,14 @@ export class TaskUiChecks {
   private readonly tasksTab: Locator;
   private readonly activeTasksHeading: Locator;
   private readonly workAllocationPage: WorkAllocationTabsPage;
+  private readonly callbackError: Locator;
 
   public constructor(page: Page) {
     this.page = page;
     this.tasksTab = page.getByRole('tab', { name: 'Tasks', exact: true });
     this.activeTasksHeading = page.getByRole('heading', { name: 'Active tasks', exact: true });
     this.workAllocationPage = new WorkAllocationTabsPage(page);
+    this.callbackError = page.getByRole('group', { name: 'The callback data failed validation' });
   }
 
   async navigateToTasks(): Promise<void> {
@@ -52,10 +54,13 @@ export class TaskUiChecks {
     await expect(this.page.getByText('Unassigned', { exact: true })).not.toBeVisible();
   }
 
-  // `notChecked` lists actions whose expected visibility is still an open question.
+  /**
+   * Asserts the expected actions are shown. By default every other action must be
+   * hidden; pass checkOthersHidden: false to only check the expected ones.
+   */
   async assertOnlyManagementActions(
     actions: readonly TaskManagementAction[],
-    notChecked: readonly TaskManagementAction[] = []
+    { checkOthersHidden = true }: { checkOthersHidden?: boolean } = {}
   ): Promise<void> {
     const manageSection = this.getManageSection();
 
@@ -71,7 +76,9 @@ export class TaskUiChecks {
         continue;
       }
 
-      await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      if (checkOthersHidden) {
+        await expect(actionLocator).not.toBeVisible({ timeout: 5_000 });
+      }
     }
   }
 
@@ -146,7 +153,8 @@ export class TaskUiChecks {
 
   async reassignTaskToUser(
     userName: string,
-    userEmail: string
+    userEmail: string,
+    roleType: 'CTSC' | 'Judicial' = 'CTSC'
   ): Promise<void> {
     await this.chooseUserForTask('Reassign task', 'Reassign', userName, userEmail);
   }
@@ -166,7 +174,7 @@ export class TaskUiChecks {
     await actionLink.click();
 
     const roleTypeOption = this.page.getByRole('radio', {
-      name: 'CTSC',
+      name: roleType,
       exact: true
     });
 
@@ -296,6 +304,20 @@ export class TaskUiChecks {
     await expect(nextStepLink).toBeVisible();
     await nextStepLink.click();
     await this.page.waitForLoadState('domcontentloaded');
+    await this.assertEventStarted(nextStep);
+  }
+
+  // Manage Case only opens the event page (/trigger/) once the event's
+  // about-to-start callback has passed. If the callback fails it shows an error
+  // on the case page instead, so fail straight away rather than waiting for
+  // the event's fields until the test times out.
+  private async assertEventStarted(nextStep: string): Promise<void> {
+    await expect.poll(async () => {
+      return this.page.url().includes('/trigger/') || await this.callbackError.isVisible();
+    }, { message: `${nextStep} did not open`, timeout: 60_000 }).toBe(true);
+    if (await this.callbackError.isVisible()) {
+      throw new Error(`${nextStep} could not start: ${await this.callbackError.innerText()}`);
+    }
   }
 
   async assertTaskUI(
@@ -305,6 +327,20 @@ export class TaskUiChecks {
     await this.waitForTaskVisibility(task.name, true);
     await this.assertTaskDetails(task);
     await this.assertOnlyManagementActions(actions);
+  }
+
+  // Judicial users see "Task created" in the case Tasks tab, not Priority or Due date.
+  async assertJudicialTaskUI(
+    task: { name: string; taskCreated: string; assignedTo: string },
+    actions: readonly TaskManagementAction[],
+    options: { checkOthersHidden?: boolean } = {}
+  ): Promise<void> {
+    await this.waitForTaskVisibility(task.name, true);
+    await expect(this.activeTasksHeading).toBeVisible();
+    await expect(this.page.getByText(task.name, { exact: true })).toBeVisible();
+    await this.assertLabelAndValue('Task created', task.taskCreated);
+    await this.assertLabelAndValue('Assigned to', task.assignedTo);
+    await this.assertOnlyManagementActions(actions, options);
   }
 
   async closeTask(taskName: TaskName, action: TaskManagementAction): Promise<void> {
