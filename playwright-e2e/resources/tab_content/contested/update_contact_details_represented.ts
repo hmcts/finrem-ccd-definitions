@@ -39,9 +39,9 @@ export const contestedUpdateContactDetailsRespondentRepresentedAddressChangeTabD
       { tabItem: 'Solicitor’s name', value: 'Sauron' },
       { tabItem: 'Solicitor’s firm', value: 'Mnt Doom Sols' },
       'Respondent’s Solicitor’s Contact Details',
-      { tabItem: 'Building and Street', value: '3rd Floor, 65-68 Leadenhall St' },
-      { tabItem: 'Town or City', value: 'London' },
-      { tabItem: 'Postcode/Zipcode', value: 'EC3A 2AD' },
+      { tabItem: 'Building and Street', value: envTestData.APP_SOL_BUILDING_STREET },
+      { tabItem: 'Town or City', value: envTestData.RESP_SOL_TOWN_CITY },
+      { tabItem: 'Postcode/Zipcode', value: envTestData.RESP_SOL_POSTCODE },
       { tabItem: 'Country', value: 'United Kingdom' },
       { tabItem: 'Phone Number', value: '07821 639001' },
       { tabItem: 'Email', value: 'fr_respondent_solicitor1@mailinator.com' }
