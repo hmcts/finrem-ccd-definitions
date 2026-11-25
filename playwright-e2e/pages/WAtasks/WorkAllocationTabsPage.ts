@@ -64,6 +64,29 @@ export class WorkAllocationTask {
       }
     }
   }
+
+  // Checks cells in the task's row by column heading, e.g. { 'Case name': /Baggins/ }.
+  async expectColumnValues(
+    expected: Readonly<Record<string, string | RegExp>>
+  ): Promise<void> {
+    const taskRow = this.taskLink.locator('xpath=ancestor::tr[1]');
+    const headings = (await taskRow
+      .locator('xpath=ancestor::table[1]//thead//th')
+      .allInnerTexts())
+      .map((heading) => {return heading.trim();});
+
+    for (const [column, value] of Object.entries(expected)) {
+      const index = headings.findIndex((heading) => {return heading === column;});
+
+      if (index < 0) {
+        throw new Error(
+          `Column "${column}" not found. Columns: ${headings.join(', ')}`
+        );
+      }
+
+      await expect(taskRow.locator('td').nth(index)).toContainText(value);
+    }
+  }
 }
 
 export class WorkAllocationTabsPage {
@@ -101,6 +124,12 @@ export class WorkAllocationTabsPage {
       `"${identity.taskName}" for case ${identity.caseId} was not visible `
       + `in ${tabName} after ${strategy.refreshAttempts} refresh attempts`
     );
+  }
+
+  async expectTabNotAvailable(tabName: WorkAllocationTab): Promise<void> {
+    // Wait for the navigation to render before checking the tab is missing.
+    await expect(this.page.locator('a.hmcts-primary-navigation__link').first()).toBeVisible();
+    await expect(this.getTab(tabName)).toHaveCount(0);
   }
 
   private getTab(tabName: WorkAllocationTab): Locator {
