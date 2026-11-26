@@ -199,7 +199,7 @@ test.describe('Check Help With Fees task tests', () => {
         await taskUiChecks.assertNotUnassigned();
         await taskUiChecks.assertOnlyManagementActions(
           assignedToOtherActions.admin.visible,
-          assignedToOtherActions.admin.notChecked
+          { notChecked: assignedToOtherActions.admin.notChecked }
         );
         await manageCaseDashboardPage.signOut();
       });
@@ -216,7 +216,7 @@ test.describe('Check Help With Fees task tests', () => {
         await taskUiChecks.assertNotUnassigned();
         await taskUiChecks.assertOnlyManagementActions(
           assignedToOtherActions.teamLeader.visible,
-          assignedToOtherActions.teamLeader.notChecked
+          { notChecked: assignedToOtherActions.teamLeader.notChecked }
         );
         await manageCaseDashboardPage.signOut();
       });

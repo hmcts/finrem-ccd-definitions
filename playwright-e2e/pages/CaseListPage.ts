@@ -4,6 +4,11 @@ import {ApplicationtypeEnum} from './helpers/enums/RadioEnums.ts';
 import {expect, Locator, Page} from '@playwright/test';
 import {envTestData} from '../data-utils/test_data/EnvTestDataConfig.ts';
 
+interface CaseSearchResults {
+  readonly results: ReadonlyArray<{ readonly case_id: string | number }>;
+  readonly total: number;
+}
+
 export class CaseListPage extends BaseJourneyPage {
 
   private readonly url: string;
@@ -110,6 +115,57 @@ export class CaseListPage extends BaseJourneyPage {
     const radioOption = this.typeOfApplicationRadio.getByLabel(type);
     await expect(radioOption).toBeVisible();
     await radioOption.check();
+  }
+
+  async assertCaseVisible(caseId: string | number, caseType: string, state: string): Promise<void> {
+    const applyButton = this.page.locator('button.workbasket-filters-apply');
+    const nextPageLink = this.page.locator('[aria-label="Next page"]');
+    const caseReference = String(caseId);
+    const formattedCaseId = caseReference.replace(/(\d{4})(?=\d)/g, '$1-');
+    const caseLink = this.page.locator(`a[href*="${caseReference}"]`)
+      .or(this.page.getByRole('link', { name: formattedCaseId }))
+      .first();
+
+    await this.visit();
+    await this.selectJurisdiction();
+    await this.selectCaseType(caseType);
+    await this.selectState(state);
+
+    await expect(async () => {
+      let resultsPage = await this.loadSearchResults(applyButton);
+      let casesSeen = resultsPage.results.length;
+
+      while (!this.containsCase(resultsPage, caseReference) && casesSeen < resultsPage.total) {
+        resultsPage = await this.loadSearchResults(nextPageLink);
+        casesSeen += resultsPage.results.length;
+      }
+
+      expect(
+        this.containsCase(resultsPage, caseReference),
+        `Case ${caseReference} not found on any Case list results page`
+      ).toBe(true);
+    }).toPass({ timeout: 120_000, intervals: [5_000] });
+
+    await expect(caseLink).toBeVisible();
+  }
+
+  private async loadSearchResults(trigger: Locator): Promise<CaseSearchResults> {
+    const searchResponse = this.page.waitForResponse((response) => {
+      return response.request().method() === 'POST'
+        && response.url().includes('/data/internal/searchCases')
+        && response.url().includes('use_case=WORKBASKET')
+        && response.url().includes('state=')
+        && response.ok();
+    });
+
+    await trigger.click();
+    return await (await searchResponse).json() as CaseSearchResults;
+  }
+
+  private containsCase(resultsPage: CaseSearchResults, caseReference: string): boolean {
+    return resultsPage.results.some((result) => {
+      return String(result.case_id) === caseReference;
+    });
   }
 
   async verifyCaseListPageForConsentedCase(states: string[], isCaseWorker: boolean = true) {

@@ -1,4 +1,4 @@
-import { expect, type Locator, type Page } from '@playwright/test';
+import { expect, type Locator, type Page, type Response } from '@playwright/test';
 import {
   taskManagementActions,
   type TaskManagementAction
@@ -18,12 +18,13 @@ interface WorkAllocationSearchStrategy {
 }
 
 const RENDER_TIMEOUT = 5_000;
+const TASK_LIST_RESPONSE_TIMEOUT = 5 * 60 * 1000;
 const searchStrategies: Readonly<Record<
   WorkAllocationTab,
   WorkAllocationSearchStrategy
 >> = {
   'My work': {
-    paginated: false,
+    paginated: true,
     refreshAttempts: 6,
     refreshInterval: 2_000
   },
@@ -51,8 +52,14 @@ export class WorkAllocationTask {
     });
 
     await expect(manageButton).toBeVisible();
-    await manageButton.click();
-    await expect(manageButton).toHaveAttribute('aria-expanded', 'true');
+    await expect(async () => {
+      if (await manageButton.getAttribute('aria-expanded') !== 'true') {
+        await manageButton.click();
+      }
+      await expect(manageButton).toHaveAttribute('aria-expanded', 'true', {
+        timeout: RENDER_TIMEOUT
+      });
+    }).toPass({ timeout: 30_000 });
 
     for (const action of taskManagementActions) {
       const actionLocator = this.page.getByText(action, { exact: true });
@@ -100,7 +107,9 @@ export class WorkAllocationTabsPage {
     const tab = this.getTab(tabName);
 
     await expect(tab).toBeVisible();
+    const taskListLoaded = this.waitForTaskList();
     await tab.click();
+    await taskListLoaded;
 
     const taskLink = this.getTaskLink(identity);
     const strategy = searchStrategies[tabName];
@@ -132,6 +141,14 @@ export class WorkAllocationTabsPage {
     await expect(this.getTab(tabName)).toHaveCount(0);
   }
 
+  private waitForTaskList(): Promise<Response> {
+    return this.page.waitForResponse((response) => {
+      return response.request().method() === 'POST'
+        && new URL(response.url()).pathname === '/workallocation/task'
+        && response.ok();
+    }, { timeout: TASK_LIST_RESPONSE_TIMEOUT });
+  }
+
   private getTab(tabName: WorkAllocationTab): Locator {
     return this.page
       .locator('a.hmcts-primary-navigation__link')
@@ -157,7 +174,18 @@ export class WorkAllocationTabsPage {
     }
   }
 
+  private async goToFirstPage(): Promise<void> {
+    const previousPage = this.page.locator('[aria-label="Previous page"]');
+
+    while (await previousPage.isVisible()) {
+      await previousPage.click();
+      await this.page.waitForLoadState('domcontentloaded');
+    }
+  }
+
   private async findAcrossPages(taskLink: Locator): Promise<boolean> {
+    await this.goToFirstPage();
+
     while (true) {
       if (await this.findOnCurrentPage(taskLink)) {
         return true;
