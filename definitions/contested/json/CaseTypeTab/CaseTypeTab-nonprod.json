@@ -40,6 +40,46 @@
   {
     "LiveFrom": "22/07/2026",
     "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrCaDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 27,
+    "CaseFieldID": "fdrApplicantDocCollection",
+    "TabFieldDisplayOrder": 7,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrCjDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 27,
+    "CaseFieldID": "fdrApplicantDocCollection",
+    "TabFieldDisplayOrder": 7,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrCaDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 27,
+    "CaseFieldID": "fdrRespondentDocCollection",
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "fdrCjDocumentsTab",
+    "TabLabel": "FDR documents",
+    "TabDisplayOrder": 27,
+    "CaseFieldID": "fdrRespondentDocCollection",
+    "TabFieldDisplayOrder": 8,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
     "TabID": "fdrDocumentsTab",
     "TabLabel": "FDR documents",
     "TabDisplayOrder": 27,
@@ -95,6 +135,46 @@
     "TabDisplayOrder": 8,
     "CaseFieldID": "divorceRespondentDocCollection",
     "TabFieldDisplayOrder": 14,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hearingCaBundleTab",
+    "TabLabel": "Hearing Bundle",
+    "TabDisplayOrder": 26,
+    "CaseFieldID": "hearingApplicantDocCollection",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hearingCjBundleTab",
+    "TabLabel": "Hearing Bundle",
+    "TabDisplayOrder": 26,
+    "CaseFieldID": "hearingApplicantDocCollection",
+    "TabFieldDisplayOrder": 2,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hearingCaBundleTab",
+    "TabLabel": "Hearing Bundle",
+    "TabDisplayOrder": 26,
+    "CaseFieldID": "hearingRespondentDocCollection",
+    "TabFieldDisplayOrder": 3,
+    "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
+  },
+  {
+    "LiveFrom": "22/07/2026",
+    "CaseTypeID": "FinancialRemedyContested",
+    "TabID": "hearingCjBundleTab",
+    "TabLabel": "Hearing Bundle",
+    "TabDisplayOrder": 26,
+    "CaseFieldID": "hearingRespondentDocCollection",
+    "TabFieldDisplayOrder": 3,
     "DisplayContextParameter": "#TABLE(DocumentType, DocumentFileName, generalDocumentUploadDateTime)"
   },
   {
