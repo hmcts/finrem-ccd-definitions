@@ -20,7 +20,7 @@ if [ "$ENABLE_WA" = "true" ]; then
   publishWAEvent="Y"
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-wa-${GIT_COMMIT:-base}.xlsx"
 else
-  publishWAEvent="N"
+  publishWAEvent="Y"
   outputFile="../definitions/consented/xlsx/ccd-config-${FR_ENV:-base}-consented-${GIT_COMMIT:-base}.xlsx"
 fi
 
