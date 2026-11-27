@@ -842,7 +842,7 @@
     "Description": "Issue Application",
     "DisplayOrder": 42,
     "PreConditionState(s)": "awaitingInfo",
-    "PostConditionState": "applicationIssued",
+    "PostConditionState": "referredToJudge",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
@@ -967,7 +967,7 @@
     "Description": "Issue Application",
     "DisplayOrder": 51,
     "PreConditionState(s)": "infoReceived",
-    "PostConditionState": "applicationIssued",
+    "PostConditionState": "referredToJudge",
     "SecurityClassification": "Public",
     "ShowSummary": "N",
     "ShowEventNotes": "Y"
