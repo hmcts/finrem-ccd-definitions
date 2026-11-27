@@ -98,6 +98,12 @@ function getRespondentSolicitorId(): string {
     : requireEnv('PLAYWRIGHT_RESPONDENT_SOLICITOR_ID');
 }
 
+function getJudgeId(): string {
+  return getIdamEnvironment() === 'demo'
+    ? requireEnv('PLAYWRIGHT_JUDGE_ID_DEMO')
+    : requireEnv('PLAYWRIGHT_JUDGE_ID');
+}
+
 function getUsers() {
   return [
     {
@@ -115,7 +121,7 @@ function getUsers() {
       roleNames: SOLICITOR_ROLES,
     },
     {
-      id: '32253507-e52b-47cd-94e4-e1f7cb257e6f',
+      id: getJudgeId(),
       email: 'MrJustice.Lopez@ejudiciary.net',
       password: config.judge.password,
       forename: 'Mario',

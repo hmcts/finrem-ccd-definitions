@@ -88,6 +88,8 @@ import {RemoveCaseDocumentPage} from '../pages/events/remove-case-document/Remov
 import { StopRepresentingClientPage } from '../pages/events/stop-representing-client/StopRepresentingClientPage.ts';
 import { CloseCasePage } from '../pages/events/close-case/CloseCasePage.ts';
 import { TaskUiChecks } from '../pages/WAtasks/TaskUiChecks.ts';
+import { JudgeSession } from '../pages/WAtasks/JudgeSession.ts';
+import { ReviewApplicationTask } from '../pages/WAtasks/ReviewApplicationTask.ts';
 import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
 
@@ -172,6 +174,8 @@ type CreateFixtures = {
   removeCaseDocumentPage: RemoveCaseDocumentPage;
   closeCasePage: CloseCasePage;
   taskUiChecks: TaskUiChecks;
+  judgeSession: JudgeSession;
+  reviewApplicationTask: ReviewApplicationTask;
   attachScannedDocumentsPage: AttachScannedDocumentsPage;
 };
 
@@ -406,6 +410,24 @@ export const test = base.extend<CreateFixtures>({
   },
   taskUiChecks: async ({ page }, use) => {
     await use(new TaskUiChecks(page));
+  },
+  judgeSession: async ({ page, loginPage, manageCaseDashboardPage }, use) => {
+    await use(new JudgeSession(page, loginPage, manageCaseDashboardPage));
+  },
+  reviewApplicationTask: async ({
+    page,
+    taskUiChecks,
+    caseDetailsPage,
+    approveApplicationPage,
+    consentOrderNotApprovedPage
+  }, use) => {
+    await use(new ReviewApplicationTask(
+      page,
+      taskUiChecks,
+      caseDetailsPage,
+      approveApplicationPage,
+      consentOrderNotApprovedPage
+    ));
   },
   attachScannedDocumentsPage: async ({ page }, use) => {
     await use(new AttachScannedDocumentsPage(page));

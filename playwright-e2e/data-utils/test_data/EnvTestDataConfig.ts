@@ -13,7 +13,13 @@ const configs = {
     APP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
     APP_SOL_TOWN_CITY: 'London',
     APP_SOL_COUNTY: 'Greater London',
-    APP_SOL_POSTCODE: 'EC3A 2AD'
+    APP_SOL_POSTCODE: 'EC3A 2AD', 
+    APP_SOL_NAME: 'APP APP',
+    RESP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
+    RESP_SOL_TOWN_CITY: 'London',
+    RESP_SOL_COUNTY: 'Greater London',
+    RESP_SOL_POSTCODE: 'EC3A 2AD',
+    RESP_SOL_NAME: 'Smeagol Gollum'
   },
   demo: {
     DOCUMENT_URL: 'http://dm-store-demo.service.core-compute-demo.internal/documents/d441d7ff-a187-418a-8d47-31198c3e5042',
@@ -24,10 +30,16 @@ const configs = {
     PBA_ACCOUNT_NAME: 'applicantSolicitorFirm',
     JUDGE_NAME: 'Mario Lopez',
     JUDGE_SURNAME: 'Lopez',
-    APP_SOL_BUILDING_STREET: '131 Regency Square',
+    APP_SOL_BUILDING_STREET: '134 Regency Square',
     APP_SOL_TOWN_CITY: 'Warrington',
     APP_SOL_COUNTY: 'Cheshire',
-    APP_SOL_POSTCODE: 'WA5 0EX'
+    APP_SOL_POSTCODE: 'WA1 4PF',
+    APP_SOL_NAME: 'Senior Dude',
+    RESP_SOL_BUILDING_STREET: '134 Regency Square',
+    RESP_SOL_TOWN_CITY: 'Warrington',
+    RESP_SOL_COUNTY: 'Cheshire',
+    RESP_SOL_POSTCODE: 'WA1 4PF',
+    RESP_SOL_NAME: 'Sauron'
   }
 };
 // get the environment variable RUNNING_ENV, default to 'aat' if not set

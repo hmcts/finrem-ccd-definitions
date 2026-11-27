@@ -171,7 +171,7 @@ export const suggested_draft_order_solicitor_case_document_tabs: Tab[] = [
         fileName: 'agreed-draft-order-document.docx',
         submittedBy: '',
         details: [
-          { tabItem: 'Submitted by', value: 'APP APP' },
+          { tabItem: 'Submitted by', value: envTestData.APP_SOL_NAME },
           { tabItem: 'Submitted by (email address)', value: 'fr_applicant_solicitor1@mailinator.com' }
         ]
       },
@@ -180,7 +180,7 @@ export const suggested_draft_order_solicitor_case_document_tabs: Tab[] = [
         fileName: 'BagginsFDA.pdf',
         submittedBy: '',
         details: [
-          { tabItem: 'Submitted by', value: 'APP APP' },
+          { tabItem: 'Submitted by', value: envTestData.APP_SOL_NAME },
           { tabItem: 'Submitted by (email address)', value: 'fr_applicant_solicitor1@mailinator.com' }
         ]
       }

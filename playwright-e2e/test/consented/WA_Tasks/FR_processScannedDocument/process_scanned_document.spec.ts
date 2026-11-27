@@ -164,8 +164,6 @@ test.describe('Process scanned document task tests', () => {
       };
       const caseId = await ConsentedCaseFactory
         .createConsentedCaseUpToApplicationPaymentSubmission();
-      await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
-      await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
 
       await test.step('Team Leader assigns the task to themselves', async () => {
         await loginAndOpenCase(
@@ -173,6 +171,11 @@ test.describe('Process scanned document task tests', () => {
           caseId,
           sessionPages
         );
+        // Close Check Help With Fees once a user has the case open, then raise the task.
+        await taskUiChecks.closeTask(TaskName.CheckHelpWithFees, 'Mark as done');
+        await ConsentedEventApi.caseWorkerAttachScannedDocuments(caseId, false);
+        // Wait for WA to create the task on the case before searching All work.
+        await taskUiChecks.assertTaskVisible(TASK_NAME);
         await taskUiChecks.assertTaskAndActionsInWorkAllocationTab(
           TASK_NAME,
           'All work',

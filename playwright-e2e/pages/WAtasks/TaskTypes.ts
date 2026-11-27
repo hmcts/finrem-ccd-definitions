@@ -9,7 +9,7 @@ export const taskManagementActions = [
 
 export type TaskManagementAction = typeof taskManagementActions[number];
 
-export type TaskUserRole = 'admin' | 'teamLeader';
+export type TaskUserRole = 'admin' | 'teamLeader' | 'judge' | 'leadJudge';
 
 export interface TaskDetails {
   readonly name: string;
@@ -23,7 +23,10 @@ export const unassignedTaskActions: Readonly<Record<
     readonly TaskManagementAction[]
 >> = {
   admin: ['Assign to me'],
-  teamLeader: ['Assign task', 'Cancel task', 'Assign to me']
+  teamLeader: ['Assign task', 'Cancel task', 'Assign to me'],
+  // Judicial users: Mark as done is only offered once the task is assigned.
+  judge: ['Assign to me'],
+  leadJudge: ['Assign task', 'Cancel task', 'Assign to me']
 };
 
 export const assignedTaskActions: Readonly<Record<
@@ -32,6 +35,13 @@ export const assignedTaskActions: Readonly<Record<
 >> = {
   admin: ['Cancel task', 'Mark as done'],
   teamLeader: [
+    'Cancel task',
+    'Mark as done',
+    'Reassign task',
+    'Unassign task'
+  ],
+  judge: ['Cancel task', 'Mark as done', 'Unassign task'],
+  leadJudge: [
     'Cancel task',
     'Mark as done',
     'Reassign task',
@@ -47,7 +57,8 @@ export type TaskName = typeof TaskName[keyof typeof TaskName];
 
 export const TaskCompletionEventName = {
   HWFApplicationAccepted: 'HWF Application Accepted',
-  FeeAccountDebited: 'Fee Account Debited'
+  FeeAccountDebited: 'Fee Account Debited',
+  AwaitingPaymentResponse: 'Awaiting Payment Response'
 } as const;
 
 export type TaskCompletionEventName = typeof TaskCompletionEventName[keyof typeof TaskCompletionEventName];

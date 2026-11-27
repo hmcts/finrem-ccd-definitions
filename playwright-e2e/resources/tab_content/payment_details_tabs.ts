@@ -1,10 +1,10 @@
 const FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING = 'Payments';
 
 export const paymentDetailsTabData = (
-    feeCode: string,
-    feeType: string,
-    amount: string
-) => [
+  feeCode: string,
+  feeType: string,
+  amount: string
+) => {return [
   {
     tabName: 'Payment History',
     tabContent: [
@@ -15,4 +15,4 @@ export const paymentDetailsTabData = (
       FEE_AND_PAY_UI_COMPONENT_PAYMENTS_HEADING
     ]
   }
-];
+];};

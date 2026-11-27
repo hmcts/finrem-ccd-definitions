@@ -44,6 +44,8 @@ static Map < String, Object > secret(String secretName, String envVariable) {
 // Dynamically resolve vault environment prefix based on parameters
 String vaultEnv = params.RUNNING_ENV.startsWith('pr') ? 'aat' : params.RUNNING_ENV
 String solicitorIdSuffix = vaultEnv == 'demo' ? '_DEMO' : ''
+String judgeIdSuffix = vaultEnv == 'demo' ? '_DEMO' : ''
+
 def secrets = [
         "${product}-${vaultEnv}": [
                 secret('playwright-solicitor-username', 'PLAYWRIGHT_SOLICITOR_USERNAME'),
@@ -64,6 +66,7 @@ def secrets = [
                 secret('password-caseworker', 'PASSWORD_CASEWORKER'),
                 secret('fr-judge-username', 'USERNAME_JUDGE'),
                 secret('fr-judge-password', 'PASSWORD_JUDGE'),
+                secret('fr-judge-id', "PLAYWRIGHT_JUDGE_ID${judgeIdSuffix}"),
                 secret('idam-client-secret', 'IDAM_CLIENT_SECRET'),
                 secret('finrem-case-orchestration-service-s2s-key', 'FINREM_CASE_ORCHESTRATION_SERVICE_S2S_KEY'),
                 secret('barrister1-username', 'USERNAME_BARRISTER1'),

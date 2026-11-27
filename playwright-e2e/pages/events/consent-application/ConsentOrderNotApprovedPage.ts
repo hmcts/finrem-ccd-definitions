@@ -15,7 +15,9 @@ export class ConsentOrderNotApprovedPage extends BaseJourneyPage {
     this.consentOrderNotApprovedTitle = this.page.getByText('Consent Order Not Approved');
     this.andAfterTextArea = this.page.locator('#orderRefusalOnScreen_orderRefusalAfterText');
     this.selectJudgeDropdown = this.page.locator('#orderRefusalOnScreen_orderRefusalJudge');
-    this.judgeName = this.page.getByLabel('Name of Judge');
+    // By id, because a second refusal also shows the earlier refusal's
+    // "Name of Judge" field.
+    this.judgeName = this.page.locator('#orderRefusalOnScreen_orderRefusalJudgeName');
     this.dateOfOrder = this.page.locator('#orderRefusalDate');
     this.additionalComments = this.page.locator('#orderRefusalOnScreen_orderRefusalAddComments');
   }
@@ -88,5 +90,26 @@ export class ConsentOrderNotApprovedPage extends BaseJourneyPage {
   async selectJudge(judgeName: string) {
     await expect(this.selectJudgeDropdown).toBeVisible();
     await this.selectJudgeDropdown.selectOption({ label: judgeName });
+  }
+
+  async enterJudgeName(name: string) {
+    await expect(this.judgeName).toBeVisible();
+    await this.judgeName.fill(name);
+  }
+
+  // Fills in and submits the Application Not Approved event, including the
+  // draft order preview page.
+  async completeApplicationNotApproved(details: {
+    reasons: string[];
+    judgeTitle: string;
+    judgeName: string;
+  }): Promise<void> {
+    await this.selectReasonsForRefusal(details.reasons);
+    await this.selectJudge(details.judgeTitle);
+    await this.enterJudgeName(details.judgeName);
+    await this.navigateContinue();
+    // Draft order preview page
+    await this.navigateContinue();
+    await this.navigateSubmit();
   }
 }
