@@ -44,12 +44,6 @@ export class ConsentedCaseFactory {
     ]);
   }
 
-  static async createConsentedCaseSubmittedWithFeeAccount(): Promise<string> {
-    return this.buildConsentedCaseWithSteps([
-      (id) => {return ConsentedEventApi.solicitorSubmitCaseWithFeeAccount(id);}
-    ]);
-  }
-
   static async createConsentedCaseUpToHWFDecision(): Promise<string> {
     return this.buildConsentedCaseWithSteps([
       (id) => {return ConsentedEventApi.solicitorSubmitCase(id);},

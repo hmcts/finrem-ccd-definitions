@@ -92,6 +92,7 @@ import { JudgeSession } from '../pages/WAtasks/JudgeSession.ts';
 import { ReviewApplicationTask } from '../pages/WAtasks/ReviewApplicationTask.ts';
 import { AttachScannedDocumentsPage } from '../pages/events/attach-scanned-doc/AttachScannedDocumentsPage.ts';
 import { HwfFeeAccountDebitedPage } from '../pages/events/hwf-fee-account-debited/HwfFeeAccountDebitedPage.ts';
+import {AmendFinalOrderPage} from '../pages/events/amend-final-order/AmendFinalOrderPage.ts';
 
 const commonActionsHelper = new CommonActionsHelper();
 const solicitorDetailsHelper = new SolicitorDetailsHelper();
@@ -177,6 +178,7 @@ type CreateFixtures = {
   judgeSession: JudgeSession;
   reviewApplicationTask: ReviewApplicationTask;
   attachScannedDocumentsPage: AttachScannedDocumentsPage;
+  amendFinalOrderPage: AmendFinalOrderPage;
 };
 
 export const test = base.extend<CreateFixtures>({
@@ -431,5 +433,8 @@ export const test = base.extend<CreateFixtures>({
   },
   attachScannedDocumentsPage: async ({ page }, use) => {
     await use(new AttachScannedDocumentsPage(page));
+  },
+  amendFinalOrderPage: async ({ page }, use) => {
+    await use(new AmendFinalOrderPage(page));
   }
 });

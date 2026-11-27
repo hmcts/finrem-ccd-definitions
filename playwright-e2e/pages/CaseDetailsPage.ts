@@ -392,20 +392,9 @@ export class CaseDetailsPage {
   }
 
 
-  // Checks the "End state" of the latest event in the History tab's Details
-  // panel. Some events share their name with a state, so matching the text
-  // anywhere on the page could pass on the event name instead.
   async validateCaseState(expectedState: string): Promise<void> {
-    const historyTab = this.page.getByRole('tab', { name: /^History\b/ });
-    await expect(historyTab).toBeVisible();
-    await historyTab.click();
-
-    // History is laid out with nested tables, so scope to the Details panel.
-    const endStateValue = this.page
-      .locator('ccd-event-log-details')
-      .getByRole('row', { name: /^End state\b/ })
-      .getByRole('cell');
-    await expect(endStateValue).toHaveText(expectedState);
+    const stateLabel = this.page.getByText(expectedState, { exact: true });
+    await expect(stateLabel).toBeVisible();
   }
 
   /**

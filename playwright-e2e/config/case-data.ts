@@ -113,10 +113,6 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Fee Account Debited",
     ccdCallback: "FR_paymentMadeFromHWF"
   },
-  awaitingPaymentResponseFromHWF: {
-    listItem: "Awaiting Payment Response",
-    ccdCallback: "FR_awaitingPaymentResponseFromHWF"
-  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
@@ -289,6 +285,7 @@ export const PayloadPath = {
     applicationPaymentSubmission: "./playwright-e2e/resources/payload/consented/solicitor/case-submission.json",
     issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
+    uploadApprovedOrder: "./playwright-e2e/resources/payload/consented/caseworker/upload-approved-order.json",
     respondToOrder: "./playwright-e2e/resources/payload/consented/solicitor/respond-to-order.json",
     assignToJudgeFromRespondToOrder: "./playwright-e2e/resources/payload/consented/caseworker/assign-to-judge-from-respond-to-order.json"
   },

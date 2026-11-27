@@ -92,6 +92,12 @@ export class ConsentedEventApi {
     ]);
   }
 
+  static async caseworkerUploadApprovedOrder(caseId: string) {
+    await this.caseWorkerIssueApplication(caseId);
+    await this.updateCaseWorkerSteps(caseId, [
+      { event: ConsentedEvents.uploadApprovedOrder.ccdCallback , payload: PayloadPath.Consented.uploadApprovedOrder }
+    ]);
+  }
   /**
    * Takes a refused case (Consent Order Not Approved) back to the judge:
    * Send Order, the solicitor's Respond To Order, then Assign To Judge, which
