@@ -290,7 +290,8 @@ export const PayloadPath = {
     issueApplication: "./playwright-e2e/resources/payload/consented/caseworker/issue-application.json",
     createFlag: "./playwright-e2e/resources/payload/consented/caseworker/create-flag.json",
     respondToOrder: "./playwright-e2e/resources/payload/consented/solicitor/respond-to-order.json",
-    assignToJudgeFromRespondToOrder: "./playwright-e2e/resources/payload/consented/caseworker/assign-to-judge-from-respond-to-order.json"
+    assignToJudgeFromRespondToOrder: "./playwright-e2e/resources/payload/consented/caseworker/assign-to-judge-from-respond-to-order.json",
+    uploadApprovedOrder: "./playwright-e2e/resources/payload/consented/caseworker/upload-approved-order.json"
   },
   Contested: {
     // Base case data

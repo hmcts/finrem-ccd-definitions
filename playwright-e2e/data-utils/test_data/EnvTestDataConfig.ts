@@ -13,7 +13,7 @@ const configs = {
     APP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
     APP_SOL_TOWN_CITY: 'London',
     APP_SOL_COUNTY: 'Greater London',
-    APP_SOL_POSTCODE: 'EC3A 2AD', 
+    APP_SOL_POSTCODE: 'EC3A 2AD',
     APP_SOL_NAME: 'APP APP',
     RESP_SOL_BUILDING_STREET: '3rd Floor, 65-68 Leadenhall St',
     RESP_SOL_TOWN_CITY: 'London',
