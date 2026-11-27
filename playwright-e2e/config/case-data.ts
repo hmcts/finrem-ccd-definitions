@@ -113,10 +113,6 @@ export const ConsentedEvents: Record<string, CaseEvent> = {
     listItem: "Fee Account Debited",
     ccdCallback: "FR_paymentMadeFromHWF"
   },
-  awaitingPaymentResponseFromHWF: {
-    listItem: "Awaiting Payment Response",
-    ccdCallback: "FR_awaitingPaymentResponseFromHWF"
-  },
   // Common events
   createFlag: CommonEvents.createFlag,
   manageFlags: CommonEvents.manageFlags,
